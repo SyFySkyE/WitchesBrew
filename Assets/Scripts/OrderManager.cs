@@ -19,7 +19,11 @@ public class OrderManager : MonoBehaviour
         listOfIngredients = new List<IngredientEnum>();
         foreach (IngredientEnum ingred in Enum.GetValues(typeof(IngredientEnum)))
         {
-            listOfIngredients.Add(ingred); // NOTE we're adding 0 index (none) in this Gonna change this later
+            if (ingred != IngredientEnum.None)
+            {
+                listOfIngredients.Add(ingred); // NOTE we're adding 0 index (none) in this Gonna change this later
+            }
+            
             
         }
 
@@ -32,9 +36,15 @@ public class OrderManager : MonoBehaviour
 
         while (numberOfIngredientsLeft > 0)
         {
-            IngredientEnum newIngred = listOfIngredients[UnityEngine.Random.Range(1, listOfIngredients.Count - 1)];
-            numberOfIngredientsLeft--;
-            Debug.Log(newIngred);
+            IngredientEnum newIngred = listOfIngredients[UnityEngine.Random.Range(0, listOfIngredients.Count)];
+            numberOfIngredientsLeft--;            
+        }
+
+
+        Debug.Log("These are the ingredients I need!");
+        foreach (IngredientEnum ingred in listOfIngredients)
+        {
+            Debug.Log($"I'll need: {ingred}");
         }
     }
 }
