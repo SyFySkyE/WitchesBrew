@@ -14,8 +14,12 @@ public class OrderManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        InstantiateIngredientList();
+        CreateOrder();
+    }
 
+    private void InstantiateIngredientList()
+    {
         listOfIngredients = new List<IngredientEnum>();
         foreach (IngredientEnum ingred in Enum.GetValues(typeof(IngredientEnum)))
         {
@@ -23,11 +27,7 @@ public class OrderManager : MonoBehaviour
             {
                 listOfIngredients.Add(ingred); // NOTE we're adding 0 index (none) in this Gonna change this later
             }
-            
-            
         }
-
-        CreateOrder();
     }
 
     private void CreateOrder()
@@ -39,7 +39,6 @@ public class OrderManager : MonoBehaviour
             IngredientEnum newIngred = listOfIngredients[UnityEngine.Random.Range(0, listOfIngredients.Count)];
             numberOfIngredientsLeft--;            
         }
-
 
         Debug.Log("These are the ingredients I need!");
         foreach (IngredientEnum ingred in listOfIngredients)
