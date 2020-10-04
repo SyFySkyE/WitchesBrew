@@ -1,49 +1,41 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class OrderManager : MonoBehaviour
 {
-    [SerializeField] private int numberOfIngredientsPerRecipe;
+    public static event Action LevelCompleted;
+
+
+
+    [SerializeField]
+    [Tooltip("Array of orders in the level")]
+    private Order[] orders;
 
     private Order currentOrder;
-    private List<IngredientEnum> listOfIngredients; // TODO should be an array!!! Decide length at runtime
-    private int numberOfIngredientsLeft;
+    
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        InstantiateIngredientList();
-        CreateOrder();
+        RunOrderSequence();
     }
 
-    private void InstantiateIngredientList()
+    /// <summary>
+    /// Creates each order in a sequence, depending on the number of orders in the level
+    /// </summary>
+    private void RunOrderSequence()
     {
-        listOfIngredients = new List<IngredientEnum>();
-        foreach (IngredientEnum ingred in Enum.GetValues(typeof(IngredientEnum)))
+        foreach(Order order in orders)
         {
-            if (ingred != IngredientEnum.None)
-            {
-                listOfIngredients.Add(ingred); // NOTE we're adding 0 index (none) in this Gonna change this later
-            }
+            currentOrder = order;
+
         }
     }
 
-    private void CreateOrder()
-    {
-        numberOfIngredientsLeft = numberOfIngredientsPerRecipe;
+   
 
-        while (numberOfIngredientsLeft > 0)
-        {
-            IngredientEnum newIngred = listOfIngredients[UnityEngine.Random.Range(0, listOfIngredients.Count)];
-            numberOfIngredientsLeft--;            
-        }
 
-        Debug.Log("These are the ingredients I need!");
-        foreach (IngredientEnum ingred in listOfIngredients)
-        {
-            Debug.Log($"I'll need: {ingred}");
-        }
-    }
+
+   
 }

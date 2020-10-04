@@ -1,13 +1,37 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Order
+[CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/Orders", order = 1)]
+public class Order : ScriptableObject //to do: create scriptable objects of recipes
 {
-    public List<BaseIngredient> IngredientsNeeded { get; private set; }
+    public string recipeName;
+    public bool isDone = false;
 
-    public Order(List<BaseIngredient> ingredientsNeeded) // TODO should be interfaces
+    public List<BaseIngredient> Recipe { get; private set; }
+
+    public Order(List<BaseIngredient> recipe) // TODO should be interfaces
     {
-        this.IngredientsNeeded = ingredientsNeeded;
+        this.Recipe = recipe;
     }
+
+    private void DisplayIngredientsInRecipe()
+    {
+        int ingredientsLeftToDisplay = Recipe.Count;
+
+        while (ingredientsLeftToDisplay > 0)
+        {
+            Debug.Log("These are the ingredients I need!");
+            foreach (BaseIngredient ingrdient in Recipe)
+            {
+                Debug.Log($"I'll need: {ingrdient}");
+            }
+
+            ingredientsLeftToDisplay--;
+        }
+    }
+
 }
+
+
