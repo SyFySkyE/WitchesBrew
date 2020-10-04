@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ingredient
   - Cauldron
+  - RecipeBook
   layers:
   - Default
   - TransparentFX
