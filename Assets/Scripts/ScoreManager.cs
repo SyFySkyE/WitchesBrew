@@ -1,16 +1,28 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    public static int tips;
-    public static int totalScore;
+    [SerializeField]
+    private TMP_Text scoreText;
 
-    void AddTipsToScore()
+    [HideInInspector]
+    public int tips;
+
+    [HideInInspector]
+    public int totalScore;
+
+    private void Update()
     {
-
+        UpdateScore();
     }
 
-    void CalculateLevelTotalScore()
+    void UpdateScore()
+    {
+        scoreText.text = "Score: " + totalScore.ToString();
+    }
+
+    void AddTipsToScore()
     {
 
     }

@@ -11,25 +11,10 @@ public class Order : ScriptableObject //to do: create scriptable objects of reci
 
     public IngredientEnum[] recipe;
     public OrderState orderState = OrderState.NotStarted;
-    int ingredientsLeftToCombine;
 
-    public Order()
+    private void OnEnable()
     {
-        ingredientsLeftToCombine = recipe.Length;
-    }
-
-    private void TrackOrderProgress() //to do, implement order tracking
-    {
-        while (ingredientsLeftToCombine > 0)
-        {
-            Debug.Log("These are the ingredients I need!");
-            foreach (IngredientEnum ingredient in recipe)
-            {
-                Debug.Log($"I'll need: {ingredient}");
-            }
-
-            ingredientsLeftToCombine--;
-        }
+        orderState = OrderState.NotStarted;
     }
 
 }

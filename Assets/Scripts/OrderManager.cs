@@ -1,5 +1,6 @@
 ﻿using System;
-using System.Runtime.CompilerServices;
+using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -8,17 +9,23 @@ public class OrderManager : MonoBehaviour
     public static event Action LevelCompleted;
 
     [SerializeField]
-    double possibleScore = 100;
+    private Cauldron cauldron;
+
+    [SerializeField]
+    private ScoreManager scoreManager;
+
+    [SerializeField]
+    private double baseScore = 100;
 
     [SerializeField]
     [Tooltip("Multiplied by the starter possible score to calculate the new possible score, based on what area of the timer the player completes the order in")]
-    [Range(0,1)]
-    double greenTimerScoreModifier = 0.9, 
-        yellowTimerScoreModifier = 0.8, 
+    [Range(0, 1)]
+    private double greenTimerScoreModifier = 0.9,
+        yellowTimerScoreModifier = 0.8,
         redTimerScoreModifier = 0.5;
 
     [SerializeField]
-    private TMP_Text scoreText, orderText;
+    private TMP_Text orderText;
 
     [SerializeField]
     [Tooltip("Array of orders in the level")]
@@ -40,12 +47,7 @@ public class OrderManager : MonoBehaviour
 
     private void TakeOrder()
     {
-        orderText.text = $"I would like to order {currentOrder}";
-        //allow the player to drag stuff until they hit the done buttone
-
-        //if done button pressed
-        //currentOrder.OrderState = OrderState.Done
-
+        orderText.text = $"I would like to order a {currentOrder.name}";
     }
 
     private void UpdateCurrentOrderState()
@@ -57,13 +59,24 @@ public class OrderManager : MonoBehaviour
                 currentOrder.orderState = OrderState.InProgress;
                 break;
             case OrderState.InProgress:
-                //allow the player to make the order
                 break;
             case OrderState.Done:
                 ScoreOrder();
-                currentOrderIndex++; //move to next order
-                currentOrder = orders[currentOrderIndex];
+                MoveToNextOrderIfThereIsOne();
                 break;
+        }  
+    }
+
+    void MoveToNextOrderIfThereIsOne()
+    {
+        if (currentOrderIndex + 1 < orders.Length) //if we aren't on the last order yet, move to next order
+        {
+            currentOrderIndex++;
+            currentOrder = orders[currentOrderIndex];
+        }
+        else if (currentOrderIndex == orders.Length) //if we are on the last order, end level
+        {
+            LevelCompleted?.Invoke();
         }
     }
 
@@ -72,28 +85,56 @@ public class OrderManager : MonoBehaviour
     /// </summary>
     private void ScoreOrder()
     {
-
+        double possibleScoreBasedOnTimer;
         //calculate quickness
-            //make switch to change this based on timer
+        //make switch to change this based on timer
 
-            //if red
-                //possibleScore = possibleScore * redTimerScoreModifier;
-            //if yellow
-                //possibleScore = possibleScore * yellowTimerScoreModifier;
-            //if green
-                possibleScore = possibleScore * greenTimerScoreModifier;
+        //if red
+        //possibleScore = possibleScore * redTimerScoreModifier;
+        //if yellow
+        //possibleScore = possibleScore * yellowTimerScoreModifier;
+        //if green
+        possibleScoreBasedOnTimer = baseScore * greenTimerScoreModifier;
 
         //calculate accuracy
-        double scoreBasedOnAccuracy = 
 
-        currentOrder.score = scoreBasedOnAccuracy / possibleScore;
 
-        ScoreManager.totalScore += Convert.ToInt32(orderScore);
+        List<IngredientEnum> ingredientsInRecipe = currentOrder.recipe.ToList();
+
+        int numberOfCorrectIngredients = 0;
+        for (int j = 0; j < cauldron.CurrentIngredients.Count; j++) //for each ingredient in the cauldron
+        {
+            for (int i = 0; i < ingredientsInRecipe.Count; i++) //check if it's in the recipe
+            {
+                if (cauldron.CurrentIngredients[j] == ingredientsInRecipe[i])
+                {
+                    numberOfCorrectIngredients++;
+                    ingredientsInRecipe.RemoveAt(i);
+                }
+            }
+        }
+
+        double accuracyPercent = (double)numberOfCorrectIngredients / currentOrder.recipe.Length;
+        Debug.Log($"{currentOrder.name} was {accuracyPercent} accurate");
+
+        currentOrder.score = accuracyPercent * possibleScoreBasedOnTimer;
+
+        scoreManager.totalScore += Convert.ToInt32(currentOrder.score);
+        cauldron.ClearIngredients();
     }
 
+    private void OnDoneButtonPressed()
+    {
+        currentOrder.orderState = OrderState.Done;
+    }
 
+    private void OnEnable()
+    {
+        CompleteOrderButton.DoneButtonClicked += OnDoneButtonPressed;
+    }
 
-
-
-
+    private void OnDisable()
+    {
+        CompleteOrderButton.DoneButtonClicked -= OnDoneButtonPressed;
+    }
 }
