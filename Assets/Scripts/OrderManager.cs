@@ -12,7 +12,7 @@ public class OrderManager : MonoBehaviour
     private Cauldron cauldron;
 
     [SerializeField]
-    private ScoreManager scoreManager;
+    private ScoreText scoreManager;
 
     [SerializeField]
     private double baseScore = 100;
@@ -34,6 +34,8 @@ public class OrderManager : MonoBehaviour
     private int currentOrderIndex = 0;
     private Order currentOrder;
 
+    bool paused = false; //to do: move to level manager?
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -42,7 +44,8 @@ public class OrderManager : MonoBehaviour
 
     private void Update()
     {
-        UpdateCurrentOrderState();
+        if(!paused)
+            UpdateCurrentOrderState();
     }
 
     private void TakeOrder()
@@ -74,9 +77,10 @@ public class OrderManager : MonoBehaviour
             currentOrderIndex++;
             currentOrder = orders[currentOrderIndex];
         }
-        else if (currentOrderIndex == orders.Length) //if we are on the last order, end level
+        else  //if we are on the last order, end level
         {
             LevelCompleted?.Invoke();
+            paused = true;
         }
     }
 
@@ -98,7 +102,6 @@ public class OrderManager : MonoBehaviour
 
         //calculate accuracy
 
-
         List<IngredientEnum> ingredientsInRecipe = currentOrder.recipe.ToList();
 
         int numberOfCorrectIngredients = 0;
@@ -119,7 +122,7 @@ public class OrderManager : MonoBehaviour
 
         currentOrder.score = accuracyPercent * possibleScoreBasedOnTimer;
 
-        scoreManager.totalScore += Convert.ToInt32(currentOrder.score);
+        LevelManager.totalScore += Convert.ToInt32(currentOrder.score);
         cauldron.ClearIngredients();
     }
 

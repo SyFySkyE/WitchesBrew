@@ -3,17 +3,20 @@
 public class AfterActionUI : MonoBehaviour
 {
     [SerializeField]
-    GameObject inGameUI;
+    private GameObject inGameUI;
+    private CanvasGroup canvasGroup, inGameCanvasGroup;
 
     private void Start()
     {
-        gameObject.SetActive(false);
+        canvasGroup = GetComponent<CanvasGroup>();
+        inGameCanvasGroup = inGameUI.GetComponent<CanvasGroup>();
+        canvasGroup.alpha = 0;
     }
 
     private void OnLevelCompleted()
     {
-        gameObject.SetActive(true);
-        inGameUI.SetActive(false);
+        canvasGroup.alpha = 1;
+        inGameCanvasGroup.alpha = 0;
     }
 
     private void OnEnable()
