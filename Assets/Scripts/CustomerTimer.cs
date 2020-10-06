@@ -20,6 +20,9 @@ public class CustomerTimer : MonoBehaviour
     [SerializeField] private float redThreshold;
     [SerializeField] private float failThreshold;
 
+    [Header("Bar Fill Area")]
+    [SerializeField] private Image fill;
+
     public CustomerHappiness CurrentSatisfaction
     {
         get
@@ -59,14 +62,17 @@ public class CustomerTimer : MonoBehaviour
             if (timerSlider.value > greenThreshold)
             {
                 this.CurrentSatisfaction = CustomerHappiness.Green;
+                fill.color = Color.green;
             }
             else if (timerSlider.value > yellowThreshold)
             {
                 this.CurrentSatisfaction = CustomerHappiness.Yellow;
+                fill.color = Color.yellow;
             }
             else if (timerSlider.value > redThreshold)
             {
                 this.CurrentSatisfaction = CustomerHappiness.Red;
+                fill.color = Color.red;
             }
 
             timerSlider.value -= Time.deltaTime;
