@@ -1,34 +1,34 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+
+public enum OrderState { NotStarted, InProgress, Done }
 
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/Orders", order = 1)]
 public class Order : ScriptableObject //to do: create scriptable objects of recipes
 {
+    [HideInInspector]
+    public double score;
     public string recipeName;
-    public bool isDone = false;
 
-    public List<BaseIngredient> Recipe { get; private set; }
+    public IngredientEnum[] recipe;
+    public OrderState orderState = OrderState.NotStarted;
+    int ingredientsLeftToCombine;
 
-    public Order(List<BaseIngredient> recipe) // TODO should be interfaces
+    public Order()
     {
-        this.Recipe = recipe;
+        ingredientsLeftToCombine = recipe.Length;
     }
 
-    private void DisplayIngredientsInRecipe()
+    private void TrackOrderProgress() //to do, implement order tracking
     {
-        int ingredientsLeftToDisplay = Recipe.Count;
-
-        while (ingredientsLeftToDisplay > 0)
+        while (ingredientsLeftToCombine > 0)
         {
             Debug.Log("These are the ingredients I need!");
-            foreach (BaseIngredient ingrdient in Recipe)
+            foreach (IngredientEnum ingredient in recipe)
             {
-                Debug.Log($"I'll need: {ingrdient}");
+                Debug.Log($"I'll need: {ingredient}");
             }
 
-            ingredientsLeftToDisplay--;
+            ingredientsLeftToCombine--;
         }
     }
 
