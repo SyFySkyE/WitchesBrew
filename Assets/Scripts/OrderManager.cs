@@ -103,16 +103,28 @@ public class OrderManager : MonoBehaviour
         //calculate accuracy
 
         List<IngredientEnum> ingredientsInRecipe = currentOrder.recipe.ToList();
-
+        
         int numberOfCorrectIngredients = 0;
         for (int j = 0; j < cauldron.CurrentIngredients.Count; j++) //for each ingredient in the cauldron
         {
             for (int i = 0; i < ingredientsInRecipe.Count; i++) //check if it's in the recipe
             {
+                //vv temp code vv
                 if (cauldron.CurrentIngredients[j] == ingredientsInRecipe[i])
                 {
-                    numberOfCorrectIngredients++;
-                    ingredientsInRecipe.RemoveAt(i);
+                    //add hack to check if cauldron.CurrentIngredients > numberOfCorrectIngredients. If so numberOfCorrectIngredients/cauldron.CurrentIngredients = numberOfCorrectIngredients
+                    if (cauldron.CurrentIngredients.Count > currentOrder.recipe.Length)
+                    {
+                        numberOfCorrectIngredients = numberOfCorrectIngredients / cauldron.CurrentIngredients.Count;
+                    }
+                    else 
+                    {
+                        numberOfCorrectIngredients++;
+                        ingredientsInRecipe.RemoveAt(i);
+                    }
+                    //^^ temp code ^^
+                    //numberOfCorrectIngredients++;
+                    //ingredientsInRecipe.RemoveAt(i);
                 }
             }
         }
