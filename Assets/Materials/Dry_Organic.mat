@@ -7,27 +7,25 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Glass_Transparent
-  m_Shader: {fileID: 4800000, guid: 8d6e58c0f7ffa7f499428ba3699f276b, type: 3}
-  m_ShaderKeywords: _FRESNELHIGHLIGHTS_ON _MK_ARTISTIC_PROJECTION_SCREEN_SPACE _MK_COLOR_BLEND_DIFFERENCE
-    _MK_DETAIL_BLEND_MIX _MK_EMISSION _MK_ENVIRONMENT_REFLECTIONS_AMBIENT _MK_FRESNEL_HIGHLIGHTS
-    _MK_INDEX_OF_REFRACTION _MK_LIGHT_TRANSMISSION_TRANSLUCENT _MK_RECEIVE_SHADOWS
-    _MK_RIM_DEFAULT _MK_SPECULAR_ISOTROPIC _MK_SURFACE_TYPE_TRANSPARENT _MK_WORKFLOW_SPECULAR
-    _MK_WRAPPED_DIFFUSE _RECEIVESHADOWS_ON _WRAPPEDLIGHTING_ON
-  m_LightmapFlags: 0
+  m_Name: Dry_Organic
+  m_Shader: {fileID: 4800000, guid: c4ae631e7daaae74eb5266cfa7a61b79, type: 3}
+  m_ShaderKeywords: _FRESNELHIGHLIGHTS_ON _MK_ALBEDO_MAP _MK_ARTISTIC_PROJECTION_SCREEN_SPACE
+    _MK_DETAIL_BLEND_MIX _MK_ENVIRONMENT_REFLECTIONS_AMBIENT _MK_FRESNEL_HIGHLIGHTS
+    _MK_RECEIVE_SHADOWS _MK_SPECULAR_ISOTROPIC _MK_WORKFLOW_ROUGHNESS _MK_WRAPPED_DIFFUSE
+    _RECEIVESHADOWS_ON _WRAPPEDLIGHTING_ON
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
+  m_CustomRenderQueue: 2000
   stringTagMap:
-    IGNOREPROJECTOR: true
-    RenderType: Transparent
-  disabledShaderPasses:
-  - SHADOWCASTER
+    IGNOREPROJECTOR: False
+    RenderType: Opaque
+  disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
     - _AlbedoMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 5d3a1108e9aba344d86c18bfa7198b8f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -126,10 +124,6 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _RefractionDistortionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _RimRamp:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -171,14 +165,10 @@ Material:
     - _ArtisticFrequency: 1
     - _ArtisticProjection: 1
     - _Blend: 0
-    - _BlendDst: 10
-    - _BlendSrc: 5
+    - _BlendDst: 0
+    - _BlendSrc: 1
     - _Brightness: 1
     - _BumpScale: 1
-    - _CameraFade: 0
-    - _CameraFadeFarDistance: 2
-    - _CameraFadeNearDistance: 1
-    - _ColorBlend: 5
     - _ColorGrading: 0
     - _Contrast: 1
     - _Cutoff: 0.5
@@ -198,26 +188,24 @@ Material:
     - _DrawnMapScale: 1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
-    - _Flipbook: 0
     - _FresnelHighlights: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _GoochRampIntensity: 0.5
     - _HatchingMapScale: 1
-    - _IndexOfRefraction: 0.5
     - _Initialized: 1
     - _InputTab: 1
     - _Iridescence: 0
-    - _IridescenceSize: 1.25
+    - _IridescenceSize: 1
     - _IridescenceSmoothness: 0.5
     - _IridescenceThresholdOffset: 0
     - _Light: 0
     - _LightBands: 4
     - _LightBandsScale: 0.5
     - _LightThreshold: 0.5
-    - _LightTransmission: 1
-    - _LightTransmissionDistortion: 0.45
+    - _LightTransmission: 0
+    - _LightTransmissionDistortion: 0.25
     - _LightTransmissionIntensity: 1
     - _LightTransmissionSmoothness: 0.5
     - _LightTransmissionThresholdOffset: 0.25
@@ -232,29 +220,21 @@ Material:
     - _OutlineNoise: 0
     - _OutlineSize: 5
     - _Parallax: 0.02
-    - _ParticlesTab: 0
     - _ReceiveShadows: 1
-    - _RefractionDistortion: 0.1
-    - _RefractionDistortionFade: 0.601
-    - _RefractionDistortionMapScale: 1
-    - _RefractionTab: 0
     - _RenderFace: 2
     - _RenderPriority: 0
-    - _Rim: 1
-    - _RimSize: 5
+    - _Rim: 0
+    - _RimSize: 1
     - _RimSmoothness: 0.5
     - _RimThresholdOffset: 0.25
     - _Roughness: 0.5
     - _Saturation: 1
     - _SketchMapScale: 1
-    - _Smoothness: 0.9
+    - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
-    - _SoftFade: 0
-    - _SoftFadeFarDistance: 1
-    - _SoftFadeNearDistance: 0
     - _Specular: 1
     - _SpecularHighlights: 1
-    - _SpecularIntensity: 1.91
+    - _SpecularIntensity: 1
     - _SpecularSmoothness: 0
     - _SpecularThresholdOffset: 0.25
     - _SrcBlend: 1
@@ -267,29 +247,29 @@ Material:
     - _StencilWriteMask: 255
     - _StencilZFail: 0
     - _StylizeTab: 1
-    - _Surface: 1
+    - _Surface: 0
     - _ThresholdMapScale: 1
     - _UVSec: 0
     - _VertexAnimation: 0
-    - _VertexAnimationIntensity: 0
+    - _VertexAnimationIntensity: 0.0075
     - _VertexAnimationStutter: 0
-    - _Workflow: 1
+    - _Workflow: 2
     - _WrappedLighting: 1
     - _ZTest: 4
-    - _ZWrite: 0
+    - _ZWrite: 1
     m_Colors:
-    - _AlbedoColor: {r: 1, g: 1, b: 1, a: 1}
+    - _AlbedoColor: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DetailColor: {r: 1, g: 1, b: 1, a: 1}
     - _DissolveBorderColor: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0.066037714, g: 0.066037714, b: 0.066037714, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GoochBrightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _GoochDarkColor: {r: 0, g: 0.6432805, b: 1, a: 1}
+    - _GoochDarkColor: {r: 0, g: 0, b: 0, a: 1}
     - _IridescenceColor: {r: 1, g: 1, b: 1, a: 0.5}
-    - _LightTransmissionColor: {r: 0, g: 0.83586705, b: 0.990566, a: 1}
+    - _LightTransmissionColor: {r: 1, g: 0.65, b: 0, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _RimBrightColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
-    - _RimDarkColor: {r: 0.05660379, g: 0.05660379, b: 0.05660379, a: 1}
-    - _SpecularColor: {r: 0, g: 0.885386, b: 1, a: 1}
+    - _RimDarkColor: {r: 0, g: 0, b: 0, a: 1}
+    - _SpecularColor: {r: 0.13777144, g: 0.17540956, b: 0.2264151, a: 1}
     - _VertexAnimationFrequency: {r: 2.5, g: 2.5, b: 2.5, a: 1}
