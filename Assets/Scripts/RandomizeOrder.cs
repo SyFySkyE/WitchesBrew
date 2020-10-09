@@ -4,7 +4,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour //idk if this needs MonoBehavior
+public class GenerateRandomCustomerOrders : MonoBehaviour //idk if this needs MonoBehavior
 {
     //pull recepies from Scriptable and put into list
     //put depending on size of the Order Length, pull x amount of random numbers
