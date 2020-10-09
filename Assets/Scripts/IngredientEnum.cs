@@ -8,6 +8,6 @@
     RatTail,
     FrogLegs,
     Snails,
-    BabyShoes_NeverWorn,
+    BabyShoesNeverWorn,
     Worms
 }

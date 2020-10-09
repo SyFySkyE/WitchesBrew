@@ -1,13 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Order
+public enum OrderState { NotStarted, InProgress, Done }
+
+[CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/Orders", order = 1)]
+public class Order : ScriptableObject //to do: create scriptable objects of recipes
 {
-    public List<BaseIngredient> IngredientsNeeded { get; private set; }
+    [HideInInspector]
+    public double score;
+    public string recipeName;
 
-    public Order(List<BaseIngredient> ingredientsNeeded) // TODO should be interfaces
+    public IngredientEnum[] recipe;
+    public OrderState orderState = OrderState.NotStarted;
+
+    private void OnEnable()
     {
-        this.IngredientsNeeded = ingredientsNeeded;
+        orderState = OrderState.NotStarted;
     }
+
 }
+
+

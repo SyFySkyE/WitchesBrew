@@ -18,13 +18,21 @@ public class Cauldron : MonoBehaviour
         LogIngredients();
     }
 
+    public void ClearIngredients()
+    {
+        CurrentIngredients.Clear();
+    }
+
     private void LogIngredients()
     {
-        Debug.Log("List of ingrediets within the cauldron: ");
+        Debug.Log("List of ingredients within the cauldron: ");
         
         foreach (IngredientEnum ingredient in CurrentIngredients)
         {
             Debug.Log(ingredient);
         }
     }
+
+    
 }
+

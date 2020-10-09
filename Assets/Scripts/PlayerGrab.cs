@@ -1,19 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerGrab : MonoBehaviour
 {
-    private IngredientEnum heldIngredient;
+    public IngredientEnum heldIngredient;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         Ray cameraRay = Camera.main.ScreenPointToRay(Input.mousePosition); // If I was a real good boi, I would abstract mouse pos so I could easily sub touch func or controller
         RaycastHit hitInfo;
@@ -28,7 +19,7 @@ public class PlayerGrab : MonoBehaviour
                     Debug.Log($"You picked up ingredient: {heldIngredient}");
                 }
             }
-        }        
+        }
         else if (Input.GetButtonUp("Fire1")) // TODO we're no longer grabbing, we're placing. Violating Single respsonigility! Please do not let this become a homonocolus class like that one project you know...
         {
             if (Physics.Raycast(cameraRay, out hitInfo, 100))
@@ -40,7 +31,7 @@ public class PlayerGrab : MonoBehaviour
                         hitInfo.collider.GetComponent<Cauldron>().AddIngredient(heldIngredient);
                         Debug.Log($"You put ingredient: {heldIngredient} in cauldron");
                         heldIngredient = IngredientEnum.None;
-                    }                    
+                    }
                 }
                 else
                 {
@@ -48,7 +39,7 @@ public class PlayerGrab : MonoBehaviour
                     {
                         Debug.Log($"You dropped ingredient: {heldIngredient}");
                         heldIngredient = IngredientEnum.None;
-                    }                    
+                    }
                 }
             }
         }
