@@ -12,9 +12,6 @@ public class OrderManager : MonoBehaviour
     private Cauldron cauldron;
 
     [SerializeField]
-    private ScoreText scoreManager;
-
-    [SerializeField]
     private double baseScore = 100;
 
     [SerializeField]

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class BookClicker : MonoBehaviour
 {
 
-    public GameObject RecipeBook;
+    public GameObject recipeBookUIPanel;
 
     private void Update()
     {
@@ -28,7 +28,7 @@ public class BookClicker : MonoBehaviour
 
     public void OpenBook()
     {
-        RecipeBook.SetActive(true);
+        recipeBookUIPanel.SetActive(true);
     }
 
 }
