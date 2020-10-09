@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class GenerateRandomCustomerOrders : MonoBehaviour //idk if this needs MonoBehavior
@@ -12,10 +9,11 @@ public class GenerateRandomCustomerOrders : MonoBehaviour //idk if this needs Mo
     //puts randNumbs into Order Length
     public List<Order> orderList;
     private int indexPos;
-    Order[] orders = Resources.LoadAll<Order>("OrderRecipes"); //pulls scriptable objects
-    //https://stackoverflow.com/questions/53922771/is-there-any-way-to-fill-a-list-with-a-large-number-of-scriptable-objects
+    private Order[] orders = Resources.LoadAll<Order>("OrderRecipes"); //pulls scriptable objects
+                                                                       //https://stackoverflow.com/questions/53922771/is-there-any-way-to-fill-a-list-with-a-large-number-of-scriptable-objects
 
-    void Awake()
+
+    private void Awake()
     {
         foreach (Order item in orders)
         {
