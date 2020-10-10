@@ -1,28 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 public class BookClicker : MonoBehaviour
 {
-
     public GameObject recipeBookUIPanel;
 
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-             RaycastHit hit;
-             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-             if (Physics.Raycast(ray, out hit,100.0f))
-             {
-                 if(hit.collider.tag == "RecipeBook")
-                 {
+            if (Physics.Raycast(ray, out hit, 100.0f))
+            {
+                if (hit.collider.tag == "RecipeBook")
+                {
                     Debug.Log("You Opened book");
                     OpenBook();
-                 }
-             }
+                }
+            }
         }
     }
 
