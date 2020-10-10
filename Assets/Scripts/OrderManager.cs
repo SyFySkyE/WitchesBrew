@@ -9,6 +9,9 @@ public class OrderManager : MonoBehaviour
     public static event Action LevelCompleted;
 
     [SerializeField]
+    private CustomerTimer customerTimer;
+
+    [SerializeField]
     private Cauldron cauldron;
 
     [SerializeField]
@@ -30,8 +33,7 @@ public class OrderManager : MonoBehaviour
 
     private int currentOrderIndex = 0;
     private Order currentOrder;
-
-    bool paused = false; //to do: move to level manager?
+    private bool paused = false; //to do: move to level manager?
 
     // Start is called before the first frame update
     private void Start()
@@ -41,7 +43,7 @@ public class OrderManager : MonoBehaviour
 
     private void Update()
     {
-        if(!paused)
+        if (!paused)
             UpdateCurrentOrderState();
     }
 
@@ -64,10 +66,10 @@ public class OrderManager : MonoBehaviour
                 ScoreOrder();
                 MoveToNextOrderIfThereIsOne();
                 break;
-        }  
+        }
     }
 
-    void MoveToNextOrderIfThereIsOne()
+    private void MoveToNextOrderIfThereIsOne()
     {
         if (currentOrderIndex + 1 < orders.Length) //if we aren't on the last order yet, move to next order
         {
@@ -86,21 +88,41 @@ public class OrderManager : MonoBehaviour
     /// </summary>
     private void ScoreOrder()
     {
-        double possibleScoreBasedOnTimer;
-        //calculate quickness
-        //make switch to change this based on timer
+        currentOrder.score = GetOrderAccuracyPercent() * GetNewBaseScoreBasedOnTimer();
 
-        //if red
-        //possibleScore = possibleScore * redTimerScoreModifier;
-        //if yellow
-        //possibleScore = possibleScore * yellowTimerScoreModifier;
-        //if green
-        possibleScoreBasedOnTimer = baseScore * greenTimerScoreModifier;
+        LevelManager.totalScore += Convert.ToInt32(currentOrder.score);
+        cauldron.ClearIngredients();
+    }
 
-        //calculate accuracy
+    /// <summary>
+    /// Multiplies the base score by a modifier depending on if the timer is in the green, yellow, or red state
+    /// </summary>
+    /// <returns>Returns a new maximum possible score</returns>
+    private double GetNewBaseScoreBasedOnTimer()
+    {
+        double possibleScoreBasedOnTimer = baseScore;
 
+        switch (customerTimer.CurrentSatisfaction)
+        {
+            case CustomerHappiness.Green:
+                possibleScoreBasedOnTimer = baseScore * greenTimerScoreModifier;
+                break;
+            case CustomerHappiness.Yellow:
+                possibleScoreBasedOnTimer = baseScore * yellowTimerScoreModifier;
+                break;
+            case CustomerHappiness.Red:
+                possibleScoreBasedOnTimer = baseScore * redTimerScoreModifier;
+                break;
+            case CustomerHappiness.Fail: //TODO show fail UI
+                break;
+        }
+        return possibleScoreBasedOnTimer;
+    }
+
+    private double GetOrderAccuracyPercent() //TODO proofread accuracy calculation, see if anything should be serialized
+    {
         List<IngredientEnum> ingredientsInRecipe = currentOrder.recipe.ToList();
-        
+
         int numberOfCorrectIngredients = 0;
         for (int j = 0; j < cauldron.CurrentIngredients.Count; j++) //for each ingredient in the cauldron
         {
@@ -114,7 +136,7 @@ public class OrderManager : MonoBehaviour
                     {
                         numberOfCorrectIngredients = numberOfCorrectIngredients / cauldron.CurrentIngredients.Count;
                     }
-                    else 
+                    else
                     {
                         numberOfCorrectIngredients++;
                         ingredientsInRecipe.RemoveAt(i);
@@ -128,11 +150,7 @@ public class OrderManager : MonoBehaviour
 
         double accuracyPercent = (double)numberOfCorrectIngredients / currentOrder.recipe.Length;
         Debug.Log($"{currentOrder.name} was {accuracyPercent} accurate");
-
-        currentOrder.score = accuracyPercent * possibleScoreBasedOnTimer;
-
-        LevelManager.totalScore += Convert.ToInt32(currentOrder.score);
-        cauldron.ClearIngredients();
+        return accuracyPercent;
     }
 
     private void OnDoneButtonPressed()

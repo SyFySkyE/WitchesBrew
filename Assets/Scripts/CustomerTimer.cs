@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public enum CustomerHappiness
@@ -38,19 +36,19 @@ public class CustomerTimer : MonoBehaviour
         }
     }
 
-    private CustomerHappiness currentSatisfaction;    
+    private CustomerHappiness currentSatisfaction;
 
     private Slider timerSlider;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         timerSlider = GetComponentInChildren<Slider>();
-        timerSlider.maxValue = timerSlider.value = startTime;        
+        timerSlider.maxValue = timerSlider.value = startTime;
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         SubtractTime();
     }
@@ -81,6 +79,6 @@ public class CustomerTimer : MonoBehaviour
         {
             this.CurrentSatisfaction = CustomerHappiness.Fail;
             Debug.Log("You lose!");
-        }       
+        }
     }
 }
