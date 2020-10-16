@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class RandomRotation : MonoBehaviour
 {
-    [Header("Rotation Parameters")]
+    [Header("Behavior Parameters")]
     [Tooltip("This get multiplied with DeltaTime")]
     [SerializeField] private float speedMultiplier;
+    [Tooltip("Delays between new rotation calculations.")]
+    [SerializeField] private float minDelay;
+    [SerializeField] private float maxDelay;
+
+    [Header("Random Quaternion Paramters")]
     [Tooltip("Rotation along the X axis")]
     [SerializeField] private float minRoll;
     [Tooltip("Rotation along the X axis")]
@@ -25,11 +30,13 @@ public class RandomRotation : MonoBehaviour
 
     private Quaternion rotationToLerpTo;
     private bool hasPickedSpecialRot;
+    private float currentTimer;
 
     // Did you know? Start is called before the first frame update
     void Start()
     {
         ChooseNewRandomClampedRotation();
+        currentTimer = Random.Range(minDelay, maxDelay); // Choose a clamped random delay
     }
 
     private void ChooseNewRandomClampedRotation() // Looked a little off rotating the Yaw, think the object itself is not perfectly centered which is fine
@@ -72,15 +79,24 @@ public class RandomRotation : MonoBehaviour
         }
         else // We're there? Choose a new rotation
         {
-            if (canRepeat && specialRotChance >= 1f)
+            if (currentTimer >= 0f)
             {
-                Debug.Log($"{this.gameObject} shouldn't have set canRepeat to true and a 100% specialRotChance since that would cause an infinite loop. Disabling script.");
-                this.enabled = false;
+                currentTimer -= Time.deltaTime;
             }
             else
             {
-                ChooseNewRandomClampedRotation();
-            }            
+                if (canRepeat && specialRotChance >= 1f)
+                {
+                    Debug.Log($"{this.gameObject} shouldn't have set canRepeat to true and a 100% specialRotChance since that would cause an infinite loop. Disabling script.");
+                    this.enabled = false;
+                }
+                else
+                {
+                    ChooseNewRandomClampedRotation();
+                }
+
+                currentTimer = Random.Range(minDelay, maxDelay); // Choose another random clamped delay
+            }                     
         }
     }
 }
