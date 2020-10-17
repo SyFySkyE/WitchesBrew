@@ -2656,7 +2656,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-6924
+  m_Name: pb_Mesh-16062
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3532,6 +3532,11 @@ PrefabInstance:
       propertyPath: customerTimer
       value: 
       objectReference: {fileID: 710923803}
+    - target: {fileID: 100534811428198454, guid: c634eac806b5cfd48930e4695b7a9a33,
+        type: 3}
+      propertyPath: randomizeOrder
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 100534811428198455, guid: c634eac806b5cfd48930e4695b7a9a33,
         type: 3}
       propertyPath: m_Name
@@ -4247,6 +4252,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 866786626}
   m_CullTransparentMesh: 0
+--- !u!1 &909030941 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100534811428198455, guid: c634eac806b5cfd48930e4695b7a9a33,
+    type: 3}
+  m_PrefabInstance: {fileID: 760122326}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &909030942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909030941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40544355e4208fa4f9c469b23c2ac2ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cauldron: {fileID: 1507457407}
+  customerTimer: {fileID: 710923803}
+  greenTimerPercent: 1
+  yellowTimerPercent: 0.8
+  redTimerPercent: 0.5
+  maxPossibleTip: 5
 --- !u!1 &912869688
 GameObject:
   m_ObjectHideFlags: 0
@@ -6140,7 +6169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d53ffe5a263e4d42b45e73e9be23f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 1381984951}
 --- !u!114 &1381984951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9359,7 +9387,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d53ffe5a263e4d42b45e73e9be23f11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 1955060140}
 --- !u!114 &1955060140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11014,7 +11041,7 @@ PrefabInstance:
     - target: {fileID: 3869156853499090923, guid: 61353f3c31e54e24898bfb323b908ca4,
         type: 3}
       propertyPath: m_Name
-      value: BrewingPot
+      value: Cauldron
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61353f3c31e54e24898bfb323b908ca4, type: 3}

@@ -6,7 +6,7 @@ public enum OrderState { NotStarted, InProgress, Done }
 public class Order : ScriptableObject //to do: create scriptable objects of recipes
 {
     [HideInInspector]
-    public double score;
+    public double tip;
     public string recipeName;
 
     public IngredientEnum[] recipe;

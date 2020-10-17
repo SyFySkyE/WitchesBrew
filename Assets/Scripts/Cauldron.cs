@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class Cauldron : MonoBehaviour
@@ -12,7 +11,7 @@ public class Cauldron : MonoBehaviour
         CurrentIngredients = new List<IngredientEnum>();
     }
 
-    public void AddIngredient(IngredientEnum ingredientToAdd) 
+    public void AddIngredient(IngredientEnum ingredientToAdd)
     {
         CurrentIngredients.Add(ingredientToAdd);
         LogIngredients();
@@ -26,13 +25,27 @@ public class Cauldron : MonoBehaviour
     private void LogIngredients()
     {
         Debug.Log("List of ingredients within the cauldron: ");
-        
+
         foreach (IngredientEnum ingredient in CurrentIngredients)
         {
             Debug.Log(ingredient);
         }
     }
 
-    
+    private void OnOrderCompleted(Order o)
+    {
+        ClearIngredients();
+    }
+
+    private void OnEnable()
+    {
+        OrderManager.OrderCompleted += OnOrderCompleted;
+    }
+
+    private void OnDisable()
+    {
+        OrderManager.OrderCompleted -= OnOrderCompleted;
+    }
+
 }
 

@@ -3,7 +3,7 @@
 public class LevelManager : MonoBehaviour
 { 
     [HideInInspector]
-    public static int totalScore = 0;
+    public static double totalTips = 0;
 
     private static int currentLevel = 1;
 
