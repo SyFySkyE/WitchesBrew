@@ -31,13 +31,18 @@ public class OrderManager : MonoBehaviour
     [Tooltip("Array of orders in the level")]
     private Order[] orders;
 
+    [SerializeField]
+    private RandomizeOrder randomizeOrder;
+
     private int currentOrderIndex = 0;
     private Order currentOrder;
+    
     private bool paused = false; //to do: move to level manager?
 
     // Start is called before the first frame update
     private void Start()
     {
+        randomizeOrder.RandomizeOrderArry(orders); 
         currentOrder = orders[0]; //current order starts at first order
     }
 
