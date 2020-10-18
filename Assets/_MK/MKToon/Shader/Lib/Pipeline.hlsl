@@ -23,34 +23,38 @@
 	/////////////////////////////////////////////////////////////////////////////////////////////
 	// Helpers
 	/////////////////////////////////////////////////////////////////////////////////////////////
-	half SafeDivide(half v, half d)
-	{
-		return v / (d + HALF_MIN);
-	}
-	half2 SafeDivide(half2 v, half d)
-	{
-		return v / (d + HALF_MIN);
-	}
-	half2 SafeDivide(half2 v, half2 d)
-	{
-		return v / (d + HALF_MIN);
-	}
-	half3 SafeDivide(half3 v, half d)
-	{
-		return v / (d + HALF_MIN);
-	}
-	half3 SafeDivide(half3 v, half3 d)
-	{
-		return v / (d + HALF_MIN);
-	}
-	half4 SafeDivide(half4 v, half d)
-	{
-		return v / (d + HALF_MIN);
-	}
-	half4 SafeDivide(half4 v, half4 d)
-	{
-		return v / (d + HALF_MIN);
-	}
+	//Somehow on Metal overloaded methods (with different types) cause a redefinition compiler issue
+	//therefore force float only on Metal here
+	#ifndef SHADER_API_METAL
+		half SafeDivide(half v, half d)
+		{
+			return v / (d + HALF_MIN);
+		}
+		half2 SafeDivide(half2 v, half d)
+		{
+			return v / (d + HALF_MIN);
+		}
+		half2 SafeDivide(half2 v, half2 d)
+		{
+			return v / (d + HALF_MIN);
+		}
+		half3 SafeDivide(half3 v, half d)
+		{
+			return v / (d + HALF_MIN);
+		}
+		half3 SafeDivide(half3 v, half3 d)
+		{
+			return v / (d + HALF_MIN);
+		}
+		half4 SafeDivide(half4 v, half d)
+		{
+			return v / (d + HALF_MIN);
+		}
+		half4 SafeDivide(half4 v, half4 d)
+		{
+			return v / (d + HALF_MIN);
+		}
+	#endif
 	float SafeDivide(float v, float d)
 	{
 		return v / (d + HALF_MIN);
