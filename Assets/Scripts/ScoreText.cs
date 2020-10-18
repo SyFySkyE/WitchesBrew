@@ -1,10 +1,15 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
 
 public class ScoreText : MonoBehaviour
 {
-    [SerializeField]
-    TextMeshProUGUI scoreText;
+    private TextMeshProUGUI tipText;
+
+    private void Start()
+    {
+        tipText = GetComponent<TextMeshProUGUI>();
+    }
 
     private void Update()
     {
@@ -13,6 +18,6 @@ public class ScoreText : MonoBehaviour
 
     private void UpdateScore()
     {
-        scoreText.text = "Score: " + LevelManager.totalScore.ToString();
+        tipText.text = "Total Tips: $" + Math.Round(LevelManager.totalTips, 2).ToString();
     }
 }
