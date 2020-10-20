@@ -55,20 +55,21 @@ public class TipCalculator : MonoBehaviour
 
     private double GetConversationQualityPercent()
     {
-        double conversationPercent;
-       /* switch (dialogueManger.dialogueSelected.ResponseValue)
-        {
-            case ResponseEffect.Positive:
-                conversationPercent = positiveResponsePercent;
-                break;
-            case ResponseEffect.Neutral:
-                conversationPercent = neutralResponsePercent;
-                break;
-            case ResponseEffect.Negative:
-                conversationPercent = negativeResponsePercent;
-                break;
-        }
-        return conversationPercent;*/
+        double conversationPercent = 1;
+        /* switch (dialogueManger.dialogueSelected.ResponseValue)
+         {
+             case ResponseEffect.Positive:
+                 conversationPercent = positiveResponsePercent;
+                 break;
+             case ResponseEffect.Neutral:
+                 conversationPercent = neutralResponsePercent;
+                 break;
+             case ResponseEffect.Negative:
+                 conversationPercent = negativeResponsePercent;
+                 break;
+         }
+         return conversationPercent;*/
+        return conversationPercent;
     }
 
     /// <summary>
