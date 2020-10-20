@@ -36,4 +36,4 @@ MonoBehaviour:
   _exampleArtistic: {fileID: 102900000, guid: 330667252edb66142bb436baab455037, type: 3}
   _exampleArtisticIcon: {fileID: 2800000, guid: 6dc4cae7b0dbd404899c80e4105343ce,
     type: 3}
-  showInstallerOnReload: 1
+  showInstallerOnReload: 0
