@@ -10,18 +10,20 @@ public class PlayerGrab : MonoBehaviour
     private void Update()
     {
         CameraRay();
-        Debug.Log(Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -5.8f)));
+
         if (ingredGORep != null)
         {
             if (Input.GetMouseButton(0))
             {
-                Vector3 mousePosToScreen = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane));
-                
+                Cursor.visible = false;
+                Vector3 mousePosToScreen = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane));                
                 ingredGORep.transform.position = mousePosToScreen;
             }
             else
             {
+                ingredGORep.GetComponent<Rigidbody>().useGravity = true;
                 ingredGORep = null;
+                Cursor.visible = true;
             }
         }
     }    

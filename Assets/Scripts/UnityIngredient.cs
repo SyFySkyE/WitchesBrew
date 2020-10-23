@@ -7,6 +7,7 @@ public class UnityIngredient : MonoBehaviour // Is responisible for both the con
     public GameObject IngredientGORep { get; private set; }
     private string resourcePath = "IngredientPrefabs/";    
     private float minYBeforeDisable = -10f; // How far the GO rep can fall before being disabled
+    private Rigidbody ingredRb;
 
     private void Start()
     {
@@ -16,11 +17,6 @@ public class UnityIngredient : MonoBehaviour // Is responisible for both the con
 
     private void Update()
     {
-        if (this.IngredientGORep.activeSelf)
-        {
-            this.IngredientGORep.transform.position = this.transform.position + Physics.gravity * Time.deltaTime; // Look at KP
-        }
-
         if (this.IngredientGORep.transform.position.y <= minYBeforeDisable)
         {
             this.IngredientGORep.transform.position = Vector3.zero;
@@ -36,6 +32,7 @@ public class UnityIngredient : MonoBehaviour // Is responisible for both the con
     private void OnMouseDown()
     {
         IngredientGORep.SetActive(true);
+        ingredRb.useGravity = false;
     }
 
     private void InstantiateIngredient()
@@ -94,6 +91,8 @@ public class UnityIngredient : MonoBehaviour // Is responisible for both the con
 
         IngredientGORep = Instantiate(Resources.Load<GameObject>(resourcePath + ingredientToSpawn));
         IngredientGORep.transform.SetParent(this.transform);
+        ingredRb = IngredientGORep.AddComponent<Rigidbody>();
+        ingredRb.useGravity = false;
         IngredientGORep.SetActive(false);
     }
 }

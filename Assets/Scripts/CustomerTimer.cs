@@ -45,6 +45,13 @@ public class CustomerTimer : MonoBehaviour
     {
         timerSlider = GetComponentInChildren<Slider>();
         timerSlider.maxValue = timerSlider.value = startTime;
+        CompleteOrderButton.DoneButtonClicked += CompleteOrderButton_DoneButtonClicked;
+
+    }
+
+    private void CompleteOrderButton_DoneButtonClicked()
+    {
+        timerSlider.value = startTime;
     }
 
     // Update is called once per frame
