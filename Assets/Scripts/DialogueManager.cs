@@ -14,7 +14,7 @@ public class DialogueManager : MonoBehaviour
 
     public Animator animator;
 
-    public Queue<string> sentences;
+    public Queue<string> sentences; //this is built around this being in order
 
     [SerializeField]
     private float TextDuration = 3.0f;
@@ -25,8 +25,11 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<string>();
     }
 
+
     public void StartDialogue(Dialogue dialogue)
     {
+        dialogue.CreatePlayerResponseWithValues();
+        //randomize order
 
         animator.SetBool("IsOpen", true);
         animator.SetBool("LastDialogue", false);
