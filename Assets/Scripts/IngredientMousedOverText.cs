@@ -40,16 +40,17 @@ public class IngredientMousedOverText : MonoBehaviour
         {
             if (hitInfo.collider.tag == "Ingredient")
             {
+                ChangeText(hitInfo.collider.gameObject.GetComponent<UnityIngredient>().GetIngredientType());
+                isFading = false;
                 if (!isHoveringOverIngred) // So we're not GetComponent'ing every frame
                 {
                     isHoveringOverIngred = true;
-                    ChangeText(hitInfo.collider.gameObject.GetComponent<UnityIngredient>().GetIngredientType());
-                    isFading = false;
+                    
+                    
                 }
             }
             else
             {
-                isHoveringOverIngred = false;
                 isFading = true;
             }
         }
