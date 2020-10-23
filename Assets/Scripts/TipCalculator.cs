@@ -19,22 +19,40 @@ public class TipCalculator : MonoBehaviour
     private CustomerTimer customerTimer;
 
     [SerializeField]
+    [Tooltip("The maximum possible tip, must be larger than 0")]
+    private double maxPossibleTip = 5;
+
+    [Header("Timer Score Component")]
+    [SerializeField]
     [Tooltip("Percentage of 1/3 of order tip based on timer. 0.1 = 10%, 1 = 100%")]
     [Range(0, 1)]
-    private double greenTimerPercent = 1,
-       yellowTimerPercent = 0.8,
-       redTimerPercent = 0.5;
+    private double greenTimerPercent = 1;
+
+    [SerializeField]
+    [Tooltip("Percentage of 1/3 of order tip based on timer. 0.1 = 10%, 1 = 100%")]
+    [Range(0, 1)]
+    private double yellowTimerPercent = 0.8;
+
+    [SerializeField]
+    [Tooltip("Percentage of 1/3 of order tip based on timer. 0.1 = 10%, 1 = 100%")]
+    [Range(0, 1)]
+    private double redTimerPercent = 0.5;
+
+    [Header("Conversation Score Component")]
+    [SerializeField]
+    [Tooltip("Percentage of 1/3 of order tip based on conversation quality. 0.1 = 10%, 1 = 100%")]
+    [Range(0, 1)]
+    private double positiveResponsePercent = 1;
 
     [SerializeField]
     [Tooltip("Percentage of 1/3 of order tip based on conversation quality. 0.1 = 10%, 1 = 100%")]
     [Range(0, 1)]
-    private double positiveResponsePercent = 1,
-       neutralResponsePercent = 0.8,
-       negativeResponsePercent = 0.5;
+    private double neutralResponsePercent = 0.5;
 
     [SerializeField]
-    [Tooltip("The maximum possible tip, must be larger than 0")]
-    private double maxPossibleTip = 5;
+    [Tooltip("Percentage of 1/3 of order tip based on conversation quality. 0.1 = 10%, 1 = 100%")]
+    [Range(0, 1)]
+    private double negativeResponsePercent = 0;
 
     private Order currentOrder;
 
@@ -67,8 +85,7 @@ public class TipCalculator : MonoBehaviour
              case ResponseEffect.Negative:
                  conversationPercent = negativeResponsePercent;
                  break;
-         }
-         return conversationPercent;*/
+         }*/
         return conversationPercent;
     }
 
