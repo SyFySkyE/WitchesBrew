@@ -25,10 +25,13 @@ public class OrderManager : MonoBehaviour
 
     private void Start()
     {
+
         if(randomizeOrder != null)
-            randomizeOrder.RandomizeOrderArry(orders); 
+            randomizeOrder.RandomizeOrderArry(orders);
+        CreateOrderInstances();
 
         currentOrder = orders[0]; //current order starts at first order
+
     }
 
     private void Update()
@@ -86,5 +89,13 @@ public class OrderManager : MonoBehaviour
     private void OnDisable()
     {
         CompleteOrderButton.DoneButtonClicked -= OnDoneButtonPressed;
+    }
+
+    private void CreateOrderInstances() //creates a unique instance of an OrderRecipe recipe
+    {
+        for (int i = 0; i < orders.Length; i++)
+        {
+            orders[i] = Instantiate(orders[i]);
+        }
     }
 }

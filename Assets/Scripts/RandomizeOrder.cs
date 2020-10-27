@@ -16,6 +16,13 @@ public class RandomizeOrder : MonoBehaviour//idk if this needs MonoBehavior
     //Order[] orders; //pulls scriptable objects
     //https://stackoverflow.com/questions/53922771/is-there-any-way-to-fill-a-list-with-a-large-number-of-scriptable-objects
 
+
+    /// <summary>
+    /// VERY IMPORTANT
+    /// Randomizer does not create two instances of the orders in an array
+    /// ex. Pumpkin Spice, Witches Brew, Pumpkin Spice is really just Pumpkin Spice, Witches Brew
+    /// </summary>
+
     void Start()
     {
         Order[] orders = Resources.LoadAll<Order>("OrderRecipes");//, typeof(Order)).Cast<Order>().ToArray();
