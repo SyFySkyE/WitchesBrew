@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+﻿using UnityEditor.SceneManagement;
+using UnityEngine;
 
 public class UnityIngredient : MonoBehaviour // Is responisible for both the container and GO ingred, infringes on proper SoC!
 {
     [SerializeField] private IngredientEnum ingredient;
+    [SerializeField] private Vector3 cauldronDropLocation;
 
     public GameObject IngredientGORep { get; private set; }
     private string resourcePath = "IngredientPrefabs/";    
@@ -20,6 +22,7 @@ public class UnityIngredient : MonoBehaviour // Is responisible for both the con
         if (this.IngredientGORep.transform.position.y <= minYBeforeDisable)
         {
             this.IngredientGORep.transform.position = Vector3.zero;
+            ingredRb.useGravity = false;            
             this.IngredientGORep.SetActive(false);
         }
     }
@@ -32,7 +35,23 @@ public class UnityIngredient : MonoBehaviour // Is responisible for both the con
     private void OnMouseDown()
     {
         IngredientGORep.SetActive(true);
+    }
+
+    public void OnGrab()
+    {
+        if (ingredRb)
+        {
+            DestroyImmediate(ingredRb); // TODO This isn't the right way to do this, this is to prevent a bug where on first drop things the object drops at a normal speed but every time after it gets faster and faster, like terminal velocity doesn't reset or something
+            ingredRb = null;
+        }
+        
+        ingredRb = IngredientGORep.AddComponent<Rigidbody>(); // TODO See above
         ingredRb.useGravity = false;
+    }
+
+    public void DropIngredientIn()
+    {
+        IngredientGORep.transform.position = cauldronDropLocation;
     }
 
     private void InstantiateIngredient()
@@ -91,8 +110,6 @@ public class UnityIngredient : MonoBehaviour // Is responisible for both the con
 
         IngredientGORep = Instantiate(Resources.Load<GameObject>(resourcePath + ingredientToSpawn));
         IngredientGORep.transform.SetParent(this.transform);
-        ingredRb = IngredientGORep.AddComponent<Rigidbody>();
-        ingredRb.useGravity = false;
         IngredientGORep.SetActive(false);
     }
 }

@@ -1,9 +1,12 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class PlayerGrab : MonoBehaviour
 {
     public IngredientEnum HeldIngredient;
     private GameObject ingredGORep;
+
+    private UnityIngredient currentIngredient;
 
     public float zOffset = -1.5f;
 
@@ -16,17 +19,11 @@ public class PlayerGrab : MonoBehaviour
             if (Input.GetMouseButton(0))
             {
                 Cursor.visible = false;
-                Vector3 mousePosToScreen = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane));                
+                Vector3 mousePosToScreen = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane));               
                 ingredGORep.transform.position = mousePosToScreen;
             }
-            else
-            {
-                ingredGORep.GetComponent<Rigidbody>().useGravity = true;
-                ingredGORep = null;
-                Cursor.visible = true;
-            }
         }
-    }    
+    }
 
     private void CameraRay()
     {
@@ -39,6 +36,8 @@ public class PlayerGrab : MonoBehaviour
             {
                 if (hitInfo.collider.tag == "Ingredient")
                 {
+                    currentIngredient = hitInfo.collider.GetComponent<UnityIngredient>();
+                    hitInfo.collider.GetComponent<UnityIngredient>().OnGrab();
                     HeldIngredient = hitInfo.collider.GetComponent<UnityIngredient>().GetIngredientType();
                     ingredGORep = hitInfo.collider.GetComponent<UnityIngredient>().IngredientGORep;
                     Debug.Log($"You picked up ingredient: {HeldIngredient}");
@@ -54,8 +53,9 @@ public class PlayerGrab : MonoBehaviour
                     if (this.HeldIngredient != IngredientEnum.None)
                     {
                         hitInfo.collider.GetComponent<Cauldron>().AddIngredient(HeldIngredient);
+                        currentIngredient.DropIngredientIn();
                         Debug.Log($"You put ingredient: {HeldIngredient} in cauldron");
-                        HeldIngredient = IngredientEnum.None;
+                        DropIngredient();
                     }
                 }
                 else
@@ -63,10 +63,19 @@ public class PlayerGrab : MonoBehaviour
                     if (this.HeldIngredient != IngredientEnum.None)
                     {
                         Debug.Log($"You dropped ingredient: {HeldIngredient}");
-                        HeldIngredient = IngredientEnum.None;
+                        DropIngredient();
                     }
-                }
+                }                
             }
         }
+    }
+
+    private void DropIngredient()
+    {
+        ingredGORep.GetComponent<Rigidbody>().useGravity = true;
+        currentIngredient = null;
+        Cursor.visible = true;
+        ingredGORep = null;
+        HeldIngredient = IngredientEnum.None;
     }
 }

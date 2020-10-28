@@ -107,3 +107,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredient: 7
+  cauldronDropLocation: {x: -0.293, y: -2.094, z: -4.469}

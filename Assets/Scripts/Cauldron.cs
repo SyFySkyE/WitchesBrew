@@ -14,6 +14,34 @@ public class Cauldron : MonoBehaviour
     public void AddIngredient(IngredientEnum ingredientToAdd)
     {
         CurrentIngredients.Add(ingredientToAdd);
+
+        switch (ingredientToAdd)
+        {
+            case IngredientEnum.BabyShoesNeverWorn:
+                break;
+
+            case IngredientEnum.Eyeballs:
+                break;
+
+            case IngredientEnum.FrogLegs:
+                break;
+
+            case IngredientEnum.RatTail:
+                break;
+
+            case IngredientEnum.Snails:
+                break;
+
+            case IngredientEnum.Tears:
+                break;
+
+            case IngredientEnum.Vanilla:
+                break;
+
+            case IngredientEnum.Worms:
+                break;
+        }
+
         LogIngredients();
     }
 
@@ -37,6 +65,11 @@ public class Cauldron : MonoBehaviour
         ClearIngredients();
     }
 
+    private void OnMouseUp()
+    {
+        Debug.Log("The consequences will never be the sam");
+    }
+
     private void OnEnable()
     {
         OrderManager.OrderCompleted += OnOrderCompleted;
@@ -46,6 +79,4 @@ public class Cauldron : MonoBehaviour
     {
         OrderManager.OrderCompleted -= OnOrderCompleted;
     }
-
 }
-

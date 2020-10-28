@@ -121,7 +121,7 @@ Transform:
   m_GameObject: {fileID: 1418038109078572048}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.4813, y: -2.3635, z: -4.0482}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 1520596299943246288}
   - {fileID: 6805514481935140150}
@@ -155,6 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredient: 2
+  cauldronDropLocation: {x: -1.081, y: 0.809, z: 0.185}
 --- !u!1 &2510384764121541009
 GameObject:
   m_ObjectHideFlags: 0
