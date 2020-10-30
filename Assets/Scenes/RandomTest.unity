@@ -4718,13 +4718,13 @@ PrefabInstance:
         type: 3}
       propertyPath: orders.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 5ad6524832c98c8469883e8e397750d4,
+      objectReference: {fileID: 11400000, guid: 40a27ed177928184ba36f768ec66b8ca,
         type: 2}
     - target: {fileID: 100534811428198454, guid: c634eac806b5cfd48930e4695b7a9a33,
         type: 3}
       propertyPath: orders.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 5ad6524832c98c8469883e8e397750d4,
+      objectReference: {fileID: 11400000, guid: 5f6736dc44be0534c9ad022f429d9955,
         type: 2}
     - target: {fileID: 100534811428198454, guid: c634eac806b5cfd48930e4695b7a9a33,
         type: 3}
