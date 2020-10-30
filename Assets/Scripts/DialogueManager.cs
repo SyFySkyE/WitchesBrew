@@ -5,6 +5,7 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
+    public DialogueValue dialogueValueSelected;
 
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
@@ -191,14 +192,17 @@ public class DialogueManager : MonoBehaviour
         if (rand1 == 1)
         {
             dialogueText.text = NPCResponsePos;
+            dialogueValueSelected = DialogueValue.Positive;
         }
         else if (rand1 == 2)
         {
             dialogueText.text = NPCResponseNeut;
+            dialogueValueSelected = DialogueValue.Neutral;
         }
         else
         {
             dialogueText.text = NPCResponseNeg;
+            dialogueValueSelected = DialogueValue.Negative;
         }
         
         /////
@@ -219,14 +223,18 @@ public class DialogueManager : MonoBehaviour
         if (rand2 == 1)
         {
             dialogueText.text = NPCResponsePos;
+            dialogueValueSelected = DialogueValue.Positive;
         }
         else if (rand2 == 2)
         {
             dialogueText.text = NPCResponseNeut;
+            dialogueValueSelected = DialogueValue.Neutral;
+
         }
         else
         {
             dialogueText.text = NPCResponseNeg;
+            dialogueValueSelected = DialogueValue.Negative;
         }
 
         /////
@@ -245,15 +253,20 @@ public class DialogueManager : MonoBehaviour
         if (rand3 == 1)
         {
             dialogueText.text = NPCResponsePos;
+            dialogueValueSelected = DialogueValue.Positive;
         }
         else if (rand3 == 2)
         {
             dialogueText.text = NPCResponseNeut;
+            dialogueValueSelected = DialogueValue.Neutral;
         }
         else
         {
             dialogueText.text = NPCResponseNeg;
+            dialogueValueSelected = DialogueValue.Negative;
         }
+
+        Debug.Log(dialogueValueSelected);
 
         /////
         animator.SetBool("LastDialogue", true);

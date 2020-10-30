@@ -3,6 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+public enum DialogueValue { Positive, Neutral, Negative };
+
+public class PlayerResponse
+{
+    public string text;
+    DialogueValue value;
+
+    public PlayerResponse(string text, DialogueValue value)
+    {
+        this.value = value;
+    }
+}
+
 [System.Serializable]
 public class Dialogue
 {
