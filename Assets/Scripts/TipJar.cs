@@ -10,8 +10,11 @@ public class TipJar : MonoBehaviour
 {
     public double Tip { get; set; }
 
+    [Tooltip("The tip goal or quota that must be reached to successfully complete a level")]
+    public double tipGoal = 5;
+
     [SerializeField]
-    DialogueManager dialogueManger;
+    private DialogueManager dialogueManger;
 
     [SerializeField]
     private Cauldron cauldron;
@@ -20,11 +23,7 @@ public class TipJar : MonoBehaviour
     private CustomerTimer customerTimer;
 
     [SerializeField]
-    Slider tipBarSlider;
-
-    [SerializeField]
-    [Tooltip("The tip goal or quota that must be reached to successfully complete a level")]
-    private double tipGoal = 5;
+    private Slider tipBarSlider;
 
     [SerializeField]
     [Tooltip("The maximum possible tip a customer can give, must be larger than 0")]

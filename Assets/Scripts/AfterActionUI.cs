@@ -1,22 +1,19 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AfterActionUI : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject inGameUI;
-    private CanvasGroup canvasGroup, inGameCanvasGroup;
+    private CanvasGroup canvasGroup;
 
     private void Start()
     {
         canvasGroup = GetComponent<CanvasGroup>();
-        inGameCanvasGroup = inGameUI.GetComponent<CanvasGroup>();
         canvasGroup.alpha = 0;
     }
 
     private void OnLevelCompleted()
     {
         canvasGroup.alpha = 1;
-        inGameCanvasGroup.alpha = 0;
     }
 
     private void OnEnable()
@@ -28,4 +25,22 @@ public class AfterActionUI : MonoBehaviour
     {
         OrderManager.LevelCompleted -= OnLevelCompleted;
     }
+
+    #region BUTTONS
+    public void OnRestartLevelClicked()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name); 
+    }
+
+    public void OnNextLevelClicked()
+    {
+
+    }
+
+    public void OnMainMenuClicked()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    #endregion
 }
