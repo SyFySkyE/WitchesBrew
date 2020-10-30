@@ -26,7 +26,7 @@ public class DialogueManager : MonoBehaviour
 
     public Animator animator;
 
-    public Queue<string> sentences; //this is built around this being in order
+    public Queue<string> sentences;
 
     [SerializeField]
     private float TextDuration = 3.0f;
@@ -38,11 +38,8 @@ public class DialogueManager : MonoBehaviour
 
     }
 
-
     public void StartDialogue(Dialogue dialogue)
     {
-        dialogue.CreatePlayerResponseWithValues();
-        //randomize order
 
         animator.SetBool("IsOpen", true);
         animator.SetBool("LastDialogue", false);
@@ -266,10 +263,6 @@ public class DialogueManager : MonoBehaviour
             return;
 
     }
-
-    //check if response = pos neg or neutral response value, call in each SelectText method
-    //void EvaluatePlayerResponse(string response)
-    //set current_dialogue to last player response dialogue selected
 
     public void EndDialogue()
     {
