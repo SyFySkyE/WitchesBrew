@@ -13,7 +13,9 @@ public class AfterActionUI : MonoBehaviour
 
     private void OnLevelCompleted()
     {
+        canvasGroup.interactable = true;
         canvasGroup.alpha = 1;
+        canvasGroup.blocksRaycasts = true;
     }
 
     private void OnEnable()
@@ -29,6 +31,9 @@ public class AfterActionUI : MonoBehaviour
     #region BUTTONS
     public void OnRestartLevelClicked()
     {
+        canvasGroup.blocksRaycasts = false;
+        canvasGroup.interactable = false;
+        canvasGroup.alpha = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); 
     }
 
@@ -39,6 +44,9 @@ public class AfterActionUI : MonoBehaviour
 
     public void OnMainMenuClicked()
     {
+        canvasGroup.blocksRaycasts = false;
+        canvasGroup.interactable = false;
+        canvasGroup.alpha = 0;
         SceneManager.LoadScene("MainMenu");
     }
 

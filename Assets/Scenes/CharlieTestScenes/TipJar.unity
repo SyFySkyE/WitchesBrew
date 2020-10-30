@@ -6866,6 +6866,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2342002679710439219, guid: df62af40b3593fe4baa57900ec9f28bc,
+        type: 3}
+      propertyPath: m_TagString
+      value: RecipeBook
+      objectReference: {fileID: 0}
     - target: {fileID: 3188863919720149836, guid: df62af40b3593fe4baa57900ec9f28bc,
         type: 3}
       propertyPath: m_Name
