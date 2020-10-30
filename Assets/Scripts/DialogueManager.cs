@@ -135,6 +135,10 @@ public class DialogueManager : MonoBehaviour
 
     }
 
+    //check if response = pos neg or neutral response value, call in each SelectText method
+    //void EvaluatePlayerResponse(string response)
+    //set current_dialogue to last player response dialogue selected
+
     public void EndDialogue()
     {
 

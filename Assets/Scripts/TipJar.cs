@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// Calculates the tip for each order upon its completion and adds it to the tip total
 /// </summary>
-public class TipCalculator : MonoBehaviour
+public class TipJar : MonoBehaviour
 {
     public double Tip { get; set; }
 
@@ -19,7 +20,14 @@ public class TipCalculator : MonoBehaviour
     private CustomerTimer customerTimer;
 
     [SerializeField]
-    [Tooltip("The maximum possible tip, must be larger than 0")]
+    Slider tipBarSlider;
+
+    [SerializeField]
+    [Tooltip("The tip goal or quota that must be reached to successfully complete a level")]
+    private double tipGoal = 5;
+
+    [SerializeField]
+    [Tooltip("The maximum possible tip a customer can give, must be larger than 0")]
     private double maxPossibleTip = 5;
 
     [Header("Timer Score Component")]
@@ -56,19 +64,30 @@ public class TipCalculator : MonoBehaviour
 
     private Order currentOrder;
 
+    private void Start()
+    {
+        tipBarSlider.maxValue = (float)tipGoal;
+    }
+
     private void OnOrderCompleted(Order currentOrder)
     {
         this.currentOrder = currentOrder;
-        CalculateTip();
+        CalculateTipAndAddItToTotal();
+        UpdateTipJarDisplay();
     }
 
-    private void CalculateTip()
+    private void CalculateTipAndAddItToTotal()
     {
         double totalOrderQualityPercent = GetTimerPercent() * GetOrderAccuracyPercent() * GetConversationQualityPercent();
 
         currentOrder.tip = totalOrderQualityPercent * maxPossibleTip;
 
         LevelManager.totalTips += currentOrder.tip;
+    }
+
+    private void UpdateTipJarDisplay()
+    {
+        tipBarSlider.value = (float)LevelManager.totalTips;
     }
 
     private double GetConversationQualityPercent()

@@ -18,6 +18,6 @@ public class ScoreText : MonoBehaviour
 
     private void UpdateScore()
     {
-        tipText.text = "Total Tips: $" + Math.Round(LevelManager.totalTips, 2).ToString();
+        tipText.text = "$" + Math.Round(LevelManager.totalTips, 2).ToString();
     }
 }
