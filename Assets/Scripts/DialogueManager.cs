@@ -12,6 +12,18 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI Response2;
     public TextMeshProUGUI Response3;
 
+    public string NPCDiag;
+    public string PlayerResponsePos;
+    public string PlayerResponseNeut;
+    public string PlayerResponseNeg;
+    public string NPCResponsePos;
+    public string NPCResponseNeut;
+    public string NPCResponseNeg;
+
+    public int rand1 = 0;
+    public int rand2 = 0;
+    public int rand3 = 0;
+
     public Animator animator;
 
     public Queue<string> sentences; //this is built around this being in order
@@ -22,7 +34,8 @@ public class DialogueManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sentences = new Queue<string>();
+        //sentences = new Queue<string>();
+
     }
 
 
@@ -36,102 +49,221 @@ public class DialogueManager : MonoBehaviour
 
         nameText.text = dialogue.name;
 
-        sentences.Clear();
+        //sentences.Clear();
 
-        foreach (string sentence in dialogue.sentences)
-        {
+        NumberMixerUpper();
 
-            sentences.Enqueue(sentence);
-
-        }
+        PlayerResponsePos = dialogue.sentences[0];
+        PlayerResponseNeut = dialogue.sentences[1];
+        PlayerResponseNeg = dialogue.sentences[2];
+        NPCDiag = dialogue.sentences[3];
+        NPCResponsePos = dialogue.sentences[4];
+        NPCResponseNeut = dialogue.sentences[5];
+        NPCResponseNeg = dialogue.sentences[6];
 
         InitializeResponse();
 
-        DisplayNextSentence();
+        DisplayFirstSentence();
 
     }
 
-    public void DisplayNextSentence()
+    public void NumberMixerUpper()
     {
 
-        if (sentences.Count == 0)
+        //Random random = new Random();
+
+        rand1 = Random.Range(1,4);
+
+        if (rand1 == 1)
         {
-            EndDialogue();
-            return;
+            rand2 = Random.Range(2,4);
+            if (rand2 == 2)
+            {
+                rand3 = 3;
+            }
+            else
+            {
+                rand3 = 2;
+            }
+        }
+        else if (rand1 == 2)
+        {
+            rand2 = Random.Range(1,4);
+            if (rand2 == 2)
+                rand2 = 1;
+            if (rand2 == 1)
+            {
+                rand3 = 3;
+            }
+            else
+            {
+                rand3 = 1;
+            }
+        }
+        else
+        {
+            rand2 = Random.Range(1,3);
+            if (rand2 == 1)
+            {
+                rand3 = 2;
+            }
+            else
+            {
+                rand3 = 1;
+            }
         }
 
-        string sentence = sentences.Dequeue();
-        dialogueText.text = sentence;
+    }
+
+    public void DisplayFirstSentence()
+    {
+
+        //if (sentences.Count == 0)
+        //{
+        //    EndDialogue();
+        //    return;
+        //}
+
+        //string sentence = sentences.Dequeue();
+        dialogueText.text = NPCDiag;
 
     }
 
     public void InitializeResponse()
     {
 
-        string sentence = sentences.Dequeue();
-        Response1.text = sentence;
-        sentence = sentences.Dequeue();
-        Response2.text = sentence;
-        sentence = sentences.Dequeue();
-        Response3.text = sentence;
+        //string sentence = sentences.Dequeue();
+        //Response1.text = sentence;
+        //sentence = sentences.Dequeue();
+        //Response2.text = sentence;
+        //sentence = sentences.Dequeue();
+        //Response3.text = sentence;
+
+        //Response1.text = PlayerResponsePos;
+        //Response2.text = PlayerResponseNeut;
+        //Response3.text = PlayerResponseNeg;
+
+        if (rand1 == 1)
+        {
+            Response1.text = PlayerResponsePos;
+        }
+        else if (rand1 == 2)
+        {
+            Response1.text = PlayerResponseNeut;
+        }
+        else
+        {
+            Response1.text = PlayerResponseNeg;
+        }
+        /////
+        if (rand2 == 1)
+        {
+            Response2.text = PlayerResponsePos;
+        }
+        else if (rand2 == 2)
+        {
+            Response2.text = PlayerResponseNeut;
+        }
+        else
+        {
+            Response2.text = PlayerResponseNeg;
+        }
+        /////
+        if (rand3 == 1)
+        {
+            Response3.text = PlayerResponsePos;
+        }
+        else if (rand3 == 2)
+        {
+            Response3.text = PlayerResponseNeut;
+        }
+        else
+        {
+            Response3.text = PlayerResponseNeg;
+        }
 
     }
 
     public void SelectText1()
     {
 
-        string sentence = sentences.Dequeue();
-        sentences.Dequeue();
-        sentences.Dequeue();
+        dialogueText.text = NPCResponsePos;
 
-        dialogueText.text = sentence;
-
-        if (sentences.Count == 0)
+        /////
+        
+        if (rand1 == 1)
         {
-            animator.SetBool("LastDialogue", true);
+            dialogueText.text = NPCResponsePos;
+        }
+        else if (rand1 == 2)
+        {
+            dialogueText.text = NPCResponseNeut;
+        }
+        else
+        {
+            dialogueText.text = NPCResponseNeg;
+        }
+        
+        /////
+
+        animator.SetBool("LastDialogue", true);
 
             Invoke("EndDialogue", TextDuration);
 
             return;
-        }
 
     }
 
     public void SelectText2()
     {
 
-        sentences.Dequeue();
-        string sentence = sentences.Dequeue();
-        sentences.Dequeue();
-        dialogueText.text = sentence;
+        /////
 
-        if (sentences.Count == 0)
+        if (rand2 == 1)
         {
-            animator.SetBool("LastDialogue", true);
+            dialogueText.text = NPCResponsePos;
+        }
+        else if (rand2 == 2)
+        {
+            dialogueText.text = NPCResponseNeut;
+        }
+        else
+        {
+            dialogueText.text = NPCResponseNeg;
+        }
+
+        /////
+        animator.SetBool("LastDialogue", true);
 
             Invoke("EndDialogue", TextDuration);
 
             return;
-        }
 
     }
     public void SelectText3()
     {
 
-        sentences.Dequeue(); 
-        sentences.Dequeue();
-        string sentence = sentences.Dequeue();
+        /////
 
-        dialogueText.text = sentence;
-
-        if (sentences.Count == 0)
+        if (rand3 == 1)
         {
-            animator.SetBool("LastDialogue", true);
+            dialogueText.text = NPCResponsePos;
+        }
+        else if (rand3 == 2)
+        {
+            dialogueText.text = NPCResponseNeut;
+        }
+        else
+        {
+            dialogueText.text = NPCResponseNeg;
+        }
+
+        /////
+        animator.SetBool("LastDialogue", true);
 
             Invoke("EndDialogue", TextDuration);
 
             return;
-        }
 
     }
 

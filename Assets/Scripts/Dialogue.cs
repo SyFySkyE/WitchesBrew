@@ -25,11 +25,12 @@ public class Dialogue
     [TextArea(3, 10)]
     public string[] sentences;
 
+
     // note formating here:
     //
-    // Player response 1
-    // Player response 2
-    // Player Response 3
+    // Player response 1 Positive
+    // Player response 2 Neutral 
+    // Player Response 3 Negative
     // The original Question or text from the NPC
     // NPC Response to 1
     // NPC Response to 2
