@@ -2504,7 +2504,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b209a376ba04e5845ba7b6a8339fba5d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7061e95159d4cf54086d62da85fbafc4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3285,6 +3285,16 @@ MonoBehaviour:
   Response1: {fileID: 126445457}
   Response2: {fileID: 412942701}
   Response3: {fileID: 259400123}
+  NPCDiag: 
+  PlayerResponsePos: 
+  PlayerResponseNeut: 
+  PlayerResponseNeg: 
+  NPCResponsePos: 
+  NPCResponseNeut: 
+  NPCResponseNeg: 
+  rand1: 0
+  rand2: 0
+  rand3: 0
   animator: {fileID: 851629096}
   TextDuration: 4
 --- !u!4 &148101415
@@ -4728,7 +4738,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 01ec05ba006f8fb4885214f7d92e0b14, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 980f8c454b01b2e4ba2f3627e2d9d4a9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4802,7 +4812,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 615c6825d75875d42bfa9807494fb1fb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2d8c2ba944e2bff44bd628b4d29382cf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -22113,9 +22123,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40544355e4208fa4f9c469b23c2ac2ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tipGoal: 5
   dialogueManger: {fileID: 0}
   cauldron: {fileID: 0}
   customerTimer: {fileID: 710923803}
+  tipBarSlider: {fileID: 0}
   maxPossibleTip: 5
   greenTimerPercent: 1
   yellowTimerPercent: 0.8
@@ -23340,6 +23352,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BookStack (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188863919720149836, guid: df62af40b3593fe4baa57900ec9f28bc,
+        type: 3}
+      propertyPath: m_TagString
+      value: RecipeBook
       objectReference: {fileID: 0}
     - target: {fileID: 3188863919720149839, guid: df62af40b3593fe4baa57900ec9f28bc,
         type: 3}
@@ -28115,7 +28132,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 09419761f6534ea42a648117de2acc70, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 52045800b8de3cd458e4f586fec81146, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -28283,6 +28300,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1099410518}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1103428026 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3188863919720149836, guid: df62af40b3593fe4baa57900ec9f28bc,
+    type: 3}
+  m_PrefabInstance: {fileID: 944603224}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1103428027
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103428026}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1104849028
 GameObject:
   m_ObjectHideFlags: 0
@@ -28339,7 +28375,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7e3e94eba258b534597c22462fec15d5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 362f2674376530f478d9bfbc9ab4f5bf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -31050,7 +31086,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4619bdaad05aafd408973e3299cdbc0b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bc4dc028c666ea74cb96c993344642a9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -39816,7 +39852,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 310b4263359756c49a14e912209e428b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5f825b0f9b3aa8b48b31e788c1769222, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -42382,7 +42418,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29b3abc6f6ca7334a83d89b307aac0eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inGameUI: {fileID: 955420407}
 --- !u!114 &1698715943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43353,7 +43388,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    dialogueValueSelected: 0
     name: Skeleton Customer
     sentences:
     - "They probably just find a new hand and stick it on.\r"
@@ -53836,7 +53870,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 836fb7f0983df44488f00baa1965e037, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a836537136cc2014083b0f222d761832, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
