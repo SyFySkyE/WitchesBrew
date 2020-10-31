@@ -91,7 +91,7 @@ public class TipJar : MonoBehaviour
 
     private double GetConversationQualityPercent()
     {
-        double conversationPercent = 1;
+        double conversationPercent = 0;
          switch (dialogueManger.dialogueValueSelected)
          {
              case DialogueValue.Positive:
@@ -103,6 +103,9 @@ public class TipJar : MonoBehaviour
              case DialogueValue.Negative:
                  conversationPercent = negativeResponsePercent;
                  break;
+            default:
+                conversationPercent = negativeResponsePercent;
+                break;
          }
 
         Debug.Log("Player scored " + conversationPercent + " on conversation");
