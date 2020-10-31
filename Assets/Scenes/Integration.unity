@@ -24201,6 +24201,7 @@ GameObject:
   - component: {fileID: 955420408}
   - component: {fileID: 955420410}
   - component: {fileID: 955420409}
+  - component: {fileID: 955420411}
   m_Layer: 5
   m_Name: InGameUI
   m_TagString: Untagged
@@ -24252,6 +24253,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 955420407}
   m_CullTransparentMesh: 0
+--- !u!114 &955420411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955420407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073f23748a50a294680a059a17c3b6b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &961528970
 PrefabInstance:
   m_ObjectHideFlags: 0
