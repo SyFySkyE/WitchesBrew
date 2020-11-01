@@ -56,6 +56,9 @@ public class PlayerGrab : MonoBehaviour
                         currentIngredient.DropIngredientIn();
                         Debug.Log($"You put ingredient: {HeldIngredient} in cauldron");
                         DropIngredient();
+                        
+                        // UseThis Code to grab stuff from Audiomanager. We will need to identify what is liquid and solid. 
+                        FindObjectOfType<AudioManager>().Play("SolidIngredientDrop"); 
                     }
                 }
                 else
