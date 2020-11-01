@@ -10,8 +10,7 @@ public class TipJar : MonoBehaviour
 {
     public double Tip { get; set; }
 
-    [Tooltip("The tip goal or quota that must be reached to successfully complete a level")]
-    public double tipGoal = 5;
+  
 
     [SerializeField]
     private DialogueManager dialogueManger;
@@ -65,7 +64,7 @@ public class TipJar : MonoBehaviour
 
     private void Start()
     {
-        tipBarSlider.maxValue = (float)tipGoal;
+        tipBarSlider.maxValue = (float)LevelManager.tipGoal;
     }
 
     private void OnOrderCompleted(Order currentOrder)

@@ -20,6 +20,7 @@ public class CustomerTimer : MonoBehaviour
 
     [Header("Bar Fill Area")]
     [SerializeField] private Image fill;
+    [SerializeField] private Slider timerSlider;
 
     public CustomerHappiness CurrentSatisfaction
     {
@@ -38,12 +39,8 @@ public class CustomerTimer : MonoBehaviour
 
     private CustomerHappiness currentSatisfaction;
 
-    private Slider timerSlider;
-
-    // Start is called before the first frame update
     private void Start()
     {
-        timerSlider = GetComponentInChildren<Slider>();
         timerSlider.maxValue = timerSlider.value = startTime;
         CompleteOrderButton.DoneButtonClicked += CompleteOrderButton_DoneButtonClicked;
 
@@ -54,7 +51,6 @@ public class CustomerTimer : MonoBehaviour
         timerSlider.value = startTime;
     }
 
-    // Update is called once per frame
     private void Update()
     {
         SubtractTime();

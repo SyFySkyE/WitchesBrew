@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class TipGoalText : MonoBehaviour
 {
-    [SerializeField]
-    private TipJar tipJar;
+    public static event Action LevelStarted;
 
     [SerializeField]
     private bool fadeTextInAndOut;
@@ -25,12 +24,12 @@ public class TipGoalText : MonoBehaviour
 
         if (fadeTextInAndOut)
         {
-            goalText.text = "Today's tip goal: $" + Math.Round(tipJar.tipGoal, 2).ToString();
+            goalText.text = "Today's tip goal: $" + Math.Round(LevelManager.tipGoal, 2).ToString();
             StartCoroutine(FadeTextInAndOut());
         }
         else
         {
-            goalText.text = "Out of $" + Math.Round(tipJar.tipGoal, 2).ToString();
+            goalText.text = "Out of $" + Math.Round(LevelManager.tipGoal, 2).ToString();
         }
     }
 
@@ -59,6 +58,8 @@ public class TipGoalText : MonoBehaviour
             i.color = new Color(i.color.r, i.color.g, i.color.b, i.color.a - (Time.deltaTime / t));
             yield return null;
         }
+
+        LevelStarted?.Invoke();
     }
 
 }
