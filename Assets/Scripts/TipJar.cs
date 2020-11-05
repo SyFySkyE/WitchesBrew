@@ -69,9 +69,11 @@ public class TipJar : MonoBehaviour
 
     private void OnOrderCompleted(Order currentOrder)
     {
+        FindObjectOfType<AudioManager>().Play("DrinkComplete");
         this.currentOrder = currentOrder;
         CalculateTipAndAddItToTotal();
         UpdateTipJarDisplay();
+        
     }
 
     private void CalculateTipAndAddItToTotal()
