@@ -22,6 +22,10 @@ public class CustomerTimer : MonoBehaviour
     [SerializeField] private Image fill;
     [SerializeField] private Slider timerSlider;
 
+    [SerializeField] private AudioClip timer;
+    [SerializeField] private AudioClip timerRing;
+    public AudioSource audioSource;
+
     public CustomerHappiness CurrentSatisfaction
     {
         get
@@ -41,6 +45,7 @@ public class CustomerTimer : MonoBehaviour
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         timerSlider.maxValue = timerSlider.value = startTime;
         CompleteOrderButton.DoneButtonClicked += CompleteOrderButton_DoneButtonClicked;
 
@@ -53,6 +58,7 @@ public class CustomerTimer : MonoBehaviour
 
     private void Update()
     {
+        
         SubtractTime();
     }
 
@@ -60,6 +66,7 @@ public class CustomerTimer : MonoBehaviour
     {
         if (timerSlider.value > failThreshold)
         {
+            //audioSource.PlayOneShot(timer);
             if (timerSlider.value > greenThreshold)
             {
                 this.CurrentSatisfaction = CustomerHappiness.Green;
@@ -75,13 +82,16 @@ public class CustomerTimer : MonoBehaviour
                 this.CurrentSatisfaction = CustomerHappiness.Red;
                 fill.color = Color.red;
             }
-
+            ;
             timerSlider.value -= Time.deltaTime;
         }
         else
         {
             this.CurrentSatisfaction = CustomerHappiness.Fail;
             Debug.Log("You lose!");
+            //audioSource.Stop();
+            //audioSource.loop = false;
+            //audioSource.PlayOneShot(timerRing);
         }
     }
 }

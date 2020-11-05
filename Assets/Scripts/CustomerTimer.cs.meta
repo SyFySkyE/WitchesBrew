@@ -3,7 +3,12 @@ guid: 286058b2d6d00b74ca6efb23c1107b40
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - fill: {instanceID: 0}
+  - timerSlider: {instanceID: 0}
+  - timer: {fileID: 8300000, guid: 517f2d9842430d5489dd25048b24b700, type: 3}
+  - timerRing: {fileID: 8300000, guid: dbfab005b9a9f2443ac72a4196ff7649, type: 3}
+  - audioSource: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

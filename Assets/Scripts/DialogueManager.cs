@@ -32,16 +32,20 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     private float TextDuration = 3.0f;
 
+    public AudioSource audioSource;
+    [SerializeField] private AudioClip customerSpeak, positiveResponse, neutralResponse, negativeResponse; 
+  
+
     // Start is called before the first frame update
     void Start()
     {
         //sentences = new Queue<string>();
-
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void StartDialogue(Dialogue dialogue)
     {
-
+        audioSource.PlayOneShot(customerSpeak,1.5f);
         animator.SetBool("IsOpen", true);
         animator.SetBool("LastDialogue", false);
 
@@ -193,16 +197,19 @@ public class DialogueManager : MonoBehaviour
         {
             dialogueText.text = NPCResponsePos;
             dialogueValueSelected = DialogueValue.Positive;
+            audioSource.PlayOneShot(positiveResponse,1.5f);
         }
         else if (rand1 == 2)
         {
             dialogueText.text = NPCResponseNeut;
             dialogueValueSelected = DialogueValue.Neutral;
+            audioSource.PlayOneShot(neutralResponse,1.5f);
         }
         else
         {
             dialogueText.text = NPCResponseNeg;
             dialogueValueSelected = DialogueValue.Negative;
+            audioSource.PlayOneShot(negativeResponse,1.5f);
         }
         
         /////
@@ -224,17 +231,20 @@ public class DialogueManager : MonoBehaviour
         {
             dialogueText.text = NPCResponsePos;
             dialogueValueSelected = DialogueValue.Positive;
+            audioSource.PlayOneShot(positiveResponse, 1.5f);
         }
         else if (rand2 == 2)
         {
             dialogueText.text = NPCResponseNeut;
             dialogueValueSelected = DialogueValue.Neutral;
+            audioSource.PlayOneShot(neutralResponse, 1.5f);
 
         }
         else
         {
             dialogueText.text = NPCResponseNeg;
             dialogueValueSelected = DialogueValue.Negative;
+            audioSource.PlayOneShot(negativeResponse, 1.5f);
         }
 
         /////
@@ -254,16 +264,19 @@ public class DialogueManager : MonoBehaviour
         {
             dialogueText.text = NPCResponsePos;
             dialogueValueSelected = DialogueValue.Positive;
+            audioSource.PlayOneShot(positiveResponse, 1.5f);
         }
         else if (rand3 == 2)
         {
             dialogueText.text = NPCResponseNeut;
             dialogueValueSelected = DialogueValue.Neutral;
+            audioSource.PlayOneShot(neutralResponse, 1.5f);
         }
         else
         {
             dialogueText.text = NPCResponseNeg;
             dialogueValueSelected = DialogueValue.Negative;
+            audioSource.PlayOneShot(negativeResponse, 1.5f);
         }
 
         Debug.Log(dialogueValueSelected);
