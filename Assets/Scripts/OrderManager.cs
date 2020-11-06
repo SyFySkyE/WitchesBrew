@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class OrderManager : MonoBehaviour
 {
+    public Dialogue dialogue1;
+    public Dialogue dialogue2;
+    public Dialogue dialogue3;
+    public int CurrentCustomerNumber = 1;
+
     public static event Action LevelCompleted;
     public static event Action<Order> OrderCompleted;
 
@@ -43,6 +48,9 @@ public class OrderManager : MonoBehaviour
     private void TakeOrder()
     {
         orderText.text = $"I would like to order a {currentOrder.name}";
+
+        Invoke("StartDialogue", 5f);//////////////////////////////////////////////////////////////////////////
+
     }
 
     private void UpdateCurrentOrderState()
@@ -97,5 +105,36 @@ public class OrderManager : MonoBehaviour
         {
             orders[i] = Instantiate(orders[i]);
         }
+    }
+
+    private void StartDialogue() ///////////////////////////////////////////////////////////////////
+    {
+
+        if (CurrentCustomerNumber == 1)
+        {
+            BeginDialogue(dialogue1);
+        }
+        else if (CurrentCustomerNumber == 2)
+        {
+            BeginDialogue(dialogue2);
+        }
+        else if (CurrentCustomerNumber == 3)
+        {
+            BeginDialogue(dialogue3);
+        }
+        else if (CurrentCustomerNumber == 4)
+        {
+            CurrentCustomerNumber = 1;
+        }
+
+        ++CurrentCustomerNumber;
+
+    }
+
+    private void BeginDialogue(Dialogue dialogue) ///////////////////////////////////////////////////
+    {
+
+        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+
     }
 }
