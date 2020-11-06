@@ -109,6 +109,9 @@ public class UnityIngredient : MonoBehaviour // Is responisible for both the con
         #endregion
 
         IngredientGORep = Instantiate(Resources.Load<GameObject>(resourcePath + ingredientToSpawn));
+        IngredientGORep.AddComponent<BoxCollider>();
+        IngredientGORep.GetComponent<BoxCollider>().isTrigger = true;
+        IngredientGORep.gameObject.tag = this.gameObject.tag;
         IngredientGORep.transform.SetParent(this.transform);
         IngredientGORep.SetActive(false);
     }

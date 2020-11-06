@@ -10,8 +10,7 @@ public class TipJar : MonoBehaviour
 {
     public double Tip { get; set; }
 
-    [Tooltip("The tip goal or quota that must be reached to successfully complete a level")]
-    public double tipGoal = 5;
+  
 
     [SerializeField]
     private DialogueManager dialogueManger;
@@ -65,7 +64,7 @@ public class TipJar : MonoBehaviour
 
     private void Start()
     {
-        tipBarSlider.maxValue = (float)tipGoal;
+        tipBarSlider.maxValue = (float)LevelManager.tipGoal;
     }
 
     private void OnOrderCompleted(Order currentOrder)
@@ -91,7 +90,7 @@ public class TipJar : MonoBehaviour
 
     private double GetConversationQualityPercent()
     {
-        double conversationPercent = 1;
+        double conversationPercent = 0;
          switch (dialogueManger.dialogueValueSelected)
          {
              case DialogueValue.Positive:
@@ -103,6 +102,9 @@ public class TipJar : MonoBehaviour
              case DialogueValue.Negative:
                  conversationPercent = negativeResponsePercent;
                  break;
+            default:
+                conversationPercent = negativeResponsePercent;
+                break;
          }
 
         Debug.Log("Player scored " + conversationPercent + " on conversation");

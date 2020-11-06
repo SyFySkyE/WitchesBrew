@@ -9,12 +9,12 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.P)) && (check == false))
+        if ((Input.GetKeyDown(KeyCode.Escape)) && (check == false))
         {                       
            OpenPauseMenu();
            Debug.Log("tick on ");
         }
-        else if ((Input.GetKeyDown(KeyCode.P)) && (check == true))
+        else if ((Input.GetKeyDown(KeyCode.Escape)) && (check == true))
         {
             ClosePauseMenu();
             Debug.Log("tick off");
