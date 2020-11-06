@@ -2,7 +2,7 @@
 using TMPro;
 using UnityEngine;
 
-public class TipScoreText : MonoBehaviour
+public class ScoreText : MonoBehaviour
 {
     private TextMeshProUGUI tipText;
 

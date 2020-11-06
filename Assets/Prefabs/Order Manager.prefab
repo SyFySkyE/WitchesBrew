@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 100534811428198453}
   - component: {fileID: 100534811428198454}
+  - component: {fileID: 4453518319158400456}
   m_Layer: 0
   m_Name: Order Manager
   m_TagString: Untagged
@@ -46,3 +47,25 @@ MonoBehaviour:
   orderText: {fileID: 0}
   orders: []
   randomizeOrder: {fileID: 0}
+--- !u!114 &4453518319158400456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100534811428198455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40544355e4208fa4f9c469b23c2ac2ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueManger: {fileID: 0}
+  cauldron: {fileID: 0}
+  customerTimer: {fileID: 0}
+  maxPossibleTip: 5
+  greenTimerPercent: 1
+  yellowTimerPercent: 0.8
+  redTimerPercent: 0.5
+  positiveResponsePercent: 1
+  neutralResponsePercent: 0.5
+  negativeResponsePercent: 0
