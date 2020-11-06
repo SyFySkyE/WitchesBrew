@@ -88,6 +88,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3782919593882248578}
+  - component: {fileID: 3982510267739581942}
   m_Layer: 0
   m_Name: Cinnamon_Sticks
   m_TagString: Untagged
@@ -112,6 +113,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3982510267739581942
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4554390465180811064}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.98924, y: 0.45069265, z: 1.3395936}
+  m_Center: {x: 0.051816862, y: 0.110949114, z: -0.00018735683}
 --- !u!1 &7093033169265155480
 GameObject:
   m_ObjectHideFlags: 0

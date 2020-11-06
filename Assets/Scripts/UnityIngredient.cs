@@ -119,7 +119,7 @@ public class UnityIngredient : MonoBehaviour // Is responisible for both the con
                 break;
 
             case IngredientEnum.PumpkinSpice:
-                ingredientToSpawn = "Empty";
+                ingredientToSpawn = "PumpkinSpice";
                 Debug.Log($"GO equavilent of type: {this.ingredient} is not set, setting GO rep to empty");
                 break;
 
@@ -153,8 +153,8 @@ public class UnityIngredient : MonoBehaviour // Is responisible for both the con
         #endregion
 
         IngredientGORep = Instantiate(Resources.Load<GameObject>(resourcePath + ingredientToSpawn));
-        IngredientGORep.AddComponent<BoxCollider>();
-        IngredientGORep.GetComponent<BoxCollider>().isTrigger = true;
+        //IngredientGORep.AddComponent<BoxCollider>();
+        IngredientGORep.GetComponent<Collider>().isTrigger = true;
         IngredientGORep.gameObject.tag = this.gameObject.tag;
         IngredientGORep.transform.SetParent(this.transform);
         IngredientGORep.SetActive(false);
