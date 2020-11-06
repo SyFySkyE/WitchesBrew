@@ -1362,7 +1362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40544355e4208fa4f9c469b23c2ac2ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueManger: {fileID: 0}
+  dialogueManger: {fileID: 7563692348990361649}
   cauldron: {fileID: 0}
   customerTimer: {fileID: 0}
   tipBarSlider: {fileID: 1250762694076068925}

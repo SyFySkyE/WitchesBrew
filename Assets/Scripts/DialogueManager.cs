@@ -193,19 +193,19 @@ public class DialogueManager : MonoBehaviour
         {
             dialogueText.text = NPCResponsePos;
             dialogueValueSelected = DialogueValue.Positive;
-            FindObjectOfType<AudioManager>().Play("PositiveResponse");
+            FindObjectOfType<AudioManager>().Play("PositiveAnswer");
         }
         else if (rand1 == 2)
         {
             dialogueText.text = NPCResponseNeut;
             dialogueValueSelected = DialogueValue.Neutral;
-            FindObjectOfType<AudioManager>().Play("NeutralResponse");
+            FindObjectOfType<AudioManager>().Play("NeutralAnswer");
         }
         else
         {
             dialogueText.text = NPCResponseNeg;
             dialogueValueSelected = DialogueValue.Negative;
-            FindObjectOfType<AudioManager>().Play("NegativeResponse");
+            FindObjectOfType<AudioManager>().Play("NegativeAnswer");
         }
 
         //Debug.Log(dialogueValueSelected);
@@ -229,20 +229,20 @@ public class DialogueManager : MonoBehaviour
         {
             dialogueText.text = NPCResponsePos;
             dialogueValueSelected = DialogueValue.Positive;
-            FindObjectOfType<AudioManager>().Play("PositiveResponse");
+            FindObjectOfType<AudioManager>().Play("PositiveAnswer");
         }
         else if (rand2 == 2)
         {
             dialogueText.text = NPCResponseNeut;
             dialogueValueSelected = DialogueValue.Neutral;
-            FindObjectOfType<AudioManager>().Play("NeutralResponse");
+            FindObjectOfType<AudioManager>().Play("NeutralAnswer");
 
         }
         else
         {
             dialogueText.text = NPCResponseNeg;
             dialogueValueSelected = DialogueValue.Negative;
-            FindObjectOfType<AudioManager>().Play("NegativeResponse");
+            FindObjectOfType<AudioManager>().Play("NegativeAnswer");
         }
 
         Debug.Log(dialogueValueSelected);
@@ -264,19 +264,19 @@ public class DialogueManager : MonoBehaviour
         {
             dialogueText.text = NPCResponsePos;
             dialogueValueSelected = DialogueValue.Positive;
-            FindObjectOfType<AudioManager>().Play("PositiveResponse");
+            FindObjectOfType<AudioManager>().Play("PositiveAnswer");
         }
         else if (rand3 == 2)
         {
             dialogueText.text = NPCResponseNeut;
             dialogueValueSelected = DialogueValue.Neutral;
-            FindObjectOfType<AudioManager>().Play("NeutralResponse");
+            FindObjectOfType<AudioManager>().Play("NeutralAnswer");
         }
         else
         {
             dialogueText.text = NPCResponseNeg;
             dialogueValueSelected = DialogueValue.Negative;
-            FindObjectOfType<AudioManager>().Play("NegativeResponse");
+            FindObjectOfType<AudioManager>().Play("NegativeAnswer");
         }
 
         Debug.Log(dialogueValueSelected);
