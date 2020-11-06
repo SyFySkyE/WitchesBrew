@@ -7347,6 +7347,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11d408bd74c083a42844b2022bbd9c36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  orderComplete: {fileID: 0}
 --- !u!65 &307309630
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37093,6 +37095,12 @@ MonoBehaviour:
     volume: 0.25
     pitch: 1
     loop: 1
+    source: {fileID: 0}
+  - name: Vanilla
+    clip: {fileID: 8300000, guid: f2859d85792559144bb9a56b61d4b409, type: 3}
+    volume: 0.25
+    pitch: 1
+    loop: 0
     source: {fileID: 0}
 --- !u!4 &1657997031
 Transform:
