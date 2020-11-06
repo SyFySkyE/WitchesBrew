@@ -9,10 +9,10 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Iron
   m_Shader: {fileID: 4800000, guid: c4ae631e7daaae74eb5266cfa7a61b79, type: 3}
-  m_ShaderKeywords: _FRESNELHIGHLIGHTS_ON _MK_ARTISTIC_PROJECTION_SCREEN_SPACE _MK_DETAIL_BLEND_MIX
-    _MK_ENVIRONMENT_REFLECTIONS_AMBIENT _MK_FRESNEL_HIGHLIGHTS _MK_RECEIVE_SHADOWS
-    _MK_SPECULAR_ISOTROPIC _MK_SURFACE_TYPE_TRANSPARENT _MK_WRAPPED_DIFFUSE _RECEIVESHADOWS_ON
-    _WRAPPEDLIGHTING_ON
+  m_ShaderKeywords: _FRESNELHIGHLIGHTS_ON _MK_ARTISTIC_HATCHING _MK_DETAIL_BLEND_MIX
+    _MK_ENVIRONMENT_REFLECTIONS_AMBIENT _MK_FRESNEL_HIGHLIGHTS _MK_IRIDESCENCE_DEFAULT
+    _MK_LIGHT_TRANSMISSION_SUB_SURFACE_SCATTERING _MK_RECEIVE_SHADOWS _MK_SPECULAR_ISOTROPIC
+    _MK_SURFACE_TYPE_TRANSPARENT _MK_WRAPPED_DIFFUSE _RECEIVESHADOWS_ON _WRAPPEDLIGHTING_ON
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -165,9 +165,9 @@ Material:
     - _AlphaClipping: 0
     - _AlphaCutoff: 0.5
     - _Anisotropy: 0
-    - _Artistic: 0
+    - _Artistic: 2
     - _ArtisticFrequency: 1
-    - _ArtisticProjection: 1
+    - _ArtisticProjection: 0
     - _Blend: 0
     - _BlendDst: 0
     - _BlendSrc: 1
@@ -201,16 +201,16 @@ Material:
     - _IndexOfRefraction: 0
     - _Initialized: 1
     - _InputTab: 1
-    - _Iridescence: 0
-    - _IridescenceSize: 1
+    - _Iridescence: 1
+    - _IridescenceSize: 1.22
     - _IridescenceSmoothness: 0.5
     - _IridescenceThresholdOffset: 0
     - _Light: 0
     - _LightBands: 4
     - _LightBandsScale: 0.5
     - _LightThreshold: 0.5
-    - _LightTransmission: 0
-    - _LightTransmissionDistortion: 0.25
+    - _LightTransmission: 2
+    - _LightTransmissionDistortion: 0.046
     - _LightTransmissionIntensity: 1
     - _LightTransmissionSmoothness: 0.5
     - _LightTransmissionThresholdOffset: 0.25
@@ -239,7 +239,7 @@ Material:
     - _Roughness: 0.5
     - _Saturation: 1
     - _SketchMapScale: 1
-    - _Smoothness: 0.486
+    - _Smoothness: 0.505
     - _SmoothnessTextureChannel: 0
     - _Specular: 1
     - _SpecularHighlights: 1
@@ -273,12 +273,12 @@ Material:
     - _DissolveBorderColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GoochBrightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _GoochDarkColor: {r: 0, g: 0, b: 0, a: 1}
-    - _IridescenceColor: {r: 1, g: 1, b: 1, a: 0.5}
-    - _LightTransmissionColor: {r: 1, g: 0.65, b: 0, a: 1}
+    - _GoochDarkColor: {r: 0, g: 0.020147523, b: 0.1792453, a: 1}
+    - _IridescenceColor: {r: 0.03951584, g: 0.0434924, b: 0.2264151, a: 0.5}
+    - _LightTransmissionColor: {r: 0.0074759745, g: 0.028579049, b: 0.2264151, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _RimBrightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _RimColor: {r: 1, g: 1, b: 1, a: 1}
+    - _RimColor: {r: 0, g: 0, b: 0, a: 1}
     - _RimDarkColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecularColor: {r: 0.203125, g: 0.203125, b: 0.203125, a: 1}
     - _VertexAnimationFrequency: {r: 2.5, g: 2.5, b: 2.5, a: 1}
