@@ -3,7 +3,7 @@
 public class BookClicker : MonoBehaviour
 {
     public GameObject recipeBookUIPanel;
-
+   
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -17,6 +17,7 @@ public class BookClicker : MonoBehaviour
                 {
                     Debug.Log("You Opened book");
                     OpenBook();
+                    
                 }
             }
         }
@@ -25,6 +26,7 @@ public class BookClicker : MonoBehaviour
     public void OpenBook()
     {
         recipeBookUIPanel.SetActive(true);
+        FindObjectOfType<AudioManager>().Play("OpenBook");
     }
 
 }

@@ -33,6 +33,17 @@ public class AudioManager : MonoBehaviour
         }
         s.source.Play();
     }
-    //use code below to grab sounds out of audio manager
-    // FindObjectOfType<AudioManager>().Play("Any sound within audiomanager Array (game object inside of unity)"); 
+
+    public void Stop(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound: " + name + " not found!");
+            return;
+        }
+        s.source.Stop();
+        //use code below to grab sounds out of audio manager
+        // FindObjectOfType<AudioManager>().Play("Any sound within audiomanager Array (game object inside of unity)"); 
+    }
 }

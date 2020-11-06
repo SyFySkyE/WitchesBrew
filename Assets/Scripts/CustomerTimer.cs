@@ -43,23 +43,29 @@ public class CustomerTimer : MonoBehaviour
     {
         timerSlider.maxValue = timerSlider.value = startTime;
         CompleteOrderButton.DoneButtonClicked += CompleteOrderButton_DoneButtonClicked;
+        FindObjectOfType<AudioManager>().Play("Timer");
 
     }
 
     private void CompleteOrderButton_DoneButtonClicked()
     {
         timerSlider.value = startTime;
+        FindObjectOfType<AudioManager>().Stop("Timer");
+        FindObjectOfType<AudioManager>().Play("TimerRing");
     }
-
+    
     private void Update()
     {
+        
         SubtractTime();
     }
 
     private void SubtractTime()
     {
+        
         if (timerSlider.value > failThreshold)
         {
+            
             if (timerSlider.value > greenThreshold)
             {
                 this.CurrentSatisfaction = CustomerHappiness.Green;
@@ -75,13 +81,15 @@ public class CustomerTimer : MonoBehaviour
                 this.CurrentSatisfaction = CustomerHappiness.Red;
                 fill.color = Color.red;
             }
-
+            ;
             timerSlider.value -= Time.deltaTime;
+            
         }
         else
         {
             this.CurrentSatisfaction = CustomerHappiness.Fail;
             Debug.Log("You lose!");
+            
         }
     }
 }
