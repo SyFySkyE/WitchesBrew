@@ -1959,7 +1959,7 @@ PrefabInstance:
     - target: {fileID: 98026151, guid: fabb02d2ff9592f4ea894e9b0f8e130d, type: 3}
       propertyPath: cauldron
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1009326546}
     - target: {fileID: 98026151, guid: fabb02d2ff9592f4ea894e9b0f8e130d, type: 3}
       propertyPath: customerTimer
       value: 
@@ -23054,6 +23054,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1008787419}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1009326546 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 307309629, guid: c39ced3e09c19aa4ba887f97ee3b3090,
+    type: 3}
+  m_PrefabInstance: {fileID: 307309627}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11d408bd74c083a42844b2022bbd9c36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1013883747
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29665,6 +29677,75 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1300771991}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1303764130
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2902576910944402556, guid: 64b2d149979f71844b6b69bb9576043c,
+        type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2902576910944402558, guid: 64b2d149979f71844b6b69bb9576043c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2902576910944402558, guid: 64b2d149979f71844b6b69bb9576043c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2902576910944402558, guid: 64b2d149979f71844b6b69bb9576043c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2902576910944402558, guid: 64b2d149979f71844b6b69bb9576043c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2902576910944402558, guid: 64b2d149979f71844b6b69bb9576043c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2902576910944402558, guid: 64b2d149979f71844b6b69bb9576043c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2902576910944402558, guid: 64b2d149979f71844b6b69bb9576043c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2902576910944402558, guid: 64b2d149979f71844b6b69bb9576043c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2902576910944402558, guid: 64b2d149979f71844b6b69bb9576043c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2902576910944402558, guid: 64b2d149979f71844b6b69bb9576043c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2902576910944402558, guid: 64b2d149979f71844b6b69bb9576043c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 64b2d149979f71844b6b69bb9576043c, type: 3}
 --- !u!1001 &1304244492
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36942,152 +37023,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1656029749}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1657997029
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1657997031}
-  - component: {fileID: 1657997030}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1657997030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1657997029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35e25e3e24bac224596861ea0edc0196, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds:
-  - name: ' LiquidIngredientDrop'
-    clip: {fileID: 8300000, guid: bafd9bf153dd7c5469f813b205233827, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: SolidIngredientDrop
-    clip: {fileID: 8300000, guid: 586a1b668e3d464478f26381d6140886, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: CauldronBubble
-    clip: {fileID: 8300000, guid: 586a1b668e3d464478f26381d6140886, type: 3}
-    volume: 0.5
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: CauldronStir
-    clip: {fileID: 8300000, guid: c9edfde8d8fbced4d982bdcbf18e3f85, type: 3}
-    volume: 0
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: CustomerEntrance
-    clip: {fileID: 8300000, guid: 1423ca7c6f7cb4443a9fd74ae44de19f, type: 3}
-    volume: 0.5
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: BabyShoe
-    clip: {fileID: 8300000, guid: 687513c29ef619f40b660af0ad185a20, type: 3}
-    volume: 0.5
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: Cinnamon
-    clip: {fileID: 8300000, guid: d8a36f15be2f9da45bfcc14a647c5b18, type: 3}
-    volume: 0.5
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: Eyeball
-    clip: {fileID: 8300000, guid: 9bb7615849ed2414ba3b0ac3213b225d, type: 3}
-    volume: 0.5
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: FrogLeg
-    clip: {fileID: 8300000, guid: decc79a6e94dc534baa686cb296a2e96, type: 3}
-    volume: 0.5
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: PumpkinSpice
-    clip: {fileID: 8300000, guid: c22f4f5a731ed2c4da1400a299008e8a, type: 3}
-    volume: 0.5
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: RatTail
-    clip: {fileID: 8300000, guid: 5eec3997bcb8acb49a71d19d76ac0feb, type: 3}
-    volume: 0.5
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: Snail
-    clip: {fileID: 8300000, guid: 6e10cd20c2e14cd4883df282e2d5ff52, type: 3}
-    volume: 0.5
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: Tears
-    clip: {fileID: 8300000, guid: 0da8e77c2e1a97844b57ba295f396b6f, type: 3}
-    volume: 0.5
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: Worms
-    clip: {fileID: 8300000, guid: c791db249e8ee2d47a1ef70f316263f6, type: 3}
-    volume: 0.5
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: Register
-    clip: {fileID: 8300000, guid: 586a1b668e3d464478f26381d6140886, type: 3}
-    volume: 0
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: Theme
-    clip: {fileID: 8300000, guid: 489f2ba6d411c9541b2ae7b1f4a7e8bc, type: 3}
-    volume: 0.25
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
-  - name: Vanilla
-    clip: {fileID: 8300000, guid: f2859d85792559144bb9a56b61d4b409, type: 3}
-    volume: 0.25
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
---- !u!4 &1657997031
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1657997029}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1665487944
 PrefabInstance:
   m_ObjectHideFlags: 0
