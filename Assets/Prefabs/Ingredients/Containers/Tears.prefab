@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredient: 2
-  cauldronDropLocation: {x: -1.081, y: 0.809, z: 0.185}
+  cauldronDropLocation: {x: -0.293, y: -2.094, z: -4.469}
 --- !u!1 &2510384764121541009
 GameObject:
   m_ObjectHideFlags: 0
