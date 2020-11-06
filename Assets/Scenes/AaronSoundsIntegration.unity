@@ -7465,8 +7465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11d408bd74c083a42844b2022bbd9c36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  orderComplete: {fileID: 8300000, guid: 5dbc7a904608df5479d832e3a21093cb, type: 3}
+  orderCompleteSound: {fileID: 0}
 --- !u!65 &307309630
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37514,7 +37513,7 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: DrinkCompleted
+  - name: DrinkComplete
     clip: {fileID: 8300000, guid: 5dbc7a904608df5479d832e3a21093cb, type: 3}
     volume: 1
     pitch: 1

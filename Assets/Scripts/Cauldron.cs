@@ -5,9 +5,10 @@ public class Cauldron : MonoBehaviour
 {
     public List<IngredientEnum> CurrentIngredients { get; private set; } // TODO switch to interfaces ?? enums might be better
 
-    public AudioSource audioSource;
     [SerializeField]
-    public AudioClip orderComplete;
+    public AudioClip orderCompleteSound;
+
+    private AudioSource audioSource;
 
     private void Start()
     {
@@ -69,7 +70,7 @@ public class Cauldron : MonoBehaviour
 
     private void OnOrderCompleted(Order o)
     {
-        audioSource.PlayOneShot(orderComplete);
+        audioSource.PlayOneShot(orderCompleteSound);
         ClearIngredients();
     }
 
