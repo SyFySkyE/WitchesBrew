@@ -16502,7 +16502,7 @@ PrefabInstance:
     - target: {fileID: 100534811428198454, guid: c634eac806b5cfd48930e4695b7a9a33,
         type: 3}
       propertyPath: orders.Array.size
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100534811428198454, guid: c634eac806b5cfd48930e4695b7a9a33,
         type: 3}
@@ -16557,6 +16557,48 @@ PrefabInstance:
       propertyPath: randomizeOrder
       value: 
       objectReference: {fileID: 849391232}
+    - target: {fileID: 100534811428198454, guid: c634eac806b5cfd48930e4695b7a9a33,
+        type: 3}
+      propertyPath: orders.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5ad6524832c98c8469883e8e397750d4,
+        type: 2}
+    - target: {fileID: 100534811428198454, guid: c634eac806b5cfd48930e4695b7a9a33,
+        type: 3}
+      propertyPath: orders.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5ad6524832c98c8469883e8e397750d4,
+        type: 2}
+    - target: {fileID: 100534811428198454, guid: c634eac806b5cfd48930e4695b7a9a33,
+        type: 3}
+      propertyPath: orders.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5ad6524832c98c8469883e8e397750d4,
+        type: 2}
+    - target: {fileID: 100534811428198454, guid: c634eac806b5cfd48930e4695b7a9a33,
+        type: 3}
+      propertyPath: orders.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5ad6524832c98c8469883e8e397750d4,
+        type: 2}
+    - target: {fileID: 100534811428198454, guid: c634eac806b5cfd48930e4695b7a9a33,
+        type: 3}
+      propertyPath: orders.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5ad6524832c98c8469883e8e397750d4,
+        type: 2}
+    - target: {fileID: 100534811428198454, guid: c634eac806b5cfd48930e4695b7a9a33,
+        type: 3}
+      propertyPath: orders.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5ad6524832c98c8469883e8e397750d4,
+        type: 2}
+    - target: {fileID: 100534811428198454, guid: c634eac806b5cfd48930e4695b7a9a33,
+        type: 3}
+      propertyPath: orders.Array.data[9]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5ad6524832c98c8469883e8e397750d4,
+        type: 2}
     - target: {fileID: 100534811428198455, guid: c634eac806b5cfd48930e4695b7a9a33,
         type: 3}
       propertyPath: m_Name
@@ -18748,7 +18790,7 @@ GameObject:
   - component: {fileID: 849391233}
   - component: {fileID: 849391232}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Randomizer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18766,7 +18808,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d51ef10e8b0de54caff2d5661c25460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orderList: []
 --- !u!4 &849391233
 Transform:
   m_ObjectHideFlags: 0

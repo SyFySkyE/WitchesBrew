@@ -11,25 +11,14 @@ public class RandomizeOrder : MonoBehaviour//idk if this needs MonoBehavior
     //put depending on size of the Order Length, pull x amount of random numbers
     //random numbers are a (0,amntOfRecipes.Length), corresspond to indexes of anmtOfRecipies
     //puts randNumbs into Order Length
-    public List<Order> orderList;
     private int indexPos;
+    private Order[] allPossibleOrders;
     //Order[] orders; //pulls scriptable objects
     //https://stackoverflow.com/questions/53922771/is-there-any-way-to-fill-a-list-with-a-large-number-of-scriptable-objects
 
-
-    /// <summary>
-    /// VERY IMPORTANT
-    /// Randomizer does not create two instances of the orders in an array
-    /// ex. Pumpkin Spice, Witches Brew, Pumpkin Spice is really just Pumpkin Spice, Witches Brew
-    /// </summary>
-
-    void Start()
+    void Awake()
     {
-        Order[] orders = Resources.LoadAll<Order>("OrderRecipes");//, typeof(Order)).Cast<Order>().ToArray();
-        foreach (Order item in orders)
-        {
-            orderList.Add(item); //puts scriptables in OrderRecipes to orderList list
-        }
+        allPossibleOrders = Resources.LoadAll<Order>("OrderRecipes");
     }
 
     public void RandomizeOrderArry(Order[] orders)
@@ -37,12 +26,12 @@ public class RandomizeOrder : MonoBehaviour//idk if this needs MonoBehavior
         for (int i = 0; i < orders.Length; i++)
         {
             RandomizeIndexPos();
-            orders[i] = orderList[indexPos]; //should put a random orderList recipe into indexes of orders
+            orders[i] = allPossibleOrders[indexPos]; //should put a random orderList recipe into indexes of orders
         }
     }
 
     private void RandomizeIndexPos()
     {
-        indexPos = UnityEngine.Random.Range(0, orderList.Count);
+        indexPos = UnityEngine.Random.Range(0, allPossibleOrders.Length);
     }
 }
