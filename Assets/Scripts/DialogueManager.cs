@@ -21,9 +21,9 @@ public class DialogueManager : MonoBehaviour
     public string NPCResponseNeut;
     public string NPCResponseNeg;
 
-    public int rand1 = 3;
-    public int rand2 = 3;
-    public int rand3 = 3;
+    public int rand1 = 0;
+    public int rand2 = 0;
+    public int rand3 = 0;
 
     public Animator animator;
 
@@ -187,8 +187,9 @@ public class DialogueManager : MonoBehaviour
     {
 
         dialogueText.text = NPCResponsePos;
-        /////
 
+        /////
+        
         if (rand1 == 1)
         {
             dialogueText.text = NPCResponsePos;
@@ -207,9 +208,7 @@ public class DialogueManager : MonoBehaviour
             dialogueValueSelected = DialogueValue.Negative;
             FindObjectOfType<AudioManager>().Play("NegativeResponse");
         }
-
-        //Debug.Log(dialogueValueSelected);
-
+        
         /////
 
         animator.SetBool("LastDialogue", true);
@@ -244,8 +243,6 @@ public class DialogueManager : MonoBehaviour
             dialogueValueSelected = DialogueValue.Negative;
             FindObjectOfType<AudioManager>().Play("NegativeResponse");
         }
-
-        Debug.Log(dialogueValueSelected);
 
         /////
         animator.SetBool("LastDialogue", true);
