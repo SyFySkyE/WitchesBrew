@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 777637503463650412}
+  - component: {fileID: 4390743781332919705}
   m_Layer: 0
   m_Name: Rat_Tail
   m_TagString: Untagged
@@ -32,6 +33,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4390743781332919705
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108483988783935190}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.023571108, y: 0.49478978, z: 0.16883795}
+  m_Center: {x: -0.109236024, y: -2.7474334, z: 1.5686173}
 --- !u!1 &1986541944030813221
 GameObject:
   m_ObjectHideFlags: 0
