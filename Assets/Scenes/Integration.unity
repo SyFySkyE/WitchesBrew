@@ -1964,6 +1964,11 @@ PrefabInstance:
       propertyPath: customerTimer
       value: 
       objectReference: {fileID: 64337195459283129}
+    - target: {fileID: 365009516758163204, guid: fabb02d2ff9592f4ea894e9b0f8e130d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.10449219
+      objectReference: {fileID: 0}
     - target: {fileID: 559512435187495480, guid: fabb02d2ff9592f4ea894e9b0f8e130d,
         type: 3}
       propertyPath: m_AnchorMin.x
@@ -2879,7 +2884,7 @@ PrefabInstance:
     - target: {fileID: 211792515036107116, guid: c0ef6616c8aec0443b6b75f20a2768df,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 211792515036107116, guid: c0ef6616c8aec0443b6b75f20a2768df,
         type: 3}
