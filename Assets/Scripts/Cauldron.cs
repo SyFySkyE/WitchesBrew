@@ -14,6 +14,8 @@ public class Cauldron : MonoBehaviour
     public void AddIngredient(IngredientEnum ingredientToAdd)
     {
         CurrentIngredients.Add(ingredientToAdd);
+        FindObjectOfType<AudioManager>().Play("SolidIngredientDrop");
+
 
         switch (ingredientToAdd)
         {

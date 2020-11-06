@@ -37017,68 +37017,68 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: CauldronStir
-    clip: {fileID: 8300000, guid: 586a1b668e3d464478f26381d6140886, type: 3}
+    clip: {fileID: 8300000, guid: c9edfde8d8fbced4d982bdcbf18e3f85, type: 3}
     volume: 0
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: CustomerEntrance
-    clip: {fileID: 8300000, guid: 586a1b668e3d464478f26381d6140886, type: 3}
-    volume: 0
+    clip: {fileID: 8300000, guid: 1423ca7c6f7cb4443a9fd74ae44de19f, type: 3}
+    volume: 0.5
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: BabyShoe
-    clip: {fileID: 8300000, guid: 586a1b668e3d464478f26381d6140886, type: 3}
-    volume: 0
+    clip: {fileID: 8300000, guid: 687513c29ef619f40b660af0ad185a20, type: 3}
+    volume: 0.5
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Cinnamon
-    clip: {fileID: 8300000, guid: 586a1b668e3d464478f26381d6140886, type: 3}
-    volume: 0
+    clip: {fileID: 8300000, guid: d8a36f15be2f9da45bfcc14a647c5b18, type: 3}
+    volume: 0.5
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Eyeball
-    clip: {fileID: 8300000, guid: 586a1b668e3d464478f26381d6140886, type: 3}
-    volume: 0
+    clip: {fileID: 8300000, guid: 9bb7615849ed2414ba3b0ac3213b225d, type: 3}
+    volume: 0.5
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: FrogLeg
-    clip: {fileID: 8300000, guid: 586a1b668e3d464478f26381d6140886, type: 3}
-    volume: 0
+    clip: {fileID: 8300000, guid: decc79a6e94dc534baa686cb296a2e96, type: 3}
+    volume: 0.5
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: PumpkinSpice
-    clip: {fileID: 8300000, guid: 586a1b668e3d464478f26381d6140886, type: 3}
-    volume: 0
+    clip: {fileID: 8300000, guid: c22f4f5a731ed2c4da1400a299008e8a, type: 3}
+    volume: 0.5
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: ratTail
-    clip: {fileID: 8300000, guid: 586a1b668e3d464478f26381d6140886, type: 3}
-    volume: 0
+  - name: RatTail
+    clip: {fileID: 8300000, guid: 5eec3997bcb8acb49a71d19d76ac0feb, type: 3}
+    volume: 0.5
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Snail
-    clip: {fileID: 8300000, guid: 586a1b668e3d464478f26381d6140886, type: 3}
-    volume: 0
+    clip: {fileID: 8300000, guid: 6e10cd20c2e14cd4883df282e2d5ff52, type: 3}
+    volume: 0.5
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Tears
-    clip: {fileID: 8300000, guid: 586a1b668e3d464478f26381d6140886, type: 3}
-    volume: 0
+    clip: {fileID: 8300000, guid: 0da8e77c2e1a97844b57ba295f396b6f, type: 3}
+    volume: 0.5
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Worms
-    clip: {fileID: 8300000, guid: 586a1b668e3d464478f26381d6140886, type: 3}
-    volume: 0
+    clip: {fileID: 8300000, guid: c791db249e8ee2d47a1ef70f316263f6, type: 3}
+    volume: 0.5
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -37090,7 +37090,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Theme
     clip: {fileID: 8300000, guid: 489f2ba6d411c9541b2ae7b1f4a7e8bc, type: 3}
-    volume: 0.5
+    volume: 0.25
     pitch: 1
     loop: 1
     source: {fileID: 0}
