@@ -43,6 +43,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6afe77568ff92c42b25b1baad366705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogue1:
+    name: C1
+    sentences:
+    - POS1
+    - NUT1
+    - NEG1
+    - QQ1
+    - POSPOS1
+    - NUTNUT1
+    - NEGNEG1
+  dialogue2:
+    name: C2
+    sentences:
+    - POS2
+    - NUT2
+    - NEG2
+    - QQ2
+    - POSPOS2
+    - NUTNUT2
+    - NEGNEG2
+  dialogue3:
+    name: C3
+    sentences:
+    - POS3
+    - NUT3
+    - NEG3
+    - QQ3
+    - POSPOS3
+    - NUTNUT3
+    - NEGNEG3
+  CurrentCustomerNumber: 1
   orderText: {fileID: 0}
   orders: []
   randomizeOrder: {fileID: 0}
