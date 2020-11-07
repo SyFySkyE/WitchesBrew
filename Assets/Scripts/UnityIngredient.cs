@@ -64,7 +64,7 @@ public class UnityIngredient : MonoBehaviour // Is responisible for both the con
                 break;
 
             case IngredientEnum.RatTail:
-                FindObjectOfType<AudioManager>().Play("RatTail");
+                FindObjectOfType<AudioManager>().Play("ratTail");
                 break;
 
             case IngredientEnum.Snails:
