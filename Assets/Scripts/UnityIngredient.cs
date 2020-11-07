@@ -1,5 +1,4 @@
-﻿using UnityEditor.SceneManagement;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class UnityIngredient : MonoBehaviour // Is responisible for both the container and GO ingred, infringes on proper SoC!
 {

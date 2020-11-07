@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class TitleMenuFunctions : MonoBehaviour
@@ -11,7 +9,7 @@ public class TitleMenuFunctions : MonoBehaviour
     public void LoadGameScene()
     {
         SceneManager.LoadScene(gameSceneName);
-    
+
     }
     public void QuitGame()
     {
