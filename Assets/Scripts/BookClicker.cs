@@ -16,8 +16,7 @@ public class BookClicker : MonoBehaviour
                 if (hit.collider.tag == "RecipeBook")
                 {
                     Debug.Log("You Opened book");
-                    OpenBook();
-                    
+                    OpenBook(); 
                 }
             }
         }
