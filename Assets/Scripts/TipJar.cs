@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,10 +9,6 @@ using UnityEngine.UI;
 /// </summary>
 public class TipJar : MonoBehaviour
 {
-    public double Tip { get; set; }
-
-  
-
     [SerializeField]
     private DialogueManager dialogueManger;
 
@@ -53,18 +50,20 @@ public class TipJar : MonoBehaviour
     [SerializeField]
     [Tooltip("Percentage of 1/3 of order tip based on conversation quality. 0.1 = 10%, 1 = 100%")]
     [Range(0, 1)]
-    private double neutralResponsePercent = 0.5;
+    private double neutralResponsePercent = 0.7;
 
     [SerializeField]
     [Tooltip("Percentage of 1/3 of order tip based on conversation quality. 0.1 = 10%, 1 = 100%")]
     [Range(0, 1)]
-    private double negativeResponsePercent = 0;
+    private double negativeResponsePercent = 0.5;
 
     private Order currentOrder;
 
     private void Start()
     {
         tipBarSlider.maxValue = (float)LevelManager.tipGoal;
+        LevelManager.totalTips = 0;
+        UpdateTipJarDisplay();
     }
 
     private void OnOrderCompleted(Order currentOrder)
@@ -80,7 +79,7 @@ public class TipJar : MonoBehaviour
     {
         double totalOrderQualityPercent = GetTimerPercent() * GetOrderAccuracyPercent() * GetConversationQualityPercent();
 
-        currentOrder.tip = totalOrderQualityPercent * maxPossibleTip;
+        currentOrder.tip = Math.Round((totalOrderQualityPercent * maxPossibleTip), 2);
 
         LevelManager.totalTips += currentOrder.tip;
     }
