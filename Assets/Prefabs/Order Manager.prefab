@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 100534811428198453}
   - component: {fileID: 100534811428198454}
+  - component: {fileID: 8449797887795458226}
   m_Layer: 0
   m_Name: Order Manager
   m_TagString: Untagged
@@ -83,5 +84,20 @@ MonoBehaviour:
     - What? I dont have magic either? Am I boring.
   CurrentCustomerNumber: 1
   orderText: {fileID: 0}
-  orders: []
-  randomizeOrder: {fileID: 0}
+  orders:
+  - {fileID: 11400000, guid: 40a27ed177928184ba36f768ec66b8ca, type: 2}
+  - {fileID: 11400000, guid: 5f6736dc44be0534c9ad022f429d9955, type: 2}
+  - {fileID: 11400000, guid: 5ad6524832c98c8469883e8e397750d4, type: 2}
+  randomizeOrder: {fileID: 8449797887795458226}
+--- !u!114 &8449797887795458226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100534811428198455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d51ef10e8b0de54caff2d5661c25460, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

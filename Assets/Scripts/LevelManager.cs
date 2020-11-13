@@ -12,6 +12,5 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
-        //to do: singleton?
     }
 }
