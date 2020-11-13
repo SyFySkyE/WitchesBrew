@@ -3,7 +3,6 @@
 public class UnityIngredient : MonoBehaviour // Is responisible for both the container and GO ingred, infringes on proper SoC!
 {
     [SerializeField] private IngredientEnum ingredient;
-    [SerializeField] private Vector3 cauldronDropLocation;
 
     public GameObject IngredientGORep { get; private set; }
     private string resourcePath = "IngredientPrefabs/";    
@@ -89,11 +88,6 @@ public class UnityIngredient : MonoBehaviour // Is responisible for both the con
         }
         ingredRb = IngredientGORep.AddComponent<Rigidbody>(); // TODO See above
         ingredRb.useGravity = false;
-    }
-
-    public void DropIngredientIn()
-    {
-        IngredientGORep.transform.position = cauldronDropLocation;
     }
 
     private void InstantiateIngredient()
