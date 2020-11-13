@@ -300,7 +300,7 @@ Material:
     m_Colors:
     - _AlbedoColor: {r: 0, g: 1, b: 0.9717827, a: 1}
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
-    - _Color: {r: 0.7028302, g: 1, b: 0.9918424, a: 1}
+    - _Color: {r: 0.7882353, g: 1, b: 0.9918424, a: 1}
     - _DetailColor: {r: 0.31132078, g: 0, b: 0, a: 1}
     - _DissolveBorderColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0.06301003, g: 0.06301003, b: 0.06301003, a: 1}
