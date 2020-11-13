@@ -264,7 +264,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DetailColor: {r: 1, g: 1, b: 1, a: 1}
     - _DissolveBorderColor: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 2.3181944, g: 3.3117063, b: 7.9066987, a: 1}
+    - _EmissionColor: {r: 1.283901, g: 1.8307477, b: 4.4223256, a: 1}
     - _GoochBrightColor: {r: 1, g: 1, b: 1, a: 1}
     - _GoochDarkColor: {r: 0, g: 0.23064575, b: 0.2735849, a: 1}
     - _IridescenceColor: {r: 1, g: 1, b: 1, a: 0.5}
