@@ -1179,12 +1179,32 @@ PrefabInstance:
     - target: {fileID: 2101132404421068350, guid: c39ced3e09c19aa4ba887f97ee3b3090,
         type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2713631582050766921, guid: c39ced3e09c19aa4ba887f97ee3b3090,
         type: 3}
       propertyPath: m_Layer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2713631582050766921, guid: c39ced3e09c19aa4ba887f97ee3b3090,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2713631582050766924, guid: c39ced3e09c19aa4ba887f97ee3b3090,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2713631582050766927, guid: c39ced3e09c19aa4ba887f97ee3b3090,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2713631582050766927, guid: c39ced3e09c19aa4ba887f97ee3b3090,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4205764979941642105, guid: c39ced3e09c19aa4ba887f97ee3b3090,
         type: 3}

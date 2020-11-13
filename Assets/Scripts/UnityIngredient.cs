@@ -7,7 +7,7 @@ public class UnityIngredient : MonoBehaviour // Is responisible for both the con
 
     public GameObject IngredientGORep { get; private set; }
     private string resourcePath = "IngredientPrefabs/";    
-    private float minYBeforeDisable = -10f; // How far the GO rep can fall before being disabled
+    private float minYBeforeDisable = -30f; // How far the GO rep can fall before being disabled
     private Rigidbody ingredRb;
 
     private void Start()
