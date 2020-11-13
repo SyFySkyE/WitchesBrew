@@ -36,7 +36,6 @@ public class OrderManager : MonoBehaviour
         CreateOrderInstances();
 
         currentOrder = orders[0]; //current order starts at first order
-
     }
 
     private void Update()
@@ -48,9 +47,9 @@ public class OrderManager : MonoBehaviour
     private void TakeOrder()
     {
         //orderText.text = $"I would like to order a {currentOrder.name}";
-        dialogue1.OrderItem = currentOrder.name;//////////////////////////////////////////////////////////////////////////DWIGHT
-        dialogue2.OrderItem = currentOrder.name;
-        dialogue3.OrderItem = currentOrder.name;
+        dialogue1.OrderItem = currentOrder.recipeName;//////////////////////////////////////////////////////////////////////////DWIGHT
+        dialogue2.OrderItem = currentOrder.recipeName;
+        dialogue3.OrderItem = currentOrder.recipeName;
         Invoke("StartDialogue", 2f);
     }
 
