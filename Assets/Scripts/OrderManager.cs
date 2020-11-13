@@ -47,10 +47,11 @@ public class OrderManager : MonoBehaviour
 
     private void TakeOrder()
     {
-        orderText.text = $"I would like to order a {currentOrder.name}";
-
-        Invoke("StartDialogue", 5f);//////////////////////////////////////////////////////////////////////////
-
+        //orderText.text = $"I would like to order a {currentOrder.name}";
+        dialogue1.OrderItem = currentOrder.name;//////////////////////////////////////////////////////////////////////////DWIGHT
+        dialogue2.OrderItem = currentOrder.name;
+        dialogue3.OrderItem = currentOrder.name;
+        Invoke("StartDialogue", 2f);
     }
 
     private void UpdateCurrentOrderState()
@@ -107,20 +108,20 @@ public class OrderManager : MonoBehaviour
         }
     }
 
-    private void StartDialogue() ///////////////////////////////////////////////////////////////////
+    private void StartDialogue() ///////////////////////////////////////////////////////////////////DWIGHT
     {
 
         if (CurrentCustomerNumber == 1)
         {
-            BeginDialogue(dialogue1);
+            BeginOrderDialogue(dialogue1);
         }
         else if (CurrentCustomerNumber == 2)
         {
-            BeginDialogue(dialogue2);
+            BeginOrderDialogue(dialogue2);
         }
         else if (CurrentCustomerNumber == 3)
         {
-            BeginDialogue(dialogue3);
+            BeginOrderDialogue(dialogue3);
         }
         else if (CurrentCustomerNumber == 4)
         {
@@ -131,10 +132,16 @@ public class OrderManager : MonoBehaviour
 
     }
 
-    private void BeginDialogue(Dialogue dialogue) ///////////////////////////////////////////////////
+    //private void BeginDialogue(Dialogue dialogue) ///////////////////////////////////////////////////DWIGHT
+    //{
+
+    //    FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+
+    //}
+    private void BeginOrderDialogue(Dialogue dialogue) ///////////////////////////////////////////////////DWIGHT
     {
 
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        FindObjectOfType<DialogueManager>().StartOrderDialogue(dialogue);
 
     }
 }

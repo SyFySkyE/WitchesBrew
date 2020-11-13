@@ -12,6 +12,7 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI Response1;
     public TextMeshProUGUI Response2;
     public TextMeshProUGUI Response3;
+    public TextMeshProUGUI ResponseACCEPT;
 
     public string NPCDiag;
     public string PlayerResponsePos;
@@ -20,10 +21,13 @@ public class DialogueManager : MonoBehaviour
     public string NPCResponsePos;
     public string NPCResponseNeut;
     public string NPCResponseNeg;
+    public string NPCOrder;
 
     public int rand1 = 3;
     public int rand2 = 3;
     public int rand3 = 3;
+
+    public Dialogue dialogueholder;
 
     public Animator animator;
 
@@ -40,30 +44,43 @@ public class DialogueManager : MonoBehaviour
         
     }
 
-    public void StartDialogue(Dialogue dialogue)
+    public void StartDialogue()
     {
         FindObjectOfType<AudioManager>().Play("SkeletonSpeak");
         animator.SetBool("IsOpen", true);
         animator.SetBool("LastDialogue", false);
 
-        nameText.text = dialogue.name;
-
-        //sentences.Clear();
+        nameText.text = dialogueholder.name;
 
         NumberMixerUpper();
 
-        PlayerResponsePos = dialogue.sentences[0];
-        PlayerResponseNeut = dialogue.sentences[1];
-        PlayerResponseNeg = dialogue.sentences[2];
-        NPCDiag = dialogue.sentences[3];
-        NPCResponsePos = dialogue.sentences[4];
-        NPCResponseNeut = dialogue.sentences[5];
-        NPCResponseNeg = dialogue.sentences[6];
+        PlayerResponsePos = dialogueholder.sentences[0];
+        PlayerResponseNeut = dialogueholder.sentences[1];
+        PlayerResponseNeg = dialogueholder.sentences[2];
+        NPCDiag = dialogueholder.sentences[3];
+        NPCResponsePos = dialogueholder.sentences[4];
+        NPCResponseNeut = dialogueholder.sentences[5];
+        NPCResponseNeg = dialogueholder.sentences[6];
 
         InitializeResponse();
 
-        DisplayFirstSentence();
+        dialogueText.text = NPCDiag;
 
+    }
+
+    public void StartOrderDialogue(Dialogue dialogue)
+    {
+        FindObjectOfType<AudioManager>().Play("SkeletonSpeak");
+        animator.SetBool("IsOrder", true);
+        animator.SetBool("AcceptOrderTrue", true);
+
+        dialogueholder = dialogue;
+
+        nameText.text = dialogue.name;
+
+        dialogueText.text = "Hey there can I get a " + dialogue.OrderItem;
+        ResponseACCEPT.text = dialogue.OrderResponse; 
+        
     }
 
     public void NumberMixerUpper()
@@ -114,19 +131,12 @@ public class DialogueManager : MonoBehaviour
 
     }
 
-    public void DisplayFirstSentence()
-    {
+    //public void DisplayFirstSentence()
+    //{
 
-        //if (sentences.Count == 0)
-        //{
-        //    EndDialogue();
-        //    return;
-        //}
+    //    dialogueText.text = NPCDiag;
 
-        //string sentence = sentences.Dequeue();
-        dialogueText.text = NPCDiag;
-
-    }
+    //}
 
     public void InitializeResponse()
     {
@@ -186,7 +196,7 @@ public class DialogueManager : MonoBehaviour
     public void SelectText1()
     {
 
-        dialogueText.text = NPCResponsePos;
+        //dialogueText.text = NPCResponsePos;
         /////
 
         if (rand1 == 1)
@@ -208,13 +218,13 @@ public class DialogueManager : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("NegativeAnswer");
         }
 
-        //Debug.Log(dialogueValueSelected);
+        Debug.Log(dialogueValueSelected);
 
         /////
 
         animator.SetBool("LastDialogue", true);
 
-            Invoke("EndDialogue", TextDuration);
+            Invoke("EndDialogueforreal", TextDuration);
 
             return;
 
@@ -250,7 +260,7 @@ public class DialogueManager : MonoBehaviour
         /////
         animator.SetBool("LastDialogue", true);
 
-            Invoke("EndDialogue", TextDuration);
+            Invoke("EndDialogueforreal", TextDuration);
 
             return;
 
@@ -284,9 +294,24 @@ public class DialogueManager : MonoBehaviour
         /////
         animator.SetBool("LastDialogue", true);
 
-            Invoke("EndDialogue", TextDuration);
+            Invoke("EndDialogueforreal", TextDuration);
 
             return;
+
+    }
+
+    public void SelectTextAcceptOrder()
+    {
+
+        FindObjectOfType<AudioManager>().Play("NeutralAnswer");
+
+        Debug.Log("ACCEPTED ORDER");
+
+        animator.SetBool("AcceptOrderTrue", false);
+
+        Invoke("EndDialogue", TextDuration);
+
+        return;
 
     }
 
@@ -295,6 +320,17 @@ public class DialogueManager : MonoBehaviour
 
         animator.SetBool("IsOpen", false);
         animator.SetBool("LastDialogue", false);
+        animator.SetBool("IsOrder", false);
+
+        Invoke("StartDialogue", TextDuration);
+
+    }
+    public void EndDialogueforreal()
+    {
+
+        animator.SetBool("IsOpen", false);
+        animator.SetBool("LastDialogue", false);
+        animator.SetBool("IsOrder", false);
 
     }
 
