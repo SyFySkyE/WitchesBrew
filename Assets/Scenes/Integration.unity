@@ -656,6 +656,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cauldron
       objectReference: {fileID: 0}
+    - target: {fileID: 2713631582050766921, guid: c39ced3e09c19aa4ba887f97ee3b3090,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2713631582050766924, guid: c39ced3e09c19aa4ba887f97ee3b3090,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2713631582050766927, guid: c39ced3e09c19aa4ba887f97ee3b3090,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4205764979941642105, guid: c39ced3e09c19aa4ba887f97ee3b3090,
         type: 3}
       propertyPath: m_PlayOnAwake
@@ -664,17 +679,17 @@ PrefabInstance:
     - target: {fileID: 8221414597138979269, guid: c39ced3e09c19aa4ba887f97ee3b3090,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.7570334
+      value: -1.041
       objectReference: {fileID: 0}
     - target: {fileID: 8221414597138979269, guid: c39ced3e09c19aa4ba887f97ee3b3090,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.59375
+      value: -2.789
       objectReference: {fileID: 0}
     - target: {fileID: 8221414597138979269, guid: c39ced3e09c19aa4ba887f97ee3b3090,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.4729619
+      value: -2.85
       objectReference: {fileID: 0}
     - target: {fileID: 8221414597138979269, guid: c39ced3e09c19aa4ba887f97ee3b3090,
         type: 3}
