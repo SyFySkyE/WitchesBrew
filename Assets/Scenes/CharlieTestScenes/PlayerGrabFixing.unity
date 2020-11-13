@@ -374,51 +374,6 @@ PrefabInstance:
       propertyPath: customerTimer
       value: 
       objectReference: {fileID: 64337195459283129}
-    - target: {fileID: 365009516758163204, guid: fabb02d2ff9592f4ea894e9b0f8e130d,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -100
-      objectReference: {fileID: 0}
-    - target: {fileID: 365009516758163204, guid: fabb02d2ff9592f4ea894e9b0f8e130d,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 365009516758163204, guid: fabb02d2ff9592f4ea894e9b0f8e130d,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 365009516758163204, guid: fabb02d2ff9592f4ea894e9b0f8e130d,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 365009516758163204, guid: fabb02d2ff9592f4ea894e9b0f8e130d,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 365009516758163204, guid: fabb02d2ff9592f4ea894e9b0f8e130d,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -100
-      objectReference: {fileID: 0}
-    - target: {fileID: 365009516758163204, guid: fabb02d2ff9592f4ea894e9b0f8e130d,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 734.2091
-      objectReference: {fileID: 0}
-    - target: {fileID: 365009516758163204, guid: fabb02d2ff9592f4ea894e9b0f8e130d,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 190.82663
-      objectReference: {fileID: 0}
-    - target: {fileID: 365009516758163204, guid: fabb02d2ff9592f4ea894e9b0f8e130d,
-        type: 3}
-      propertyPath: m_Pivot.y
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 559512435187495480, guid: fabb02d2ff9592f4ea894e9b0f8e130d,
         type: 3}
       propertyPath: m_AnchorMin.x
@@ -558,66 +513,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2776344464220316477, guid: fabb02d2ff9592f4ea894e9b0f8e130d,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2776344464220316477, guid: fabb02d2ff9592f4ea894e9b0f8e130d,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2776344464220316477, guid: fabb02d2ff9592f4ea894e9b0f8e130d,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2776344464220316477, guid: fabb02d2ff9592f4ea894e9b0f8e130d,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2776344464220316477, guid: fabb02d2ff9592f4ea894e9b0f8e130d,
-        type: 3}
-      propertyPath: m_Pivot.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2776344464220316477, guid: fabb02d2ff9592f4ea894e9b0f8e130d,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2776344464220316477, guid: fabb02d2ff9592f4ea894e9b0f8e130d,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2776344464220316477, guid: fabb02d2ff9592f4ea894e9b0f8e130d,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2776344464220316477, guid: fabb02d2ff9592f4ea894e9b0f8e130d,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 2776344464220316477, guid: fabb02d2ff9592f4ea894e9b0f8e130d,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 2776344464220316477, guid: fabb02d2ff9592f4ea894e9b0f8e130d,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5678660338805009183, guid: fabb02d2ff9592f4ea894e9b0f8e130d,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -14.305023
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fabb02d2ff9592f4ea894e9b0f8e130d, type: 3}
@@ -1195,7 +1090,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 111865875, guid: c39ced3e09c19aa4ba887f97ee3b3090, type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 307309630, guid: c39ced3e09c19aa4ba887f97ee3b3090, type: 3}
       propertyPath: m_Size.y
@@ -1229,7 +1124,7 @@ PrefabInstance:
     - target: {fileID: 828649261934100058, guid: c39ced3e09c19aa4ba887f97ee3b3090,
         type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2101132404421068350, guid: c39ced3e09c19aa4ba887f97ee3b3090,
         type: 3}
@@ -1239,7 +1134,7 @@ PrefabInstance:
     - target: {fileID: 2713631582050766921, guid: c39ced3e09c19aa4ba887f97ee3b3090,
         type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2713631582050766921, guid: c39ced3e09c19aa4ba887f97ee3b3090,
         type: 3}
@@ -1269,12 +1164,12 @@ PrefabInstance:
     - target: {fileID: 5882993901599688696, guid: c39ced3e09c19aa4ba887f97ee3b3090,
         type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7449824633857368295, guid: c39ced3e09c19aa4ba887f97ee3b3090,
         type: 3}
       propertyPath: m_Layer
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8221414597138979269, guid: c39ced3e09c19aa4ba887f97ee3b3090,
         type: 3}
