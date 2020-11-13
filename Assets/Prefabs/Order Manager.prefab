@@ -44,6 +44,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6afe77568ff92c42b25b1baad366705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogue1:
+    name: Skelletor Jr.
+    OrderItem: 
+    OrderResponse: Got it!
+    sentences:
+    - They probably just find a new hand and stick it on.
+    - The probably dont mind, I wish I could do that.
+    - Why does it matter if they lose a hand?
+    - What happens when zombies lose their hand? Do they just un-live with out their
+      hands or do they get prosthetics?
+    - Gross, but cool! Thanks for the shower thoughts.
+    - What, Remove your arms? ... Weird.
+    - Yeesh, I was just trying to make conversation.
+  dialogue2:
+    name: Barron Bones
+    OrderItem: 
+    OrderResponse: Sounds good!
+    sentences:
+    - They've been causing such a ruckus even the un-dead cant sleep.
+    - "I\u2019ve heard of \u2018em. Not really much to say\u2026"
+    - It's the most exciting thing that has happened here in a while.
+    - So you worried about the commotion that the new necromancer group is stirring
+      up?
+    - HaHa thats a good one!
+    - ...
+    - "Yeah that\u2019s fair, everyone has a different view of it."
+  dialogue3:
+    name: Ol'e Creeky Knee's
+    OrderItem: 
+    OrderResponse: Coming right up!
+    sentences:
+    - Exactly like this? No way! They couldn't copy my style
+    - Probably, they really like to talk to each other.
+    - Nah Humans are boring they dont even have magic.
+    - You think Humans have places like this?
+    - HaHa that's not what I meant but your right.
+    - Hmm, thats true, but so do we.
+    - What? I dont have magic either? Am I boring.
+  CurrentCustomerNumber: 1
   orderText: {fileID: 0}
   orders: []
   randomizeOrder: {fileID: 0}

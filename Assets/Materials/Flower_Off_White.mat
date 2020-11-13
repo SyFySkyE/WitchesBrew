@@ -11,7 +11,7 @@ Material:
   m_Shader: {fileID: 4800000, guid: c4ae631e7daaae74eb5266cfa7a61b79, type: 3}
   m_ShaderKeywords: _ALPHABLEND_ON _FRESNELHIGHLIGHTS_ON _GLOSSYREFLECTIONS_OFF _MK_ALBEDO_MAP
     _MK_ARTISTIC_PROJECTION_SCREEN_SPACE _MK_BLEND_CUSTOM _MK_COLOR_GRADING_ALBEDO
-    _MK_DETAIL_BLEND_MIX _MK_DETAIL_MAP _MK_DIFFUSE_OREN_NAYAR _MK_ENVIRONMENT_REFLECTIONS_AMBIENT
+    _MK_DETAIL_BLEND_MIX _MK_DETAIL_MAP _MK_DIFFUSE_OREN_NAYAR _MK_EMISSION _MK_ENVIRONMENT_REFLECTIONS_AMBIENT
     _MK_FRESNEL_HIGHLIGHTS _MK_RECEIVE_SHADOWS _MK_SPECULAR_ISOTROPIC _MK_SURFACE_TYPE_TRANSPARENT
     _MK_WORKFLOW_SPECULAR _MK_WRAPPED_DIFFUSE _RECEIVESHADOWS_ON _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
     _SPECULARHIGHLIGHTS_OFF _WRAPPEDLIGHTING_ON
@@ -290,9 +290,9 @@ Material:
     - _AlbedoColor: {r: 0.7830189, g: 0.38842678, b: 0.121885024, a: 1}
     - _CameraFadeParams: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 0, g: 1, b: 0.94729495, a: 1}
-    - _DetailColor: {r: 0.9433962, g: 0.8655062, b: 0.6274475, a: 1}
+    - _DetailColor: {r: 0.5518868, g: 0.9754579, b: 1, a: 1}
     - _DissolveBorderColor: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissionColor: {r: 0, g: 0.052062336, b: 0.18093795, a: 1}
     - _GoochBrightColor: {r: 1, g: 1, b: 1, a: 1}
     - _GoochDarkColor: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 1}
     - _IridescenceColor: {r: 1, g: 1, b: 1, a: 0.5}

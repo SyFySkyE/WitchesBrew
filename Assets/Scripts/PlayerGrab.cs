@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class PlayerGrab : MonoBehaviour
 {
+    [SerializeField]
+    private float ingredientDistanceFromCamera = 1.1f;
+
     public IngredientEnum HeldIngredient;
     private GameObject ingredGORep;
 
@@ -19,7 +22,7 @@ public class PlayerGrab : MonoBehaviour
             if (Input.GetMouseButton(0))
             {
                 Cursor.visible = false;
-                Vector3 mousePosToScreen = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane));               
+                Vector3 mousePosToScreen = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane + ingredientDistanceFromCamera));               
                 ingredGORep.transform.position = mousePosToScreen;
             }
         }

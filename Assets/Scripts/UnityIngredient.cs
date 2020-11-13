@@ -1,5 +1,4 @@
-﻿using UnityEditor.SceneManagement;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class UnityIngredient : MonoBehaviour // Is responisible for both the container and GO ingred, infringes on proper SoC!
 {
@@ -8,7 +7,7 @@ public class UnityIngredient : MonoBehaviour // Is responisible for both the con
 
     public GameObject IngredientGORep { get; private set; }
     private string resourcePath = "IngredientPrefabs/";    
-    private float minYBeforeDisable = -10f; // How far the GO rep can fall before being disabled
+    private float minYBeforeDisable = -30f; // How far the GO rep can fall before being disabled
     private Rigidbody ingredRb;
 
     private void Start()
@@ -65,7 +64,7 @@ public class UnityIngredient : MonoBehaviour // Is responisible for both the con
                 break;
 
             case IngredientEnum.RatTail:
-                FindObjectOfType<AudioManager>().Play("RatTail");
+                FindObjectOfType<AudioManager>().Play("ratTail");
                 break;
 
             case IngredientEnum.Snails:

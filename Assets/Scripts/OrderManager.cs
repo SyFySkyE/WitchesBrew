@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class OrderManager : MonoBehaviour
 {
+    public Dialogue dialogue1;
+    public Dialogue dialogue2;
+    public Dialogue dialogue3;
+    public int CurrentCustomerNumber = 1;
+
     public static event Action LevelCompleted;
     public static event Action<Order> OrderCompleted;
 
@@ -42,7 +47,11 @@ public class OrderManager : MonoBehaviour
 
     private void TakeOrder()
     {
-        orderText.text = $"I would like to order a {currentOrder.name}";
+        //orderText.text = $"I would like to order a {currentOrder.name}";
+        dialogue1.OrderItem = currentOrder.name;//////////////////////////////////////////////////////////////////////////DWIGHT
+        dialogue2.OrderItem = currentOrder.name;
+        dialogue3.OrderItem = currentOrder.name;
+        Invoke("StartDialogue", 2f);
     }
 
     private void UpdateCurrentOrderState()
@@ -97,5 +106,42 @@ public class OrderManager : MonoBehaviour
         {
             orders[i] = Instantiate(orders[i]);
         }
+    }
+
+    private void StartDialogue() ///////////////////////////////////////////////////////////////////DWIGHT
+    {
+
+        if (CurrentCustomerNumber == 1)
+        {
+            BeginOrderDialogue(dialogue1);
+        }
+        else if (CurrentCustomerNumber == 2)
+        {
+            BeginOrderDialogue(dialogue2);
+        }
+        else if (CurrentCustomerNumber == 3)
+        {
+            BeginOrderDialogue(dialogue3);
+        }
+        else if (CurrentCustomerNumber == 4)
+        {
+            CurrentCustomerNumber = 1;
+        }
+
+        ++CurrentCustomerNumber;
+
+    }
+
+    //private void BeginDialogue(Dialogue dialogue) ///////////////////////////////////////////////////DWIGHT
+    //{
+
+    //    FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+
+    //}
+    private void BeginOrderDialogue(Dialogue dialogue) ///////////////////////////////////////////////////DWIGHT
+    {
+
+        FindObjectOfType<DialogueManager>().StartOrderDialogue(dialogue);
+
     }
 }
