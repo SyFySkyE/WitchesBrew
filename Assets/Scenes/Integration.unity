@@ -818,6 +818,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1250762694692928015, guid: fabb02d2ff9592f4ea894e9b0f8e130d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -108.00012
+      objectReference: {fileID: 0}
     - target: {fileID: 1250762695382964497, guid: fabb02d2ff9592f4ea894e9b0f8e130d,
         type: 3}
       propertyPath: m_Alpha
@@ -14162,7 +14167,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5f825b0f9b3aa8b48b31e788c1769222, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d890cbe7ef3b1c44eba19a8f3899f54a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
