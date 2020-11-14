@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 1059275613473462285}
   - component: {fileID: 1059275613473462284}
   m_Layer: 0
-  m_Name: Container_FrogLegs
+  m_Name: Container_FrogLegs 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -206,7 +206,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredient: 6
-  cauldronDropLocation: {x: -0.293, y: -2.094, z: -4.469}
 --- !u!1001 &4771975064963122218
 PrefabInstance:
   m_ObjectHideFlags: 0
