@@ -98,7 +98,7 @@ MonoBehaviour:
   dialogueManger: {fileID: 0}
   cauldron: {fileID: 0}
   customerTimer: {fileID: 0}
-  tipBarSlider: {fileID: 0}
+  tipFillTransform: {fileID: 7916977249722289417}
   maxPossibleTip: 5
   greenTimerPercent: 1
   yellowTimerPercent: 0.8
