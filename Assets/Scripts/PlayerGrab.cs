@@ -16,6 +16,7 @@ public class PlayerGrab : MonoBehaviour
 
     private UnityIngredient currentIngredient;
 
+    [HideInInspector]
     public float zOffset = -1.5f;
 
     private void Update()
