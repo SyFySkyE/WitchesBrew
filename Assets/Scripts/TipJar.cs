@@ -19,7 +19,7 @@ public class TipJar : MonoBehaviour
     private CustomerTimer customerTimer;
 
     [SerializeField]
-    private Slider tipBarSlider;
+    private Transform tipFillTransform;
 
     [SerializeField]
     [Tooltip("The maximum possible tip a customer can give, must be larger than 0")]
@@ -58,10 +58,11 @@ public class TipJar : MonoBehaviour
     private double negativeResponsePercent = 0.5;
 
     private Order currentOrder;
+    private float tipMax;
 
     private void Start()
     {
-        tipBarSlider.maxValue = (float)LevelManager.tipGoal;
+        tipMax = (float)LevelManager.tipGoal;
         LevelManager.totalTips = 0;
         UpdateTipJarDisplay();
     }
@@ -86,7 +87,8 @@ public class TipJar : MonoBehaviour
 
     private void UpdateTipJarDisplay()
     {
-        tipBarSlider.value = (float)LevelManager.totalTips;
+        float yScale = (float)LevelManager.totalTips / tipMax;
+        tipFillTransform.localScale = new Vector3(tipFillTransform.localScale.x, yScale,tipFillTransform.localScale.z);
     }
 
     private double GetConversationQualityPercent()

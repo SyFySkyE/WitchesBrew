@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class TipScoreText : MonoBehaviour
 {
-    private TextMeshProUGUI tipText;
+    private TMP_Text tipText;
 
     private void Start()
     {
-        tipText = GetComponent<TextMeshProUGUI>();
+        tipText = GetComponent<TMP_Text>();
     }
 
     private void Update()
