@@ -11,6 +11,19 @@ public enum CustomerHappiness
 
 public class CustomerTimer : MonoBehaviour
 {
+    public bool Paused
+    {
+        get { return paused; }
+        set
+        {
+            if (!value) { StartTimer(); } //if timer is being unpaused start the timer
+            else { timer.SetActive(false); }
+            paused = value;
+        }
+    }
+
+    private bool paused = true;
+
     [Header("Timer Paramters, in seconds")]
     [SerializeField] private float startTime;
     [SerializeField] private float greenThreshold;
@@ -20,7 +33,14 @@ public class CustomerTimer : MonoBehaviour
 
     [Header("Bar Fill Area")]
     [SerializeField] private Image fill;
-    [SerializeField] private Slider timerSlider;
+    [SerializeField] private GameObject timer;
+
+    private Slider timerSlider;
+
+    private void Start()
+    {
+        timerSlider = timer.GetComponent<Slider>();
+    }
 
     public CustomerHappiness CurrentSatisfaction
     {
@@ -39,12 +59,13 @@ public class CustomerTimer : MonoBehaviour
 
     private CustomerHappiness currentSatisfaction;
 
-    private void Start()
+    public void StartTimer()
     {
+        timer.SetActive(true);
         timerSlider.maxValue = timerSlider.value = startTime;
         CompleteOrderButton.DoneButtonClicked += CompleteOrderButton_DoneButtonClicked;
         FindObjectOfType<AudioManager>().Play("Timer");
-
+        Paused = false;
     }
 
     private void CompleteOrderButton_DoneButtonClicked()
@@ -56,13 +77,12 @@ public class CustomerTimer : MonoBehaviour
     
     private void Update()
     {
-        
-        SubtractTime();
+        if(!Paused)
+            SubtractTime();
     }
 
     private void SubtractTime()
     {
-        
         if (timerSlider.value > failThreshold)
         {
             
@@ -88,8 +108,7 @@ public class CustomerTimer : MonoBehaviour
         else
         {
             this.CurrentSatisfaction = CustomerHappiness.Fail;
-            Debug.Log("You lose!");
-            
+            Debug.Log("You lose!");    
         }
     }
 }
