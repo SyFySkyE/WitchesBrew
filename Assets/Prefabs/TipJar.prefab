@@ -105,9 +105,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4188123476943437242}
-  m_LocalRotation: {x: -0, y: -0.10062061, z: -0, w: 0.9949249}
+  m_LocalRotation: {x: 0, y: -0.10062218, z: 0, w: 0.9949248}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5280694, y: 0.6454181, z: 0.5280694}
+  m_LocalScale: {x: 0.6659375, y: 0.81398433, z: 0.6659375}
   m_Children:
   - {fileID: 1366891638534839062}
   - {fileID: 1338524950465988743}
@@ -141,7 +141,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c82511d0c7dd5de489e563159fcfe9d2, type: 2}
+  - {fileID: 2100000, guid: 1155388af8d485149b1d50ea7a154fa4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -177,7 +177,7 @@ MonoBehaviour:
   dialogueManger: {fileID: 0}
   cauldron: {fileID: 0}
   customerTimer: {fileID: 0}
-  tipFillTransform: {fileID: 0}
+  tipFillTransform: {fileID: 9107712761521617691}
   maxPossibleTip: 5
   greenTimerPercent: 1
   yellowTimerPercent: 0.8
@@ -213,7 +213,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4943719686619663525}
   m_LocalRotation: {x: -0, y: 0.3826828, z: -0, w: 0.92387974}
-  m_LocalPosition: {x: 0, y: 0, z: -0.1102}
+  m_LocalPosition: {x: 0, y: 0, z: -0.09795528}
   m_LocalScale: {x: 0.16167113, y: 0.13227636, z: 0.16167113}
   m_Children: []
   m_Father: {fileID: 6062049889025792277}
@@ -221,7 +221,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 45.000004, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0687, y: 0.08946968}
+  m_AnchoredPosition: {x: -0.07964904, y: 0.101737194}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &1812426850399311931
@@ -318,8 +318,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 3
-  m_fontSizeBase: 3
+  m_fontSize: 4
+  m_fontSizeBase: 4
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

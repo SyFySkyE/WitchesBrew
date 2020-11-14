@@ -137,6 +137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7955791185737239313}
   - component: {fileID: 7955791185737239314}
+  - component: {fileID: 2645286251510055190}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -174,3 +175,16 @@ MonoBehaviour:
   ingredientDistanceFromCamera: 1.8
   HeldIngredient: 0
   zOffset: -1.5
+--- !u!114 &2645286251510055190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7955791185737239312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6250d69db170d9e4bafe4af57faca3d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recipeBookUIPanel: {fileID: 0}

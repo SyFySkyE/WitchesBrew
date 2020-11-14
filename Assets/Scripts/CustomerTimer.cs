@@ -65,7 +65,6 @@ public class CustomerTimer : MonoBehaviour
         timerSlider.maxValue = timerSlider.value = startTime;
         CompleteOrderButton.DoneButtonClicked += CompleteOrderButton_DoneButtonClicked;
         FindObjectOfType<AudioManager>().Play("Timer");
-        Paused = false;
     }
 
     private void CompleteOrderButton_DoneButtonClicked()
