@@ -9,12 +9,11 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Fog_Leg_Juice
   m_Shader: {fileID: 4800000, guid: c4ae631e7daaae74eb5266cfa7a61b79, type: 3}
-  m_ShaderKeywords: _FRESNELHIGHLIGHTS_ON _MK_ALBEDO_MAP _MK_ARTISTIC_PROJECTION_SCREEN_SPACE
-    _MK_DETAIL_BLEND_MIX _MK_EMISSION _MK_ENVIRONMENT_REFLECTIONS_AMBIENT _MK_FRESNEL_HIGHLIGHTS
-    _MK_LIGHT_TRANSMISSION_TRANSLUCENT _MK_RECEIVE_SHADOWS _MK_RIM_DEFAULT _MK_SPECULAR_ANISOTROPIC
-    _MK_SURFACE_TYPE_TRANSPARENT _MK_WORKFLOW_SPECULAR _MK_WRAPPED_DIFFUSE _RECEIVESHADOWS_ON
-    _WRAPPEDLIGHTING_ON
-  m_LightmapFlags: 4
+  m_ShaderKeywords: _FRESNELHIGHLIGHTS_ON _MK_ALBEDO_MAP _MK_ARTISTIC_DRAWN _MK_DETAIL_BLEND_MIX
+    _MK_EMISSION _MK_ENVIRONMENT_REFLECTIONS_AMBIENT _MK_FRESNEL_HIGHLIGHTS _MK_RECEIVE_SHADOWS
+    _MK_SPECULAR_ANISOTROPIC _MK_SURFACE_TYPE_TRANSPARENT _MK_WORKFLOW_SPECULAR _MK_WRAPPED_DIFFUSE
+    _RECEIVESHADOWS_ON _WRAPPEDLIGHTING_ON
+  m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2000
@@ -26,7 +25,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _AlbedoMap:
-        m_Texture: {fileID: 2800000, guid: 6601205643faef744a4a2dd491969beb, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5e8d657d59d70f14795731b74a0a5a7e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -160,15 +159,15 @@ Material:
     m_Floats:
     - _AdvancedTab: 1
     - _AlphaClipping: 0
-    - _AlphaCutoff: 0.5
-    - _Anisotropy: 0.6
-    - _Artistic: 0
+    - _AlphaCutoff: 0.517
+    - _Anisotropy: -0.61
+    - _Artistic: 1
     - _ArtisticFrequency: 1
-    - _ArtisticProjection: 1
+    - _ArtisticProjection: 0
     - _Blend: 0
     - _BlendDst: 10
     - _BlendSrc: 5
-    - _Brightness: 1
+    - _Brightness: 0.81
     - _BumpScale: 1
     - _ColorGrading: 0
     - _Contrast: 1
@@ -198,19 +197,19 @@ Material:
     - _Initialized: 1
     - _InputTab: 1
     - _Iridescence: 0
-    - _IridescenceSize: 1
-    - _IridescenceSmoothness: 0.5
+    - _IridescenceSize: 5
+    - _IridescenceSmoothness: 0
     - _IridescenceThresholdOffset: 0
     - _Light: 0
-    - _LightBands: 4
-    - _LightBandsScale: 0.5
-    - _LightThreshold: 0.5
-    - _LightTransmission: 1
-    - _LightTransmissionDistortion: 0.299
+    - _LightBands: 2
+    - _LightBandsScale: 0
+    - _LightThreshold: 0
+    - _LightTransmission: 0
+    - _LightTransmissionDistortion: 0.25
     - _LightTransmissionIntensity: 0
     - _LightTransmissionSmoothness: 0.5
     - _LightTransmissionThresholdOffset: 0.25
-    - _Metallic: 0
+    - _Metallic: 0.291
     - _Mode: 0
     - _NormalMapIntensity: 1
     - _OcclusionMapIntensity: 1
@@ -224,18 +223,18 @@ Material:
     - _ReceiveShadows: 1
     - _RenderFace: 2
     - _RenderPriority: 0
-    - _Rim: 1
-    - _RimSize: 1.93
+    - _Rim: 0
+    - _RimSize: 2.27
     - _RimSmoothness: 0.5
     - _RimThresholdOffset: 0.25
-    - _Roughness: 0.566
-    - _Saturation: 1
+    - _Roughness: 0.272
+    - _Saturation: 4.35
     - _SketchMapScale: 1
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _Specular: 2
     - _SpecularHighlights: 1
-    - _SpecularIntensity: 0.18
+    - _SpecularIntensity: 8.9
     - _SpecularSmoothness: 0
     - _SpecularThresholdOffset: 0.25
     - _SrcBlend: 1
@@ -252,25 +251,25 @@ Material:
     - _ThresholdMapScale: 1
     - _UVSec: 0
     - _VertexAnimation: 0
-    - _VertexAnimationIntensity: 0.05
+    - _VertexAnimationIntensity: 0.1
     - _VertexAnimationStutter: 0
     - _Workflow: 1
     - _WrappedLighting: 1
     - _ZTest: 4
     - _ZWrite: 0
     m_Colors:
-    - _AlbedoColor: {r: 0.6839622, g: 0.8117222, b: 1, a: 1}
+    - _AlbedoColor: {r: 0, g: 0.60557723, b: 0.6226415, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DetailColor: {r: 1, g: 1, b: 1, a: 1}
     - _DissolveBorderColor: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0, g: 1.9766746, b: 0.46570867, a: 1}
-    - _GoochBrightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _GoochDarkColor: {r: 0, g: 0.23064575, b: 0.2735849, a: 1}
+    - _EmissionColor: {r: 0.30406722, g: 0.10811279, b: 0.16667388, a: 1}
+    - _GoochBrightColor: {r: 0.13207549, g: 0.1277145, b: 0.1277145, a: 1}
+    - _GoochDarkColor: {r: 0, g: 0, b: 0, a: 1}
     - _IridescenceColor: {r: 1, g: 1, b: 1, a: 0.5}
-    - _LightTransmissionColor: {r: 0.10230509, g: 0.14714114, b: 0.1792453, a: 1}
+    - _LightTransmissionColor: {r: 1, g: 0.65, b: 0, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _RimBrightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _RimColor: {r: 1, g: 1, b: 1, a: 1}
+    - _RimColor: {r: 0.20216268, g: 0.39039412, b: 0.5566038, a: 1}
     - _RimDarkColor: {r: 0, g: 0, b: 0, a: 1}
-    - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
-    - _VertexAnimationFrequency: {r: 2.5, g: 2.5, b: 2.5, a: 1}
+    - _SpecularColor: {r: 0.23905303, g: 0.6415094, b: 0.4340319, a: 1}
+    - _VertexAnimationFrequency: {r: 0, g: 10, b: 0, a: 0}

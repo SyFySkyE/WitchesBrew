@@ -36,14 +36,6 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     private float TextDuration = 3.0f;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        //sentences = new Queue<string>();
-        
-    }
-
     public void StartDialogue()
     {
         FindObjectOfType<AudioManager>().Play("SkeletonSpeak");

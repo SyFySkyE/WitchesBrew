@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,11 +9,6 @@ using UnityEngine.UI;
 /// </summary>
 public class TipJar : MonoBehaviour
 {
-    public double Tip { get; set; }
-
-    [Tooltip("The tip goal or quota that must be reached to successfully complete a level")]
-    public double tipGoal = 5;
-
     [SerializeField]
     private DialogueManager dialogueManger;
 
@@ -23,7 +19,7 @@ public class TipJar : MonoBehaviour
     private CustomerTimer customerTimer;
 
     [SerializeField]
-    private Slider tipBarSlider;
+    private Transform tipFillTransform;
 
     [SerializeField]
     [Tooltip("The maximum possible tip a customer can give, must be larger than 0")]
@@ -54,18 +50,21 @@ public class TipJar : MonoBehaviour
     [SerializeField]
     [Tooltip("Percentage of 1/3 of order tip based on conversation quality. 0.1 = 10%, 1 = 100%")]
     [Range(0, 1)]
-    private double neutralResponsePercent = 0.5;
+    private double neutralResponsePercent = 0.7;
 
     [SerializeField]
     [Tooltip("Percentage of 1/3 of order tip based on conversation quality. 0.1 = 10%, 1 = 100%")]
     [Range(0, 1)]
-    private double negativeResponsePercent = 0;
+    private double negativeResponsePercent = 0.5;
 
     private Order currentOrder;
+    private float tipMax;
 
     private void Start()
     {
-        tipBarSlider.maxValue = (float)tipGoal;
+        tipMax = (float)LevelManager.tipGoal;
+        LevelManager.totalTips = 0;
+        UpdateTipJarDisplay();
     }
 
     private void OnOrderCompleted(Order currentOrder)
@@ -73,27 +72,29 @@ public class TipJar : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("DrinkComplete");
         this.currentOrder = currentOrder;
         CalculateTipAndAddItToTotal();
-        UpdateTipJarDisplay();
         
+        if(LevelManager.totalTips < LevelManager.tipGoal)
+            UpdateTipJarDisplay();
     }
 
     private void CalculateTipAndAddItToTotal()
     {
         double totalOrderQualityPercent = GetTimerPercent() * GetOrderAccuracyPercent() * GetConversationQualityPercent();
 
-        currentOrder.tip = totalOrderQualityPercent * maxPossibleTip;
+        currentOrder.tip = Math.Round((totalOrderQualityPercent * maxPossibleTip), 2);
 
         LevelManager.totalTips += currentOrder.tip;
     }
 
     private void UpdateTipJarDisplay()
     {
-        tipBarSlider.value = (float)LevelManager.totalTips;
+        float yScale = (float)LevelManager.totalTips / tipMax;
+        tipFillTransform.localScale = new Vector3(tipFillTransform.localScale.x, yScale,tipFillTransform.localScale.z);
     }
 
     private double GetConversationQualityPercent()
     {
-        double conversationPercent = 1;
+        double conversationPercent = 0;
          switch (dialogueManger.dialogueValueSelected)
          {
              case DialogueValue.Positive:
@@ -105,6 +106,9 @@ public class TipJar : MonoBehaviour
              case DialogueValue.Negative:
                  conversationPercent = negativeResponsePercent;
                  break;
+            default:
+                conversationPercent = negativeResponsePercent;
+                break;
          }
 
         Debug.Log("Player scored " + conversationPercent + " on conversation");

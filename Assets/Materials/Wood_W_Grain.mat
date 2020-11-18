@@ -12,8 +12,7 @@ Material:
   m_ShaderKeywords: _FRESNELHIGHLIGHTS_ON _MK_ALBEDO_MAP _MK_ARTISTIC_PROJECTION_SCREEN_SPACE
     _MK_DETAIL_BLEND_MIX _MK_ENVIRONMENT_REFLECTIONS_AMBIENT _MK_FRESNEL_HIGHLIGHTS
     _MK_LIGHT_CEL _MK_RECEIVE_SHADOWS _MK_SPECULAR_ISOTROPIC _MK_WORKFLOW_ROUGHNESS
-    _MK_WRAPPED_DIFFUSE _NORMALMAP _RECEIVESHADOWS_ON _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
-    _WRAPPEDLIGHTING_ON
+    _MK_WRAPPED_DIFFUSE _RECEIVESHADOWS_ON _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A _WRAPPEDLIGHTING_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -24,7 +23,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: d77c8bdf9506dea49a2c5bd70af4a768, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -67,7 +66,7 @@ Material:
     - _GlossMapScale: 0.604
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Metallic: 0.272
+    - _Metallic: 1
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
@@ -77,5 +76,5 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.26415092, g: 0.26415092, b: 0.26415092, a: 1}
+    - _Color: {r: 0.1981132, g: 0.1981132, b: 0.1981132, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

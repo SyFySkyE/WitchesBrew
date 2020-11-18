@@ -6,11 +6,17 @@ public class PlayerGrab : MonoBehaviour
     [SerializeField]
     private float ingredientDistanceFromCamera = 1.1f;
 
+    public RaycastHit HitInfo
+    {
+        get; set;
+    }
+
     public IngredientEnum HeldIngredient;
     private GameObject ingredGORep;
 
     private UnityIngredient currentIngredient;
 
+    [HideInInspector]
     public float zOffset = -1.5f;
 
     private void Update()
@@ -56,7 +62,6 @@ public class PlayerGrab : MonoBehaviour
                     if (this.HeldIngredient != IngredientEnum.None)
                     {
                         hitInfo.collider.GetComponent<Cauldron>().AddIngredient(HeldIngredient);
-                        currentIngredient.DropIngredientIn();
                         Debug.Log($"You put ingredient: {HeldIngredient} in cauldron");
                         DropIngredient();
                         

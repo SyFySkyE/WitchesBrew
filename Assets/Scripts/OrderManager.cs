@@ -14,6 +14,11 @@ public class OrderManager : MonoBehaviour
 
     public Order currentOrder { get; set; }
 
+    public bool Paused = true; //to do: move to level manager?
+
+    [SerializeField]
+    CustomerTimer customer;
+
     [SerializeField]
     private TMP_Text orderText;
 
@@ -25,8 +30,6 @@ public class OrderManager : MonoBehaviour
     private RandomizeOrder randomizeOrder;
 
     private int currentOrderIndex = 0;
-    
-    private bool paused = false; //to do: move to level manager?
 
     private void Start()
     {
@@ -36,21 +39,19 @@ public class OrderManager : MonoBehaviour
         CreateOrderInstances();
 
         currentOrder = orders[0]; //current order starts at first order
-
     }
 
     private void Update()
     {
-        if (!paused)
+        if (!Paused)
             UpdateCurrentOrderState();
     }
 
     private void TakeOrder()
     {
-        //orderText.text = $"I would like to order a {currentOrder.name}";
-        dialogue1.OrderItem = currentOrder.name;//////////////////////////////////////////////////////////////////////////DWIGHT
-        dialogue2.OrderItem = currentOrder.name;
-        dialogue3.OrderItem = currentOrder.name;
+        dialogue1.OrderItem = currentOrder.recipeName;//////////////////////////////////////////////////////////////////////////DWIGHT
+        dialogue2.OrderItem = currentOrder.recipeName;
+        dialogue3.OrderItem = currentOrder.recipeName;
         Invoke("StartDialogue", 2f);
     }
 
@@ -81,7 +82,7 @@ public class OrderManager : MonoBehaviour
         else  //if we are on the last order, end level
         {
             LevelCompleted?.Invoke();
-            paused = true;
+            Paused = true;
         }
     }
 
@@ -142,6 +143,7 @@ public class OrderManager : MonoBehaviour
     {
 
         FindObjectOfType<DialogueManager>().StartOrderDialogue(dialogue);
+        customer.Paused = false;
 
     }
 }

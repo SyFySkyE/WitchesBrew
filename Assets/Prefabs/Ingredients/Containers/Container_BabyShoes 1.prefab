@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 759165982018141138}
   m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
-  m_LocalPosition: {x: 0.83932066, y: -2.4296, z: -4.3461037}
+  m_LocalPosition: {x: 0, y: -2.4296, z: 0}
   m_LocalScale: {x: 1.238676, y: 0.29922593, z: 1.238676}
   m_Children:
   - {fileID: 484281614271770632}
@@ -93,8 +93,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.24278939, y: 0.35126108, z: 0.24278945}
-  m_Center: {x: 0, y: 0.07067739, z: 0}
+  m_Size: {x: 0.24278939, y: 0.5701641, z: 0.24278943}
+  m_Center: {x: 0, y: -0.038774196, z: 0}
 --- !u!114 &6721883786097722104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,7 +108,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredient: 8
-  cauldronDropLocation: {x: -0.293, y: -2.094, z: -4.469}
 --- !u!1001 &8122877892628574611
 PrefabInstance:
   m_ObjectHideFlags: 0

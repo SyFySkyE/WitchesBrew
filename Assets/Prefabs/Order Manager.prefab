@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 100534811428198453}
   - component: {fileID: 100534811428198454}
-  - component: {fileID: 4453518319158400456}
+  - component: {fileID: 8449797887795458226}
   m_Layer: 0
   m_Name: Order Manager
   m_TagString: Untagged
@@ -84,9 +84,12 @@ MonoBehaviour:
     - What? I dont have magic either? Am I boring.
   CurrentCustomerNumber: 1
   orderText: {fileID: 0}
-  orders: []
-  randomizeOrder: {fileID: 0}
---- !u!114 &4453518319158400456
+  orders:
+  - {fileID: 11400000, guid: 40a27ed177928184ba36f768ec66b8ca, type: 2}
+  - {fileID: 11400000, guid: 5f6736dc44be0534c9ad022f429d9955, type: 2}
+  - {fileID: 11400000, guid: 5ad6524832c98c8469883e8e397750d4, type: 2}
+  randomizeOrder: {fileID: 8449797887795458226}
+--- !u!114 &8449797887795458226
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,16 +98,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 100534811428198455}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40544355e4208fa4f9c469b23c2ac2ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d51ef10e8b0de54caff2d5661c25460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueManger: {fileID: 0}
-  cauldron: {fileID: 0}
-  customerTimer: {fileID: 0}
-  maxPossibleTip: 5
-  greenTimerPercent: 1
-  yellowTimerPercent: 0.8
-  redTimerPercent: 0.5
-  positiveResponsePercent: 1
-  neutralResponsePercent: 0.5
-  negativeResponsePercent: 0
