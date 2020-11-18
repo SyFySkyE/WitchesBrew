@@ -51,7 +51,7 @@ public class UnityIngredient : MonoBehaviour // Is responisible for both the con
                 break;
 
             case IngredientEnum.Eyeballs:
-                FindObjectOfType<AudioManager>().Play("Cinnamon");
+                FindObjectOfType<AudioManager>().Play("Eyeball");
                 break;
 
             case IngredientEnum.FrogLegs:

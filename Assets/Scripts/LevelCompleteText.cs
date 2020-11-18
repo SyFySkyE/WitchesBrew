@@ -19,6 +19,7 @@ public class LevelCompleteText : MonoBehaviour
         else
         {
             textObj.text = "Level Failed";
+            FindObjectOfType<AudioManager>().Play("TimerRing");
         }
     }
 
