@@ -112,6 +112,7 @@ public class OrderManager : MonoBehaviour
     private void StartDialogue() ///////////////////////////////////////////////////////////////////DWIGHT
     {
 
+        CustomerAnimController.PlayEnterAnimation();
         if (CurrentCustomerNumber == 1)
         {
             BeginOrderDialogue(dialogue1);
