@@ -12,7 +12,7 @@ public class LevelCompleteText : MonoBehaviour
 
     private void OnLevelCompleted()
     {
-        if (LevelManager.totalTips >= LevelManager.tipGoal)
+        if (LevelManager.TotalTips >= LevelManager.tipGoal)
         {
             textObj.text = "Level Passed";
         }

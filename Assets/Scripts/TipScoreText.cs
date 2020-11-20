@@ -11,13 +11,23 @@ public class TipScoreText : MonoBehaviour
         tipText = GetComponent<TMP_Text>();
     }
 
-    private void Update()
+    private void OnOrderCompleted(Order o)
     {
         UpdateScore();
     }
 
     private void UpdateScore()
     {
-        tipText.text = "$" + String.Format("{0:0.00}", Math.Round(LevelManager.totalTips, 2));
+        tipText.text = "$" + String.Format("{0:0.00}", Math.Round(LevelManager.TotalTips, 2));
+    }
+
+    private void OnEnable()
+    {
+        OrderManager.OrderCompleted += OnOrderCompleted;
+    }
+
+    private void OnDisable()
+    {
+        OrderManager.OrderCompleted -= OnOrderCompleted;
     }
 }

@@ -61,7 +61,7 @@ public class TipJar : MonoBehaviour
     private void Start()
     {
         tipMax = (float)LevelManager.tipGoal;
-        LevelManager.totalTips = 0;
+        LevelManager.TotalTips = 0;
         UpdateTipJarDisplay();
     }
 
@@ -71,7 +71,7 @@ public class TipJar : MonoBehaviour
         this.currentOrder = currentOrder;
         CalculateTipAndAddItToTotal();
         
-        if(LevelManager.totalTips < LevelManager.tipGoal)
+        if(LevelManager.TotalTips < LevelManager.tipGoal)
             UpdateTipJarDisplay();
     }
 
@@ -79,20 +79,23 @@ public class TipJar : MonoBehaviour
     {
         double totalOrderQualityPercent = GetTimerPercent() * GetOrderAccuracyPercent() * GetConversationQualityPercent();
 
+        
         currentOrder.tip = Math.Round((totalOrderQualityPercent * maxPossibleTip), 2);
 
-        LevelManager.totalTips += currentOrder.tip;
+        LevelManager.TotalTips += currentOrder.tip;
+        Debug.Log("currentOrder.tip is " + currentOrder.tip);
+        cauldron.ClearIngredients();
     }
 
     private void UpdateTipJarDisplay()
     {
-        float yScale = (float)LevelManager.totalTips / tipMax;
+        float yScale = (float)LevelManager.TotalTips / tipMax;
         tipFillTransform.localScale = new Vector3(tipFillTransform.localScale.x, yScale,tipFillTransform.localScale.z);
     }
 
     private double GetConversationQualityPercent()
     {
-        double conversationPercent = 0;
+        double conversationPercent = negativeResponsePercent;
          switch (dialogueManger.dialogueValueSelected)
          {
              case DialogueValue.Positive:
@@ -133,6 +136,7 @@ public class TipJar : MonoBehaviour
                 timerPercent = redTimerPercent;
                 break;
         }
+        Debug.Log("Timer percent is " + timerPercent);
 
         return timerPercent;
     }
@@ -141,31 +145,39 @@ public class TipJar : MonoBehaviour
     {
         List<IngredientEnum> ingredientsInRecipe = new List<IngredientEnum>(currentOrder.recipe);
 
+        Debug.Log("Printing recipe ingredients");
+        foreach (IngredientEnum recipeItem in ingredientsInRecipe)
+            Debug.Log("Recipe item " + recipeItem);
+
         int numberOfCorrectIngredients = 0;
+
+         Debug.Log("cauldron.CurrentIngredients.Count: " + cauldron.CurrentIngredients.Count);
         for (int j = 0; j < cauldron.CurrentIngredients.Count; j++) //for each ingredient in the cauldron
         {
+            Debug.Log("ingredientsInRecipe.Count: " + ingredientsInRecipe.Count);
             for (int i = 0; i < ingredientsInRecipe.Count; i++) //check if it's in the recipe
             {
-                //vv temp code vv
+                Debug.Log("Checking if cauldron ingredient " + cauldron.CurrentIngredients[j] + " = recipe ingredient: " + ingredientsInRecipe[i]);
                 if (cauldron.CurrentIngredients[j] == ingredientsInRecipe[i])
                 {
-                    //add hack to check if cauldron.CurrentIngredients > numberOfCorrectIngredients. If so numberOfCorrectIngredients/cauldron.CurrentIngredients = numberOfCorrectIngredients
+                    Debug.Log("Player placed a correct ingredient! " + ingredientsInRecipe[i]);
+                   
                     if (cauldron.CurrentIngredients.Count > currentOrder.recipe.Length)
                     {
+                        Debug.Log("There are too many ingredients for this recipe in the pot!");
                         numberOfCorrectIngredients = numberOfCorrectIngredients / cauldron.CurrentIngredients.Count;
                     }
                     else
                     {
+                        Debug.Log("Correct ingredient added");
                         numberOfCorrectIngredients++;
                         ingredientsInRecipe.RemoveAt(i);
                     }
-                    //^^ temp code ^^
-                    //numberOfCorrectIngredients++;
-                    //ingredientsInRecipe.RemoveAt(i);
                 }
             }
         }
 
+        Debug.Log("Total number of correct ingredients:" + numberOfCorrectIngredients);
         double accuracyPercent = (double)numberOfCorrectIngredients / currentOrder.recipe.Length;
         Debug.Log($"{currentOrder.name} was {accuracyPercent} accurate");
         return accuracyPercent;

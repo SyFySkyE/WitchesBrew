@@ -5,8 +5,21 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     OrderManager orderManager;
 
-    [HideInInspector]
-    public static double totalTips = 0;
+    public static double TotalTips 
+    {
+        get
+        {
+            Debug.Log("Accessed total tips value = " + totalTips);
+            return totalTips;
+        }
+        set
+        {
+            totalTips = value;
+            Debug.Log("Changed total tips, new value = " + totalTips);
+        }
+    }
+
+    private static double totalTips = 0;
 
     [Tooltip("The tip goal or quota that must be reached to successfully complete a level")]
     public static double tipGoal = 5;

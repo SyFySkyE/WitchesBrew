@@ -39,7 +39,7 @@ public class PlayerGrab : MonoBehaviour
         if (counter >= 3)
         {
             bellArrow.SetActive(true);
-            Debug.Log("activates arrow");
+            //Debug.Log("activates arrow");
         }
 
         if (Input.GetMouseButtonDown(0))

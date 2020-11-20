@@ -55,6 +55,7 @@ public class Cauldron : MonoBehaviour
 
     public void ClearIngredients()
     {
+        Debug.Log("Ingredients cleared");
         CurrentIngredients.Clear();
     }
 
@@ -71,7 +72,6 @@ public class Cauldron : MonoBehaviour
     private void OnOrderCompleted(Order o)
     {
         audioSource.PlayOneShot(orderCompleteSound);
-        ClearIngredients();
     }
 
     private void OnMouseUp()

@@ -35,6 +35,8 @@ public class OrderManager : MonoBehaviour
 
     private void Start()
     {
+        foreach(Order order in orders)
+            Debug.Log("Order in orders array: "+ order);
 
         if(randomizeOrder != null)
             randomizeOrder.RandomizeOrderArry(orders);
