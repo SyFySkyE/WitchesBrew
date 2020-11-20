@@ -36,6 +36,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     private float TextDuration = 3.0f;
 
+    public GameObject LastingTextOBJ;
+
     public void StartDialogue()
     {
         FindObjectOfType<AudioManager>().Play("SkeletonSpeak");
@@ -317,6 +319,9 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("IsOpen", false);
         animator.SetBool("LastDialogue", false);
         animator.SetBool("IsOrder", false);
+
+        Animator lastingtextanimator = LastingTextOBJ.GetComponent<Animator>();
+        lastingtextanimator.SetBool("LastingOrderOpen", true);
 
         Invoke("StartDialogue", TextDuration);
 

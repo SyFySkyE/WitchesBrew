@@ -633,6 +633,12 @@ Transform:
   m_Father: {fileID: 458158436}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &92156964 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3291985955480011460, guid: fabb02d2ff9592f4ea894e9b0f8e130d,
+    type: 3}
+  m_PrefabInstance: {fileID: 96900209}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &96900209
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -804,6 +810,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -586
+      objectReference: {fileID: 0}
+    - target: {fileID: 3291985955480011461, guid: fabb02d2ff9592f4ea894e9b0f8e130d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -29.999756
       objectReference: {fileID: 0}
     - target: {fileID: 4119711331566198666, guid: fabb02d2ff9592f4ea894e9b0f8e130d,
         type: 3}
@@ -10960,6 +10971,11 @@ PrefabInstance:
       propertyPath: customer
       value: 
       objectReference: {fileID: 64337195459283129}
+    - target: {fileID: 100534811428198454, guid: c634eac806b5cfd48930e4695b7a9a33,
+        type: 3}
+      propertyPath: LastingTextOBJ
+      value: 
+      objectReference: {fileID: 92156964}
     - target: {fileID: 100534811428198455, guid: c634eac806b5cfd48930e4695b7a9a33,
         type: 3}
       propertyPath: m_Name

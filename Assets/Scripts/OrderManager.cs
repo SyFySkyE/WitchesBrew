@@ -31,6 +31,8 @@ public class OrderManager : MonoBehaviour
 
     private int currentOrderIndex = 0;
 
+    public GameObject LastingTextOBJ;
+
     private void Start()
     {
 
@@ -90,7 +92,10 @@ public class OrderManager : MonoBehaviour
     {
         currentOrder.orderState = OrderState.Done;
 
-        ////////////////////////////////////////////////////////////////////////DWIGHT******************************************************ACTIVE*************************************************
+        ////////////////////////////////////////////////////////////////////////DWIGHT
+        
+        Animator lastingtextanimator = LastingTextOBJ.GetComponent<Animator>();
+        lastingtextanimator.SetBool("LastingOrderOpen", false);
 
         FindObjectOfType<DialogueManager>().animator.SetBool("IsOpen", false);
         FindObjectOfType<DialogueManager>().animator.SetBool("LastDialogue", false);
@@ -149,6 +154,11 @@ public class OrderManager : MonoBehaviour
     //}
     private void BeginOrderDialogue(Dialogue dialogue) ///////////////////////////////////////////////////DWIGHT
     {
+
+        //Animator lastingtextanimator = LastingTextOBJ.GetComponent<Animator>();
+        //lastingtextanimator.SetBool("LastingOrderOpen", true);
+        TMP_Text lastingtextTEXT = LastingTextOBJ.GetComponent<TextMeshProUGUI>();
+        lastingtextTEXT.text = currentOrder.recipeName;
 
         FindObjectOfType<DialogueManager>().StartOrderDialogue(dialogue);
         customer.Paused = false;
