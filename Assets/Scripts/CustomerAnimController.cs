@@ -1,19 +1,59 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CustomerAnimController : MonoBehaviour
 {
-    private Animator customerAnim;
+    [SerializeField]
+    private Sprite[] customers;
+
+    private static Animator customerAnim;
+    private static SpriteRenderer spriteRenderer;
+    private static int customerIndex = 0;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         customerAnim = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = customers[customerIndex];
     }
 
-    // Update is called once per frame
-    void Update() // This is more of a showcase than how the implementation should be
+    public static void PlayEnterAnimation()
+    {
+        customerAnim.SetInteger("Index", 1);
+        customerAnim.SetTrigger("Enter");
+    }
+
+    public static void PlayExitAnimation()
+    {
+        customerAnim.SetInteger("Index", 1);
+        customerAnim.SetTrigger("Leave");
+    }
+
+    private void OnOrderCompleted(Order o)
+    {
+        PlayExitAnimation();
+        StartCoroutine(WaitToSwitchCustomer());
+    }
+
+    IEnumerator WaitToSwitchCustomer()
+    {
+        yield return new WaitForSeconds(2); //magic number, very bad
+        customerIndex++;
+        spriteRenderer.sprite = customers[customerIndex];
+    }
+
+    private void OnEnable()
+    {
+        OrderManager.OrderCompleted += OnOrderCompleted;
+    }
+
+    private void OnDisable()
+    {
+        OrderManager.OrderCompleted -= OnOrderCompleted;
+    }
+
+    private void AnimationTestDemo()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {

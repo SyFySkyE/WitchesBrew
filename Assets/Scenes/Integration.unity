@@ -18220,6 +18220,25 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1999625642, guid: 260b1a0fb2116f34d81648bceaebe6fa, type: 3}
+      propertyPath: customers.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1999625642, guid: 260b1a0fb2116f34d81648bceaebe6fa, type: 3}
+      propertyPath: customers.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 2d8c2ba944e2bff44bd628b4d29382cf,
+        type: 3}
+    - target: {fileID: 1999625642, guid: 260b1a0fb2116f34d81648bceaebe6fa, type: 3}
+      propertyPath: customers.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: bc4dc028c666ea74cb96c993344642a9,
+        type: 3}
+    - target: {fileID: 1999625642, guid: 260b1a0fb2116f34d81648bceaebe6fa, type: 3}
+      propertyPath: customers.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 5f825b0f9b3aa8b48b31e788c1769222,
+        type: 3}
     - target: {fileID: 64337195459283131, guid: 260b1a0fb2116f34d81648bceaebe6fa,
         type: 3}
       propertyPath: timerSlider
@@ -18259,7 +18278,7 @@ PrefabInstance:
     - target: {fileID: 64337196446790961, guid: 260b1a0fb2116f34d81648bceaebe6fa,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.1875
+      value: 1.73
       objectReference: {fileID: 0}
     - target: {fileID: 64337196446790961, guid: 260b1a0fb2116f34d81648bceaebe6fa,
         type: 3}
