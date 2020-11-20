@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.UI;
 
 /// <summary>
 /// Calculates the tip for each order upon its completion and adds it to the tip total
