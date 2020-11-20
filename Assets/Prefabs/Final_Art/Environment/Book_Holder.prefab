@@ -364,6 +364,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3477494282566379063}
   - component: {fileID: 7608243949853541054}
+  - component: {fileID: 737561191205031880}
   m_Layer: 0
   m_Name: Book_Holder
   m_TagString: RecipeBook
@@ -399,6 +400,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.26690862, y: 0.24375248, z: 0.19145104}
   m_Center: {x: -5.175942, y: -3.2229676, z: 0.69492906}
+--- !u!114 &737561191205031880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4254030332868852877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccd563780f6abe04aa6ac643d9fec90e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightMaterial: {fileID: 2100000, guid: c9427d8ee355d154fb38490168f0a03d, type: 2}
 --- !u!1 &4629717101703537853
 GameObject:
   m_ObjectHideFlags: 0

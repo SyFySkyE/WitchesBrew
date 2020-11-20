@@ -5,12 +5,12 @@ using UnityEngine;
 public class MouseOverHighlightable : MonoBehaviour
 {
     [SerializeField]
-    Material highlightMaterial;
+    private Material highlightMaterial;
 
     private Material defaultMaterial;
     private MeshRenderer[] meshRenderers;
 
-    private 
+    //private 
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +27,7 @@ public class MouseOverHighlightable : MonoBehaviour
     {
         foreach (MeshRenderer meshRenderer in meshRenderers)
         {
+            //
             meshRenderer.material = highlightMaterial;
         }
     }

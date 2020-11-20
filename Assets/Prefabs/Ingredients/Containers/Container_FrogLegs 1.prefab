@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 4890950190273886157}
   - component: {fileID: 1059275613473462285}
   - component: {fileID: 1059275613473462284}
+  - component: {fileID: 7071111181227465310}
   m_Layer: 0
   m_Name: Container_FrogLegs 1
   m_TagString: Untagged
@@ -206,6 +207,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredient: 6
+--- !u!114 &7071111181227465310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3537296431405716219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccd563780f6abe04aa6ac643d9fec90e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightMaterial: {fileID: 2100000, guid: c9427d8ee355d154fb38490168f0a03d, type: 2}
 --- !u!1001 &4771975064963122218
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 6471521048551274199}
   - component: {fileID: 6471521048551274198}
   - component: {fileID: 1031199935}
+  - component: {fileID: 3938623718714911234}
   m_Layer: 0
   m_Name: Container_Eyeballs
   m_TagString: Untagged
@@ -152,7 +153,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredient: 1
-  cauldronDropLocation: {x: -0.293, y: -2.094, z: -4.469}
 --- !u!114 &1031199935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,6 +166,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 0}
+--- !u!114 &3938623718714911234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7709775790256333963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccd563780f6abe04aa6ac643d9fec90e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightMaterial: {fileID: 2100000, guid: c9427d8ee355d154fb38490168f0a03d, type: 2}
 --- !u!1 &8577251134103271957
 GameObject:
   m_ObjectHideFlags: 0

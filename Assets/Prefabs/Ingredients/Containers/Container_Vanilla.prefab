@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 3420980083697262214}
   - component: {fileID: 698673181700247874}
   - component: {fileID: 698673181700247875}
+  - component: {fileID: 9216974455522316941}
   m_Layer: 0
   m_Name: Container_Vanilla
   m_TagString: Untagged
@@ -139,7 +140,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredient: 3
-  cauldronDropLocation: {x: -0.293, y: -2.094, z: -4.469}
+--- !u!114 &9216974455522316941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246467728744158003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccd563780f6abe04aa6ac643d9fec90e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightMaterial: {fileID: 2100000, guid: c9427d8ee355d154fb38490168f0a03d, type: 2}
 --- !u!1 &8681369430974534077
 GameObject:
   m_ObjectHideFlags: 0

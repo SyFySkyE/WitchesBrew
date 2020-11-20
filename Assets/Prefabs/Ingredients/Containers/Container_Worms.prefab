@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 8142255283234035325}
   - component: {fileID: 1151895623342045415}
   - component: {fileID: 1151895623342045412}
+  - component: {fileID: 8649064365424795295}
   m_Layer: 0
   m_Name: Container_Worms
   m_TagString: Untagged
@@ -168,7 +169,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredient: 9
-  cauldronDropLocation: {x: -0.293, y: -2.094, z: -4.469}
+--- !u!114 &8649064365424795295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8380752961159321733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccd563780f6abe04aa6ac643d9fec90e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightMaterial: {fileID: 2100000, guid: c9427d8ee355d154fb38490168f0a03d, type: 2}
 --- !u!1001 &531413005714270702
 PrefabInstance:
   m_ObjectHideFlags: 0

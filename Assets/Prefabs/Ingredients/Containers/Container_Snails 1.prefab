@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 6347266813886385425}
   - component: {fileID: 2816233509667316629}
   - component: {fileID: 2816233509667316628}
+  - component: {fileID: 4213707179527666388}
   m_Layer: 0
-  m_Name: Container_Snails
+  m_Name: Container_Snails 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,7 +114,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredient: 7
-  cauldronDropLocation: {x: -0.293, y: -2.094, z: -4.469}
+--- !u!114 &4213707179527666388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6676434618802029545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccd563780f6abe04aa6ac643d9fec90e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightMaterial: {fileID: 2100000, guid: c9427d8ee355d154fb38490168f0a03d, type: 2}
 --- !u!1001 &1379464279248130192
 PrefabInstance:
   m_ObjectHideFlags: 0
