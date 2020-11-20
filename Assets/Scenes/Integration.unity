@@ -8767,6 +8767,7 @@ GameObject:
   - component: {fileID: 513512019}
   - component: {fileID: 513512018}
   - component: {fileID: 513512020}
+  - component: {fileID: 513512021}
   m_Layer: 5
   m_Name: BookArrow
   m_TagString: Untagged
@@ -8849,6 +8850,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &513512021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513512016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fbc8592e8067c74fa8338792dfa8c87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &531209615
 PrefabInstance:
   m_ObjectHideFlags: 0
