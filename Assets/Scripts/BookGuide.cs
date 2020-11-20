@@ -1,10 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BookGuide : MonoBehaviour
 {
     public GameObject pointer;
+
+    private void Start()
+    {
+        pointer.SetActive(false);
+    }
 
     private void Update()
     {
@@ -23,8 +26,23 @@ public class BookGuide : MonoBehaviour
         }
     }
 
+    private void OnLevelStarted()
+    {
+        pointer.SetActive(true);
+    }
+
     public void DelArrow()
     {
         pointer.SetActive(false);
+    }
+
+    private void OnEnable()
+    {
+        TipGoalText.LevelStarted += OnLevelStarted;
+    }
+
+    private void OnDisable()
+    {
+        TipGoalText.LevelStarted -= OnLevelStarted;
     }
 }
