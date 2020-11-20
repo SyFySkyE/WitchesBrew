@@ -89,6 +89,13 @@ public class OrderManager : MonoBehaviour
     private void OnDoneButtonPressed()
     {
         currentOrder.orderState = OrderState.Done;
+
+        ////////////////////////////////////////////////////////////////////////DWIGHT******************************************************ACTIVE*************************************************
+
+        FindObjectOfType<DialogueManager>().animator.SetBool("IsOpen", false);
+        FindObjectOfType<DialogueManager>().animator.SetBool("LastDialogue", false);
+        FindObjectOfType<DialogueManager>().animator.SetBool("IsOrder", false);
+
     }
 
     private void OnEnable()

@@ -55,8 +55,10 @@ public class DialogueManager : MonoBehaviour
         NPCResponseNeg = dialogueholder.sentences[6];
 
         InitializeResponse();
-
-        dialogueText.text = NPCDiag;
+        if (!animator.GetBool("AcceptOrderTrue"))
+        {
+            dialogueText.text = NPCDiag;
+        }
 
     }
 
@@ -301,7 +303,9 @@ public class DialogueManager : MonoBehaviour
 
         animator.SetBool("AcceptOrderTrue", false);
 
-        Invoke("EndDialogue", TextDuration);
+        //Invoke("EndDialogue", TextDuration);
+
+        EndDialogue();
 
         return;
 
@@ -322,7 +326,7 @@ public class DialogueManager : MonoBehaviour
 
         animator.SetBool("IsOpen", false);
         animator.SetBool("LastDialogue", false);
-        animator.SetBool("IsOrder", false);
+        //animator.SetBool("IsOrder", false);
 
     }
 
