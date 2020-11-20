@@ -8,22 +8,34 @@ public class MouseOverHighlightable : MonoBehaviour
     Material highlightMaterial;
 
     private Material defaultMaterial;
-    private MeshRenderer meshRenderer;
+    private MeshRenderer[] meshRenderers;
+
+    private 
 
     // Start is called before the first frame update
     void Start()
     {
-        meshRenderer = GetComponent<MeshRenderer>();
-        defaultMaterial = meshRenderer.material;
+        meshRenderers = GetComponentsInChildren<MeshRenderer>();
+        foreach (MeshRenderer meshRenderer in meshRenderers)
+        {
+            defaultMaterial = meshRenderer.material;
+        }
+        
     }
 
     private void OnMouseOver()
     {
-        meshRenderer.material = highlightMaterial;
+        foreach (MeshRenderer meshRenderer in meshRenderers)
+        {
+            meshRenderer.material = highlightMaterial;
+        }
     }
 
     private void OnMouseExit()
     {
-        meshRenderer.material = defaultMaterial;
+        foreach (MeshRenderer meshRenderer in meshRenderers)
+        {
+            meshRenderer.material = defaultMaterial;
+        }
     }
 }
