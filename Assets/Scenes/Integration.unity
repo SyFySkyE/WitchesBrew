@@ -8766,6 +8766,7 @@ GameObject:
   - component: {fileID: 513512017}
   - component: {fileID: 513512019}
   - component: {fileID: 513512018}
+  - component: {fileID: 513512020}
   m_Layer: 5
   m_Name: BookArrow
   m_TagString: Untagged
@@ -8811,7 +8812,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 635a7589cbddd9b4f8469751a6d19f89, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 121af473f45f92148ababc54638bf13f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8829,6 +8830,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 513512016}
   m_CullTransparentMesh: 0
+--- !u!95 &513512020
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513512016}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 02418866a949f2a479de3a38f362c5c5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &531209615
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11541,6 +11561,7 @@ GameObject:
   - component: {fileID: 855696004}
   - component: {fileID: 855696006}
   - component: {fileID: 855696005}
+  - component: {fileID: 855696007}
   m_Layer: 5
   m_Name: ServeArrow
   m_TagString: Untagged
@@ -11586,7 +11607,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 635a7589cbddd9b4f8469751a6d19f89, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 121af473f45f92148ababc54638bf13f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11604,6 +11625,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 855696003}
   m_CullTransparentMesh: 0
+--- !u!95 &855696007
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855696003}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 80cfa6cc527e9d04299042819251d369, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &863428694
 PrefabInstance:
   m_ObjectHideFlags: 0
