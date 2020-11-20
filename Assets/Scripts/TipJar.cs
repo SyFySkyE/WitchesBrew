@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 /// <summary>
@@ -140,7 +139,7 @@ public class TipJar : MonoBehaviour
 
     private double GetOrderAccuracyPercent()
     {
-        List<IngredientEnum> ingredientsInRecipe = currentOrder.recipe.ToList();
+        List<IngredientEnum> ingredientsInRecipe = new List<IngredientEnum>(currentOrder.recipe);
 
         int numberOfCorrectIngredients = 0;
         for (int j = 0; j < cauldron.CurrentIngredients.Count; j++) //for each ingredient in the cauldron
