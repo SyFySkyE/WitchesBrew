@@ -5,14 +5,17 @@ public class PlayerGrab : MonoBehaviour
 {
     [SerializeField]
     private float ingredientDistanceFromCamera = 1.1f;
+    private int counter = 0;
 
     public RaycastHit HitInfo
     {
         get; set;
     }
 
+    public GameObject bellArrow;
     public IngredientEnum HeldIngredient;
     private GameObject ingredGORep;
+
 
     private UnityIngredient currentIngredient;
 
@@ -30,6 +33,27 @@ public class PlayerGrab : MonoBehaviour
                 Cursor.visible = false;
                 Vector3 mousePosToScreen = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane + ingredientDistanceFromCamera));               
                 ingredGORep.transform.position = mousePosToScreen;
+            }
+        }
+
+        if (counter >= 3)
+        {
+            bellArrow.SetActive(true);
+            Debug.Log("activates arrow");
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out hit, 100.0f))
+            {
+                if (hit.collider.tag == "Bell")
+                {
+                    counter = 0;
+                    bellArrow.SetActive(false);
+                }
             }
         }
     }
@@ -64,7 +88,7 @@ public class PlayerGrab : MonoBehaviour
                         hitInfo.collider.GetComponent<Cauldron>().AddIngredient(HeldIngredient);
                         Debug.Log($"You put ingredient: {HeldIngredient} in cauldron");
                         DropIngredient();
-                        
+                        counter++;
                         // UseThis Code to grab stuff from Audiomanager. We will need to identify what is liquid and solid. 
                     }
                 }
