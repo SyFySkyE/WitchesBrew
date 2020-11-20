@@ -1,42 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MouseOverHighlightable : MonoBehaviour
 {
-    [SerializeField]
-    private Material highlightMaterial;
+    Outline outlineScript;
 
-    private Material defaultMaterial;
-    private MeshRenderer[] meshRenderers;
-
-    //private 
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        meshRenderers = GetComponentsInChildren<MeshRenderer>();
-        foreach (MeshRenderer meshRenderer in meshRenderers)
-        {
-            defaultMaterial = meshRenderer.material;
-        }
-        
+        outlineScript = GetComponent<Outline>();
+        outlineScript.enabled = false;
     }
 
     private void OnMouseOver()
     {
-        foreach (MeshRenderer meshRenderer in meshRenderers)
-        {
-            //
-            meshRenderer.material = highlightMaterial;
-        }
+        outlineScript.enabled = true;
     }
 
     private void OnMouseExit()
     {
-        foreach (MeshRenderer meshRenderer in meshRenderers)
-        {
-            meshRenderer.material = defaultMaterial;
-        }
+        outlineScript.enabled = false;
     }
 }
