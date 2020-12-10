@@ -16,6 +16,7 @@ public class AudioManager : MonoBehaviour
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
+            s.source.panStereo = s.panStereo;
         }
     }
 
@@ -46,4 +47,5 @@ public class AudioManager : MonoBehaviour
         //use code below to grab sounds out of audio manager
         // FindObjectOfType<AudioManager>().Play("Any sound within audiomanager Array (game object inside of unity)"); 
     }
+
 }

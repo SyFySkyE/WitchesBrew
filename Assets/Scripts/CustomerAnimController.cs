@@ -20,6 +20,7 @@ public class CustomerAnimController : MonoBehaviour
 
     public static void PlayEnterAnimation()
     {
+        FindObjectOfType<AudioManager>().Play("CustomerEntrance");
         customerAnim.SetInteger("Index", 1);
         customerAnim.SetTrigger("Enter");
     }
@@ -31,13 +32,14 @@ public class CustomerAnimController : MonoBehaviour
     }
 
     private void OnOrderCompleted(Order o)
-    {
+    { 
         PlayExitAnimation();
         StartCoroutine(WaitToSwitchCustomer());
     }
 
     IEnumerator WaitToSwitchCustomer()
     {
+        
         yield return new WaitForSeconds(2); //magic number, very bad
         customerIndex++;
         spriteRenderer.sprite = customers[customerIndex];

@@ -11,6 +11,8 @@ public class Sound
     public float volume;
     [Range (.1f,3f)]
     public float pitch;
+    [Range (-1.0f,1.0f)]
+    public float panStereo;
 
     public bool loop;
 

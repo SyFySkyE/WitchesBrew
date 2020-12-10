@@ -72,7 +72,11 @@ public class TipJar : MonoBehaviour
         CalculateTipAndAddItToTotal();
         
         if(LevelManager.TotalTips < LevelManager.tipGoal)
+        {
+            FindObjectOfType<AudioManager>().Play("TipReceived");
             UpdateTipJarDisplay();
+        }
+            
     }
 
     private void CalculateTipAndAddItToTotal()
@@ -89,6 +93,7 @@ public class TipJar : MonoBehaviour
 
     private void UpdateTipJarDisplay()
     {
+        
         float yScale = (float)LevelManager.TotalTips / tipMax;
         tipFillTransform.localScale = new Vector3(tipFillTransform.localScale.x, yScale,tipFillTransform.localScale.z);
     }
